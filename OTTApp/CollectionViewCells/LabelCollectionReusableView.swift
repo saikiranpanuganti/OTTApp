@@ -8,19 +8,22 @@
 import UIKit
 
 class LabelCollectionReusableView: UICollectionReusableView {
-    @IBOutlet weak var title: UILabel!
+
+    @IBOutlet weak var title:UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        setUpUI()
+        
+        setupUI()
     }
     
-    func setUpUI() {
-        title.font = Fonts.shared.bold4
-        title.textColor = Colors.shared.whiteTextColor
+    func setupUI(){
+        title.font = Fonts.shared.bold5
+        title.textColor = Colors.shared.whiteColor
     }
     
-    func configureUI(headerTitle: String) {
-        title.text = headerTitle
+    func configUI(title:String){
+        self.title.text = title
     }
+    
 }

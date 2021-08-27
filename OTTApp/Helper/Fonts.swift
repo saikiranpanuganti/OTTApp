@@ -6,21 +6,20 @@
 //
 
 import UIKit
+class Fonts{
+    
+   static let shared:Fonts = Fonts()
+    private init() { }
+    
+    let boldMin = UIFont(name: "Poppins-Bold", size: 10) ?? UIFont.systemFont(ofSize: 10, weight: .bold)
+    let bold1 = UIFont(name: "Poppins-Bold", size: 12) ?? UIFont.systemFont(ofSize: 12, weight: .bold)
+    let bold2 = UIFont(name: "Poppins-Bold", size: 14) ?? UIFont.systemFont(ofSize: 14, weight: .bold)
+    let bold3 = UIFont(name: "Poppins-Bold", size: 16) ?? UIFont.systemFont(ofSize: 16, weight: .bold)
+    let bold4 = UIFont(name: "Poppins-Bold", size: 18) ?? UIFont.systemFont(ofSize: 18, weight: .bold)
+    let bold5 = UIFont(name: "Poppins-Bold", size: 20) ?? UIFont.systemFont(ofSize: 20, weight: .bold)
+    let bold6 = UIFont(name: "Poppins-Bold", size: 22) ?? UIFont.systemFont(ofSize: 22, weight: .bold)
+    let bold7 = UIFont(name: "Poppins-Bold", size: 24) ?? UIFont.systemFont(ofSize: 24, weight: .bold)
 
-class Fonts {
-    static let shared: Fonts = Fonts()
-    
-    private init() {  }
-    
-    let boldMin = UIFont.init(name: "Poppins-Bold", size: 10) ?? UIFont.systemFont(ofSize: 10, weight: .bold)
-    let bold1 = UIFont.init(name: "Poppins-Bold", size: 12) ?? UIFont.systemFont(ofSize: 12, weight: .bold)
-    let bold2 = UIFont.init(name: "Poppins-Bold", size: 14) ?? UIFont.systemFont(ofSize: 14, weight: .bold)
-    let bold3 = UIFont.init(name: "Poppins-Bold", size: 16) ?? UIFont.systemFont(ofSize: 16, weight: .bold)
-    let bold4 = UIFont.init(name: "Poppins-Bold", size: 18) ?? UIFont.systemFont(ofSize: 18, weight: .bold)
-    let bold5 = UIFont.init(name: "Poppins-Bold", size: 20) ?? UIFont.systemFont(ofSize: 20, weight: .bold)
-    let bold6 = UIFont.init(name: "Poppins-Bold", size: 22) ?? UIFont.systemFont(ofSize: 22, weight: .bold)
-    let bold7 = UIFont.init(name: "Poppins-Bold", size: 24) ?? UIFont.systemFont(ofSize: 24, weight: .bold)
-    
     let semiboldMin = UIFont.init(name: "Poppins-Semibold", size: 10) ?? UIFont.systemFont(ofSize: 10, weight: .semibold)
     let semibold1 = UIFont.init(name: "Poppins-Semibold", size: 12) ?? UIFont.systemFont(ofSize: 12, weight: .semibold)
     let semibold2 = UIFont.init(name: "Poppins-Semibold", size: 14) ?? UIFont.systemFont(ofSize: 14, weight: .semibold)
