@@ -13,11 +13,16 @@ class UsersViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        usersView.delegate = self
         usersView.setupUI()
-       
     }
     
+}
 
-  
-
+extension UsersViewController: UsersViewDelegate {
+    func userTapped() {
+        let controller = Controllers.tabBar.getControllers()
+        navigationController?.pushViewController(controller, animated: true)
+    }
 }

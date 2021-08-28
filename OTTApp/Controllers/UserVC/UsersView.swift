@@ -7,8 +7,12 @@
 
 import UIKit
 
+
+protocol UsersViewDelegate: AnyObject {
+    func userTapped()
+}
+
 class UsersView:UIView{
-    
     @IBOutlet weak var userOneImg:UIImageView!
     @IBOutlet weak var userTwoImg:UIImageView!
     @IBOutlet weak var userThreeImg:UIImageView!
@@ -26,6 +30,8 @@ class UsersView:UIView{
     @IBOutlet weak var UserThreeView:UIImageView!
     @IBOutlet weak var UserFourView:UIImageView!
     @IBOutlet weak var UserFiveView:UIImageView!
+    
+    weak var delegate: UsersViewDelegate?
     
     func setupUI(){
         userOneImg.image = Images.shared.userImage
@@ -57,11 +63,25 @@ class UsersView:UIView{
         userThreeLbl.textColor = Colors.shared.whiteColor
         userFourLbl.textColor = Colors.shared.whiteColor
         userFiveLbl.textColor = Colors.shared.whiteColor
-        
-        
-        
-        
-        
     }
     
+    @IBAction func profile1Tapped() {
+        delegate?.userTapped()
+    }
+    
+    @IBAction func profile2Tapped() {
+        delegate?.userTapped()
+    }
+    
+    @IBAction func profile3Tapped() {
+        delegate?.userTapped()
+    }
+    
+    @IBAction func profile4Tapped() {
+        delegate?.userTapped()
+    }
+    
+    @IBAction func profile5Tapped() {
+        delegate?.userTapped()
+    }
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TlW-WQ-Y3j">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4Vh-ef-MW4">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
@@ -20,7 +20,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ryr-JG-1ix" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-920" y="46"/>
+            <point key="canvasLocation" x="-97.101449275362327" y="45.535714285714285"/>
         </scene>
         <!--Home Tab Bar View Controller-->
         <scene sceneID="WZ9-T9-ZqV">
@@ -60,7 +60,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kaI-eq-fWy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-251" y="46"/>
+            <point key="canvasLocation" x="657.97101449275362" y="45.535714285714285"/>
         </scene>
         <!--Users View Controller-->
         <scene sceneID="78A-oL-MSY">
@@ -116,6 +116,9 @@
                                                                     </label>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="syu-tH-Aqm">
                                                                         <rect key="frame" x="0.0" y="0.0" width="142" height="175"/>
+                                                                        <connections>
+                                                                            <action selector="profile1Tapped" destination="B38-9p-fUx" eventType="touchUpInside" id="cGh-wl-05r"/>
+                                                                        </connections>
                                                                     </button>
                                                                 </subviews>
                                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -150,6 +153,9 @@
                                                                     </label>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="88l-Z5-6Hl">
                                                                         <rect key="frame" x="0.0" y="0.0" width="142" height="175"/>
+                                                                        <connections>
+                                                                            <action selector="profile2Tapped" destination="B38-9p-fUx" eventType="touchUpInside" id="Ews-42-TdH"/>
+                                                                        </connections>
                                                                     </button>
                                                                 </subviews>
                                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -193,6 +199,9 @@
                                                                     </label>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kyx-IT-dVv">
                                                                         <rect key="frame" x="0.0" y="0.0" width="142" height="175"/>
+                                                                        <connections>
+                                                                            <action selector="profile3Tapped" destination="B38-9p-fUx" eventType="touchUpInside" id="UuK-2I-jiQ"/>
+                                                                        </connections>
                                                                     </button>
                                                                 </subviews>
                                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -227,6 +236,9 @@
                                                                     </label>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DXU-0a-2OU">
                                                                         <rect key="frame" x="0.0" y="0.0" width="142" height="175"/>
+                                                                        <connections>
+                                                                            <action selector="profile4Tapped" destination="B38-9p-fUx" eventType="touchUpInside" id="dJ1-aa-Sw5"/>
+                                                                        </connections>
                                                                     </button>
                                                                 </subviews>
                                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -267,6 +279,9 @@
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fnu-na-Z7X">
                                                                 <rect key="frame" x="0.0" y="0.0" width="142" height="175"/>
+                                                                <connections>
+                                                                    <action selector="profile5Tapped" destination="B38-9p-fUx" eventType="touchUpInside" id="TGq-d3-dJX"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -347,13 +362,31 @@
                             <outlet property="userTwoLbl" destination="a3d-Nt-zzT" id="v7S-BR-jtZ"/>
                         </connections>
                     </view>
+                    <navigationItem key="navigationItem" id="lTP-m0-RBv"/>
                     <connections>
                         <outlet property="usersView" destination="B38-9p-fUx" id="8WA-4s-gpI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Hk-sl-GEF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="498.55072463768118" y="60.9375"/>
+            <point key="canvasLocation" x="-1160.8695652173915" y="45.535714285714285"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="qOl-11-xgO">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="4Vh-ef-MW4" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="IcA-mK-J0E">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="TlW-WQ-Y3j" kind="relationship" relationship="rootViewController" id="Aiv-gg-O95"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bKR-LG-iZt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1910" y="46"/>
         </scene>
     </scenes>
     <resources>
