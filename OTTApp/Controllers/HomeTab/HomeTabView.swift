@@ -84,7 +84,7 @@ extension HomeTabView:UICollectionViewDataSource{
 extension HomeTabView:UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if indexPath.section == 0{
-            return CGSize(width: screenWidth, height: screenHeight/1.8)
+            return CGSize(width: screenWidth, height: screenHeight/1.3)
         }
         else{
         return CGSize(width: screenWidth, height: screenWidth/2)
