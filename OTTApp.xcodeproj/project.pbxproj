@@ -27,6 +27,7 @@
 		7F09C56D26D5504900B058FC /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F09C56B26D5504900B058FC /* ImageCollectionViewCell.swift */; };
 		7F09C56E26D5504900B058FC /* ImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F09C56C26D5504900B058FC /* ImageCollectionViewCell.xib */; };
 		7F09C57026D5522900B058FC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F09C56F26D5522900B058FC /* Constants.swift */; };
+		7F18EB8626DA8CE7005B6680 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F18EB8526DA8CE7005B6680 /* MenuView.swift */; };
 		7F8191C126D698040086753A /* LabelCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8191BF26D698040086753A /* LabelCollectionReusableView.swift */; };
 		7F8191C226D698040086753A /* LabelCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F8191C026D698040086753A /* LabelCollectionReusableView.xib */; };
 		7F8191C426D698D20086753A /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8191C326D698D20086753A /* Colors.swift */; };
@@ -80,6 +81,7 @@
 		7F09C56B26D5504900B058FC /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		7F09C56C26D5504900B058FC /* ImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCollectionViewCell.xib; sourceTree = "<group>"; };
 		7F09C56F26D5522900B058FC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		7F18EB8526DA8CE7005B6680 /* MenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		7F8191BF26D698040086753A /* LabelCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelCollectionReusableView.swift; sourceTree = "<group>"; };
 		7F8191C026D698040086753A /* LabelCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LabelCollectionReusableView.xib; sourceTree = "<group>"; };
 		7F8191C326D698D20086753A /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 				7F09C55F26D549CF00B058FC /* HomeTabViewModel.swift */,
 				7F09C55726D5416100B058FC /* HomeTabViewController.swift */,
 				7F09C55D26D549C100B058FC /* HomeTabView.swift */,
+				7F18EB8526DA8CE7005B6680 /* MenuView.swift */,
 			);
 			path = HomeTab;
 			sourceTree = "<group>";
@@ -395,6 +398,7 @@
 				7F09C55E26D549C100B058FC /* HomeTabView.swift in Sources */,
 				CB80B3A426D9612000E2CE44 /* MainImageViewCell.swift in Sources */,
 				7F09C56226D54B4E00B058FC /* NetworkAdaptor.swift in Sources */,
+				7F18EB8626DA8CE7005B6680 /* MenuView.swift in Sources */,
 				7F09C56D26D5504900B058FC /* ImageCollectionViewCell.swift in Sources */,
 				7F09C57026D5522900B058FC /* Constants.swift in Sources */,
 				7F09C56426D54BBA00B058FC /* NetworkAdaptorHelper.swift in Sources */,

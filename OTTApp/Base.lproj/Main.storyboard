@@ -41,6 +41,13 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="az0-j1-9Op" customClass="MenuView" customModule="OTTApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44" width="414" height="150"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="oRT-sD-U7U"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Cxj-Py-qcA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -49,6 +56,9 @@
                             <constraint firstAttribute="bottom" secondItem="fYJ-X6-JCD" secondAttribute="bottom" id="C7e-nh-joL"/>
                             <constraint firstItem="fYJ-X6-JCD" firstAttribute="leading" secondItem="Cxj-Py-qcA" secondAttribute="leading" id="LLS-Cz-pG7"/>
                             <constraint firstItem="Cxj-Py-qcA" firstAttribute="trailing" secondItem="fYJ-X6-JCD" secondAttribute="trailing" id="OIG-eG-Azx"/>
+                            <constraint firstItem="az0-j1-9Op" firstAttribute="top" secondItem="Cxj-Py-qcA" secondAttribute="top" id="Qdj-jI-zkW"/>
+                            <constraint firstItem="Cxj-Py-qcA" firstAttribute="trailing" secondItem="az0-j1-9Op" secondAttribute="trailing" id="yUT-9k-XUQ"/>
+                            <constraint firstItem="az0-j1-9Op" firstAttribute="leading" secondItem="Cxj-Py-qcA" secondAttribute="leading" id="zya-HP-9PR"/>
                         </constraints>
                         <connections>
                             <outlet property="collectionView" destination="fYJ-X6-JCD" id="z2A-xn-qdf"/>

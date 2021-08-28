@@ -15,4 +15,7 @@ class Images {
     let homeUnselected = UIImage(named: "Home")
     let homeSelected = UIImage(named: "HomeTap")
     let userImage = UIImage(named: "imageee")
+    let netflixLogo = UIImage(named: "netflixLogo")
+    let downArrow = UIImage(named: "down-arrow")
+    let cast = UIImage(named: "cast")
 }
