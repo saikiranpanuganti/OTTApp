@@ -7,90 +7,105 @@
 
 import UIKit
 
-class HomeTabView: UIView {
-    @IBOutlet weak var collectionView: UICollectionView!
+class HomeTabView:UIView{
     
-    var homeData: Home?
+    @IBOutlet weak var collectionView:UICollectionView!
     
-    func setUpUI() {
+    var homeData:Home?
+    
+    func setupUI(){
         collectionView.register(UINib(nibName: "MainCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "MainCollectionViewCell")
+        collectionView.register(UINib(nibName: "MainImageViewCell", bundle: nil), forCellWithReuseIdentifier: "MainImageViewCell")
         collectionView.register(UINib(nibName: "LabelCollectionReusableView", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "LabelCollectionReusableView")
-        collectionView.register(UINib(nibName: "ImageCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ImageCollectionViewCell")
-        
-        collectionView.delegate = self
+       collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.backgroundColor = Colors.shared.blackViewColor
+       
     }
     
-    func updateUI() {
+    func updateUI(){
         DispatchQueue.main.async {
             self.collectionView.reloadData()
         }
+        
     }
+    
 }
 
-extension HomeTabView: UICollectionViewDataSource {
+extension HomeTabView:UICollectionViewDelegate{
+    
+    
+}
+
+extension HomeTabView:UICollectionViewDataSource{
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return (homeData?.body?.data?.playlists?.count ?? 0) + 1
+        return (homeData?.body?.data?.playlists!.count ?? 0)+1
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return  1//homeData?.body?.data?.playlists?[section].content?.count ?? 0
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if indexPath.section == 0 {
-            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCollectionViewCell", for: indexPath) as? ImageCollectionViewCell {
-                cell.configureUI(urlString: homeData?.body?.data?.banner?[0].imagery?.banner ?? "")
+      
+        if indexPath.section == 0{
+            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainImageViewCell", for: indexPath) as? MainImageViewCell{
+                cell.configUI(img: homeData?.body?.data?.banner?[0].imagery?.banner ?? "")
                 return cell
+            
             }
-        }else {
-            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainCollectionViewCell", for: indexPath) as? MainCollectionViewCell {
-                cell.updateUI(data: homeData?.body?.data?.playlists?[indexPath.section - 1])
-                return cell
-            }
+        }
+        else{
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainCollectionViewCell", for: indexPath) as? MainCollectionViewCell{
+            cell.updateUI(data: homeData?.body?.data?.playlists?[indexPath.section-1])
+            return cell
+        }
         }
         
         return UICollectionViewCell()
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        if indexPath.section > 0 {
-            if let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "LabelCollectionReusableView", for: indexPath) as? LabelCollectionReusableView {
-                header.configureUI(headerTitle: homeData?.body?.data?.playlists?[indexPath.section - 1].title ?? "")
-                return header
-            }
-        }
         
+        if indexPath.section > 0 {
+        if let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "LabelCollectionReusableView", for: indexPath) as? LabelCollectionReusableView{
+            
+            header.configUI(title: homeData?.body?.data?.playlists?[indexPath.section-1].title ?? "")
+            return header
+        }
+        }
         return UICollectionReusableView()
     }
-}
-
-extension HomeTabView: UICollectionViewDelegate {
     
 }
 
-extension HomeTabView: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        if section > 0 {
-            return CGSize(width: screenWidth, height: 50)
-        }
-        return CGSize.zero
-    }
+extension HomeTabView:UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if indexPath.section == 0 {
-            return CGSize(width: screenWidth, height: screenWidth*1.2)
-        }else {
-            return CGSize(width: screenWidth, height: screenWidth/2)
+        if indexPath.section == 0{
+            return CGSize(width: screenWidth, height: screenHeight/1.8)
         }
-        
+        else{
+        return CGSize(width: screenWidth, height: screenWidth/2)
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        if section == 0 {
+           return CGSize(width: 0, height: 0)
+        }
+        else{
+            
+            return CGSize(width: screenWidth, height: 80)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
+        return 10
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
+        return 10
     }
 }
-

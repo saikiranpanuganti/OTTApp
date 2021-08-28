@@ -9,14 +9,18 @@ import UIKit
 import SDWebImage
 
 class ImageCollectionViewCell: UICollectionViewCell {
-    @IBOutlet weak var imageOutlet: UIImageView!
+    
+    @IBOutlet weak var images:UIImageView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
+      
+        images.layer.cornerRadius = 8
+    }
+    func configUI(urlString:String){
+        let url = URL(string: urlString)
         
+        images.sd_setImage(with: url, completed: nil)
     }
 
-    func configureUI(urlString: String) {
-        imageOutlet.sd_setImage(with: URL(string: urlString), placeholderImage: Images.shared.placeHolder, options: .highPriority, progress: nil, completed: nil)
-    }
 }

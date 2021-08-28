@@ -31,6 +31,10 @@
 		7F8191C226D698040086753A /* LabelCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F8191C026D698040086753A /* LabelCollectionReusableView.xib */; };
 		7F8191C426D698D20086753A /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8191C326D698D20086753A /* Colors.swift */; };
 		9438D2AF348A415468F74CFC /* Pods_OTTApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 517C0801E354D203F92D4662 /* Pods_OTTApp.framework */; };
+		CB80B3A426D9612000E2CE44 /* MainImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB80B3A226D9612000E2CE44 /* MainImageViewCell.swift */; };
+		CB80B3A526D9612000E2CE44 /* MainImageViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB80B3A326D9612000E2CE44 /* MainImageViewCell.xib */; };
+		CB80B3A826D9650C00E2CE44 /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB80B3A726D9650C00E2CE44 /* UsersViewController.swift */; };
+		CB80B3AA26D965CB00E2CE44 /* UsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB80B3A926D965CB00E2CE44 /* UsersView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +84,10 @@
 		7F8191C026D698040086753A /* LabelCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LabelCollectionReusableView.xib; sourceTree = "<group>"; };
 		7F8191C326D698D20086753A /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		9F3AAF70C64759FD37FE4944 /* Pods-OTTApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OTTApp.release.xcconfig"; path = "Target Support Files/Pods-OTTApp/Pods-OTTApp.release.xcconfig"; sourceTree = "<group>"; };
+		CB80B3A226D9612000E2CE44 /* MainImageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainImageViewCell.swift; sourceTree = "<group>"; };
+		CB80B3A326D9612000E2CE44 /* MainImageViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainImageViewCell.xib; sourceTree = "<group>"; };
+		CB80B3A726D9650C00E2CE44 /* UsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
+		CB80B3A926D965CB00E2CE44 /* UsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +176,7 @@
 			children = (
 				7F09C55526D540E400B058FC /* TabBarController.swift */,
 				7F8191B926D697750086753A /* HomeTab */,
+				CB80B3A626D964C800E2CE44 /* UserVC */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -175,10 +184,10 @@
 		7F8191B926D697750086753A /* HomeTab */ = {
 			isa = PBXGroup;
 			children = (
-				7F09C55726D5416100B058FC /* HomeTabViewController.swift */,
-				7F09C55D26D549C100B058FC /* HomeTabView.swift */,
 				7F09C56526D54E2400B058FC /* HomeModel.swift */,
 				7F09C55F26D549CF00B058FC /* HomeTabViewModel.swift */,
+				7F09C55726D5416100B058FC /* HomeTabViewController.swift */,
+				7F09C55D26D549C100B058FC /* HomeTabView.swift */,
 			);
 			path = HomeTab;
 			sourceTree = "<group>";
@@ -208,6 +217,8 @@
 			children = (
 				7F09C56B26D5504900B058FC /* ImageCollectionViewCell.swift */,
 				7F09C56C26D5504900B058FC /* ImageCollectionViewCell.xib */,
+				CB80B3A226D9612000E2CE44 /* MainImageViewCell.swift */,
+				CB80B3A326D9612000E2CE44 /* MainImageViewCell.xib */,
 			);
 			path = Image;
 			sourceTree = "<group>";
@@ -231,6 +242,15 @@
 				7F09C56326D54BBA00B058FC /* NetworkAdaptorHelper.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		CB80B3A626D964C800E2CE44 /* UserVC */ = {
+			isa = PBXGroup;
+			children = (
+				CB80B3A726D9650C00E2CE44 /* UsersViewController.swift */,
+				CB80B3A926D965CB00E2CE44 /* UsersView.swift */,
+			);
+			path = UserVC;
 			sourceTree = "<group>";
 		};
 		E1695BFDCBF4540E0B090984 /* Pods */ = {
@@ -312,6 +332,7 @@
 				7F09C53826D53B3300B058FC /* LaunchScreen.storyboard in Resources */,
 				7F09C53526D53B3300B058FC /* Assets.xcassets in Resources */,
 				7F09C53326D53B3000B058FC /* Main.storyboard in Resources */,
+				CB80B3A526D9612000E2CE44 /* MainImageViewCell.xib in Resources */,
 				7F09C56A26D54F6D00B058FC /* MainCollectionViewCell.xib in Resources */,
 				7F8191C226D698040086753A /* LabelCollectionReusableView.xib in Resources */,
 				7F09C56E26D5504900B058FC /* ImageCollectionViewCell.xib in Resources */,
@@ -372,6 +393,7 @@
 				7F8191C126D698040086753A /* LabelCollectionReusableView.swift in Sources */,
 				7F09C52C26D53B3000B058FC /* AppDelegate.swift in Sources */,
 				7F09C55E26D549C100B058FC /* HomeTabView.swift in Sources */,
+				CB80B3A426D9612000E2CE44 /* MainImageViewCell.swift in Sources */,
 				7F09C56226D54B4E00B058FC /* NetworkAdaptor.swift in Sources */,
 				7F09C56D26D5504900B058FC /* ImageCollectionViewCell.swift in Sources */,
 				7F09C57026D5522900B058FC /* Constants.swift in Sources */,
@@ -381,9 +403,11 @@
 				7F8191C426D698D20086753A /* Colors.swift in Sources */,
 				7F09C55A26D5419400B058FC /* Controllers.swift in Sources */,
 				7F09C56626D54E2400B058FC /* HomeModel.swift in Sources */,
+				CB80B3AA26D965CB00E2CE44 /* UsersView.swift in Sources */,
 				7F09C55C26D5433100B058FC /* Images.swift in Sources */,
 				7F09C52E26D53B3000B058FC /* SceneDelegate.swift in Sources */,
 				7F09C55826D5416100B058FC /* HomeTabViewController.swift in Sources */,
+				CB80B3A826D9650C00E2CE44 /* UsersViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

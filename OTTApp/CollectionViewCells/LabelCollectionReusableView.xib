@@ -17,7 +17,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="22e-3Z-5Ru">
-                            <rect key="frame" x="0.0" y="10" width="320" height="40"/>
+                            <rect key="frame" x="5" y="10" width="315" height="40"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -27,7 +27,7 @@
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="22e-3Z-5Ru" secondAttribute="bottom" id="361-Ob-UIJ"/>
                         <constraint firstItem="22e-3Z-5Ru" firstAttribute="top" secondItem="Yzj-tD-Usj" secondAttribute="top" constant="10" id="8oA-Bk-zFM"/>
-                        <constraint firstItem="22e-3Z-5Ru" firstAttribute="leading" secondItem="Yzj-tD-Usj" secondAttribute="leading" id="T4u-eV-Qax"/>
+                        <constraint firstItem="22e-3Z-5Ru" firstAttribute="leading" secondItem="Yzj-tD-Usj" secondAttribute="leading" constant="5" id="T4u-eV-Qax"/>
                         <constraint firstAttribute="trailing" secondItem="22e-3Z-5Ru" secondAttribute="trailing" id="frk-YL-kfA"/>
                     </constraints>
                 </view>
@@ -40,7 +40,7 @@
                 <constraint firstItem="VXr-Tz-HHm" firstAttribute="trailing" secondItem="Yzj-tD-Usj" secondAttribute="trailing" id="pZA-e0-Wrv"/>
             </constraints>
             <connections>
-                <outlet property="title" destination="22e-3Z-5Ru" id="yHB-vJ-eP7"/>
+                <outlet property="title" destination="22e-3Z-5Ru" id="Vsy-5M-V3K"/>
             </connections>
             <point key="canvasLocation" x="35" y="60"/>
         </collectionReusableView>

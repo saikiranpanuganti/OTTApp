@@ -7,25 +7,28 @@
 
 import UIKit
 
-class HomeTabViewController: UIViewController {
-    @IBOutlet weak var homeTabView: HomeTabView!
-    var viewModel: HomeTabViewModel = HomeTabViewModel()
+class HomeTabBarViewController: UIViewController {
+    
+    @IBOutlet weak var homeTabView:HomeTabView!
+    var homeTabViewModel:HomeTabViewModel = HomeTabViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.view.backgroundColor = .red
-        viewModel.delegate = self
-        homeTabView.setUpUI()
-        viewModel.getData()
+        
+        homeTabViewModel.delegate = self
+        homeTabView.setupUI()
+        homeTabView.updateUI()
+        homeTabViewModel.getData()
+        
     }
-
 }
 
-extension HomeTabViewController: HomeTabViewModelDelegate {
+extension HomeTabBarViewController:HomeTabViewModelDeleagte{
     func updateUI() {
-        let data = viewModel.homeData
+        let data = homeTabViewModel.homeData
         homeTabView.homeData = data
         homeTabView.updateUI()
     }
+    
+    
 }

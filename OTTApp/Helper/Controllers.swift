@@ -6,33 +6,27 @@
 //
 
 import UIKit
-
-enum Controllers {
+enum Controllers{
     case tabBar
     case home
     
-    func getController() -> UIViewController {
-        var storyBoardId = ""
+    func getControllers()->UIViewController{
         var storyBoardName = ""
-        
+        var storyBoardID = ""
         switch self {
         case .tabBar:
             storyBoardName = "Main"
-            storyBoardId = "TabBarController"
+            storyBoardID = "TabBarController"
             
-//            UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TabBarController")
-        case .home:
+        case .home :
             storyBoardName = "Main"
-            storyBoardId = "HomeTabViewController"
-            
-//            UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeTabViewController")
-            
+            storyBoardID = "HomeTabBarViewController"
+       
         }
+        return UIStoryboard(name: storyBoardName, bundle: nil).instantiateViewController(withIdentifier: storyBoardID)
         
-        return UIStoryboard(name: storyBoardName, bundle: nil).instantiateViewController(withIdentifier: storyBoardId)
     }
     
-    func printController() {
-        print(UIViewController())
-    }
+    
+    
 }

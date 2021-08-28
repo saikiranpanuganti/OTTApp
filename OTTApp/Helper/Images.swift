@@ -8,12 +8,11 @@
 import UIKit
 
 class Images {
-    static let shared: Images = Images()
     
-    private init() {  }
+   static let shared :Images = Images()
+    private init() { }
     
-    let homeUnSelected = UIImage(named: "edit")
-    let homeSelected = UIImage(named: "edit")
-    let placeHolder = UIImage(named: "placeHolder")
-    
+    let homeUnselected = UIImage(named: "Home")
+    let homeSelected = UIImage(named: "HomeTap")
+    let userImage = UIImage(named: "imageee")
 }
