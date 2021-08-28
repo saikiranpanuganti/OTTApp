@@ -8,7 +8,7 @@
 import UIKit
 
 class HomeTabView:UIView{
-    
+    @IBOutlet weak var menuView: MenuView!
     @IBOutlet weak var collectionView:UICollectionView!
     
     var homeData:Home?
@@ -21,6 +21,10 @@ class HomeTabView:UIView{
         collectionView.dataSource = self
         collectionView.backgroundColor = Colors.shared.blackViewColor
        
+    }
+    
+    func addGradientView() {
+        menuView.createGradientLayer()
     }
     
     func updateUI(){
@@ -83,11 +87,10 @@ extension HomeTabView:UICollectionViewDataSource{
 
 extension HomeTabView:UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if indexPath.section == 0{
+        if indexPath.section == 0 {
             return CGSize(width: screenWidth, height: screenHeight/1.3)
-        }
-        else{
-        return CGSize(width: screenWidth, height: screenWidth/2)
+        }else{
+            return CGSize(width: screenWidth, height: screenWidth/2)
         }
     }
     

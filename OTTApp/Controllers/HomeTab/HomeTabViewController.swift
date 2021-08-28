@@ -17,6 +17,7 @@ class HomeTabBarViewController: UIViewController {
         
         homeTabViewModel.delegate = self
         homeTabView.setupUI()
+        homeTabView.addGradientView()
         homeTabView.updateUI()
         homeTabViewModel.getData()
         
