@@ -6,10 +6,11 @@
 //
 
 import UIKit
-enum Controllers{
+enum Controllers {
     case tabBar
     case home
     case users
+    case categories
     
     func getControllers()->UIViewController{
         var storyBoardName = ""
@@ -24,7 +25,9 @@ enum Controllers{
         case .users:
             storyBoardName = "Main"
             storyBoardID = "UsersViewController"
-       
+        case .categories:
+            storyBoardName = "Home"
+            storyBoardID = "CategoriesViewController"
         }
         return UIStoryboard(name: storyBoardName, bundle: nil).instantiateViewController(withIdentifier: storyBoardID)
         

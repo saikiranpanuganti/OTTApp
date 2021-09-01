@@ -15,6 +15,7 @@ class HomeTabBarViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        homeTabView.delegate = self
         homeTabViewModel.delegate = self
         homeTabView.setupUI()
         homeTabView.addGradientView()
@@ -24,12 +25,28 @@ class HomeTabBarViewController: UIViewController {
     }
 }
 
-extension HomeTabBarViewController:HomeTabViewModelDeleagte{
+extension HomeTabBarViewController: HomeTabViewModelDeleagte{
     func updateUI() {
         let data = homeTabViewModel.homeData
         homeTabView.homeData = data
         homeTabView.updateUI()
     }
+}
+
+extension HomeTabBarViewController: HomeTabViewDelegate {
+    func movieSubButtonTapped() {
+        if let controller = Controllers.categories.getControllers() as? CategoriesViewController {
+            controller.viewModel.category = .movies
+            controller.modalPresentationStyle = .overFullScreen
+            present(controller, animated: true, completion: nil)
+        }
+    }
     
-    
+    func tvSubButtonTapped() {
+        if let controller = Controllers.categories.getControllers() as? CategoriesViewController {
+            controller.viewModel.category = .tvShows
+            controller.modalPresentationStyle = .overFullScreen
+            present(controller, animated: true, completion: nil)
+        }
+    }
 }

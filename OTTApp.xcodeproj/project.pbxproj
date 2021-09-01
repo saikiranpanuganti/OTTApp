@@ -28,6 +28,13 @@
 		7F09C56E26D5504900B058FC /* ImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F09C56C26D5504900B058FC /* ImageCollectionViewCell.xib */; };
 		7F09C57026D5522900B058FC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F09C56F26D5522900B058FC /* Constants.swift */; };
 		7F18EB8626DA8CE7005B6680 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F18EB8526DA8CE7005B6680 /* MenuView.swift */; };
+		7F4487DC26DFCEB200CF597F /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F4487DB26DFCEB200CF597F /* Home.storyboard */; };
+		7F4487E026DFCF3900CF597F /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4487DF26DFCF3900CF597F /* CategoriesViewController.swift */; };
+		7F4487E226DFCF5D00CF597F /* CategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4487E126DFCF5D00CF597F /* CategoriesView.swift */; };
+		7F4487E426DFCFA800CF597F /* CategoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4487E326DFCFA800CF597F /* CategoriesViewModel.swift */; };
+		7F4487E826DFD22100CF597F /* LabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4487E626DFD22100CF597F /* LabelTableViewCell.swift */; };
+		7F4487E926DFD22100CF597F /* LabelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F4487E726DFD22100CF597F /* LabelTableViewCell.xib */; };
+		7F4487EB26DFDCE700CF597F /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4487EA26DFDCE700CF597F /* CategoryModel.swift */; };
 		7F8191C126D698040086753A /* LabelCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8191BF26D698040086753A /* LabelCollectionReusableView.swift */; };
 		7F8191C226D698040086753A /* LabelCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F8191C026D698040086753A /* LabelCollectionReusableView.xib */; };
 		7F8191C426D698D20086753A /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8191C326D698D20086753A /* Colors.swift */; };
@@ -82,6 +89,13 @@
 		7F09C56C26D5504900B058FC /* ImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCollectionViewCell.xib; sourceTree = "<group>"; };
 		7F09C56F26D5522900B058FC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		7F18EB8526DA8CE7005B6680 /* MenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		7F4487DB26DFCEB200CF597F /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		7F4487DF26DFCF3900CF597F /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
+		7F4487E126DFCF5D00CF597F /* CategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesView.swift; sourceTree = "<group>"; };
+		7F4487E326DFCFA800CF597F /* CategoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewModel.swift; sourceTree = "<group>"; };
+		7F4487E626DFD22100CF597F /* LabelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelTableViewCell.swift; sourceTree = "<group>"; };
+		7F4487E726DFD22100CF597F /* LabelTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LabelTableViewCell.xib; sourceTree = "<group>"; };
+		7F4487EA26DFDCE700CF597F /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 		7F8191BF26D698040086753A /* LabelCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelCollectionReusableView.swift; sourceTree = "<group>"; };
 		7F8191C026D698040086753A /* LabelCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LabelCollectionReusableView.xib; sourceTree = "<group>"; };
 		7F8191C326D698D20086753A /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
@@ -129,9 +143,10 @@
 				7F09C52D26D53B3000B058FC /* SceneDelegate.swift */,
 				7F8191BE26D697D40086753A /* Network */,
 				7F8191BD26D697BC0086753A /* Helper */,
+				7F4487E526DFD20200CF597F /* TableViewCells */,
 				7F8191BA26D6978D0086753A /* CollectionViewCells */,
 				7F8191B826D6975B0086753A /* Controllers */,
-				7F09C53126D53B3000B058FC /* Main.storyboard */,
+				7F4487DD26DFCF0D00CF597F /* Storyboards */,
 				7F09C53F26D53CCC00B058FC /* Resources */,
 				7F09C53426D53B3300B058FC /* Assets.xcassets */,
 				7F09C53626D53B3300B058FC /* LaunchScreen.storyboard */,
@@ -173,10 +188,40 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		7F4487DD26DFCF0D00CF597F /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				7F09C53126D53B3000B058FC /* Main.storyboard */,
+				7F4487DB26DFCEB200CF597F /* Home.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		7F4487DE26DFCF1F00CF597F /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				7F4487DF26DFCF3900CF597F /* CategoriesViewController.swift */,
+				7F4487E126DFCF5D00CF597F /* CategoriesView.swift */,
+				7F4487E326DFCFA800CF597F /* CategoriesViewModel.swift */,
+				7F4487EA26DFDCE700CF597F /* CategoryModel.swift */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		7F4487E526DFD20200CF597F /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				7F4487E626DFD22100CF597F /* LabelTableViewCell.swift */,
+				7F4487E726DFD22100CF597F /* LabelTableViewCell.xib */,
+			);
+			path = TableViewCells;
+			sourceTree = "<group>";
+		};
 		7F8191B826D6975B0086753A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				7F09C55526D540E400B058FC /* TabBarController.swift */,
+				7F4487DE26DFCF1F00CF597F /* Categories */,
 				7F8191B926D697750086753A /* HomeTab */,
 				CB80B3A626D964C800E2CE44 /* UserVC */,
 			);
@@ -338,7 +383,9 @@
 				CB80B3A526D9612000E2CE44 /* MainImageViewCell.xib in Resources */,
 				7F09C56A26D54F6D00B058FC /* MainCollectionViewCell.xib in Resources */,
 				7F8191C226D698040086753A /* LabelCollectionReusableView.xib in Resources */,
+				7F4487E926DFD22100CF597F /* LabelTableViewCell.xib in Resources */,
 				7F09C56E26D5504900B058FC /* ImageCollectionViewCell.xib in Resources */,
+				7F4487DC26DFCEB200CF597F /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,10 +446,14 @@
 				CB80B3A426D9612000E2CE44 /* MainImageViewCell.swift in Sources */,
 				7F09C56226D54B4E00B058FC /* NetworkAdaptor.swift in Sources */,
 				7F18EB8626DA8CE7005B6680 /* MenuView.swift in Sources */,
+				7F4487E226DFCF5D00CF597F /* CategoriesView.swift in Sources */,
 				7F09C56D26D5504900B058FC /* ImageCollectionViewCell.swift in Sources */,
 				7F09C57026D5522900B058FC /* Constants.swift in Sources */,
+				7F4487E826DFD22100CF597F /* LabelTableViewCell.swift in Sources */,
 				7F09C56426D54BBA00B058FC /* NetworkAdaptorHelper.swift in Sources */,
+				7F4487EB26DFDCE700CF597F /* CategoryModel.swift in Sources */,
 				7F09C56926D54F6D00B058FC /* MainCollectionViewCell.swift in Sources */,
+				7F4487E026DFCF3900CF597F /* CategoriesViewController.swift in Sources */,
 				7F09C55626D540E400B058FC /* TabBarController.swift in Sources */,
 				7F8191C426D698D20086753A /* Colors.swift in Sources */,
 				7F09C55A26D5419400B058FC /* Controllers.swift in Sources */,
@@ -411,6 +462,7 @@
 				7F09C55C26D5433100B058FC /* Images.swift in Sources */,
 				7F09C52E26D53B3000B058FC /* SceneDelegate.swift in Sources */,
 				7F09C55826D5416100B058FC /* HomeTabViewController.swift in Sources */,
+				7F4487E426DFCFA800CF597F /* CategoriesViewModel.swift in Sources */,
 				CB80B3A826D9650C00E2CE44 /* UsersViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

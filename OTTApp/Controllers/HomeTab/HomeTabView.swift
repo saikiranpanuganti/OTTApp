@@ -7,20 +7,26 @@
 
 import UIKit
 
+protocol HomeTabViewDelegate: AnyObject {
+    func movieSubButtonTapped()
+    func tvSubButtonTapped()
+}
+
 class HomeTabView:UIView{
     @IBOutlet weak var menuView: MenuView!
     @IBOutlet weak var collectionView:UICollectionView!
     
+    weak var delegate: HomeTabViewDelegate?
     var homeData:Home?
     
     func setupUI(){
         collectionView.register(UINib(nibName: "MainCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "MainCollectionViewCell")
         collectionView.register(UINib(nibName: "MainImageViewCell", bundle: nil), forCellWithReuseIdentifier: "MainImageViewCell")
         collectionView.register(UINib(nibName: "LabelCollectionReusableView", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "LabelCollectionReusableView")
-       collectionView.delegate = self
+        collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.backgroundColor = Colors.shared.blackViewColor
-       
+        menuView.delegate = self
     }
     
     func addGradientView() {
@@ -110,5 +116,39 @@ extension HomeTabView:UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 10
+    }
+}
+
+extension HomeTabView: MenuViewDelegate {
+    func logoButtonTapped() {
+        
+    }
+    
+    func tvButtonTapped() {
+        
+    }
+    
+    func tvSubButtonTapped() {
+        delegate?.tvSubButtonTapped()
+    }
+    
+    func moviesButtonTapped() {
+        
+    }
+    
+    func movieSubButtonTapped() {
+        delegate?.movieSubButtonTapped()
+    }
+    
+    func myListButtonTapped() {
+        
+    }
+    
+    func castTapped() {
+        
+    }
+    
+    func homeCategoriesTapped(category: CurrentSection) {
+        
     }
 }
