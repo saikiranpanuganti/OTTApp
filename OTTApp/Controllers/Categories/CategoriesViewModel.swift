@@ -10,6 +10,7 @@ import Foundation
 enum Category {
     case movies
     case tvShows
+    case home
 }
 
 protocol CategoriesViewModelDelegate: AnyObject {
@@ -21,12 +22,15 @@ class CategoriesViewModel {
     
     var category: Category = .movies
     var categoriesData: CategoryModel?
+    var homeCategoriesData: [String] = ["Home", "TV Shows", "Movies", "My List"]
     
     func getData() {
         if category == .movies {
             getMovieCategories()
-        }else {
+        }else if category == .tvShows {
             getTvShowsCategories()
+        }else if category == .home {
+            delegate?.updateUI()
         }
     }
     

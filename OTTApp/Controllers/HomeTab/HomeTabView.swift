@@ -10,6 +10,7 @@ import UIKit
 protocol HomeTabViewDelegate: AnyObject {
     func movieSubButtonTapped()
     func tvSubButtonTapped()
+    func homeCategoriesTapped()
 }
 
 class HomeTabView:UIView{
@@ -149,6 +150,13 @@ extension HomeTabView: MenuViewDelegate {
     }
     
     func homeCategoriesTapped(category: CurrentSection) {
-        
+        if category == .tvShow {
+            print("TV Shows tapped")
+        }else if category == .movie {
+            print("Movies tapped")
+        }else if category == .myList {
+            print("My List tapped")
+        }
+        delegate?.homeCategoriesTapped()
     }
 }

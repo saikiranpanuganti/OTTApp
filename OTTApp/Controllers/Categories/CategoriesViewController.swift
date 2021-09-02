@@ -33,6 +33,8 @@ extension CategoriesViewController: CategoriesViewModelDelegate {
     func updateUI() {
         let data = viewModel.categoriesData
         categoriesView.categoriesData = data
+        categoriesView.category = viewModel.category
+        categoriesView.homeCategoriesData = viewModel.homeCategoriesData
         categoriesView.updateUI()
     }
 }

@@ -34,6 +34,14 @@ extension HomeTabBarViewController: HomeTabViewModelDeleagte{
 }
 
 extension HomeTabBarViewController: HomeTabViewDelegate {
+    func homeCategoriesTapped() {
+        if let controller = Controllers.categories.getControllers() as? CategoriesViewController {
+            controller.viewModel.category = .home
+            controller.modalPresentationStyle = .overFullScreen
+            present(controller, animated: true, completion: nil)
+        }
+    }
+    
     func movieSubButtonTapped() {
         if let controller = Controllers.categories.getControllers() as? CategoriesViewController {
             controller.viewModel.category = .movies

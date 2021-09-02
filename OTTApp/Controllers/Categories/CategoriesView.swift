@@ -21,6 +21,8 @@ class CategoriesView: UIView {
     weak var delegate: CategoriesViewDelegate?
     
     var categoriesData: CategoryModel?
+    var homeCategoriesData: [String] = []
+    var category: Category = .movies
     
     func setUpUI() {
         tableView.register(UINib(nibName: "LabelTableViewCell", bundle: nil), forCellReuseIdentifier: "LabelTableViewCell")
@@ -58,14 +60,27 @@ class CategoriesView: UIView {
 
 extension CategoriesView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return categoriesData?.body?.count ?? 0
+        if category == .home {
+            return homeCategoriesData.count
+        }else {
+            return categoriesData?.body?.count ?? 0
+        }
+        
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "LabelTableViewCell", for: indexPath) as? LabelTableViewCell {
-            if indexPath.row == 0 {
-                cell.configureUI(text: categoriesData?.body?[indexPath.row] ?? "", isHeader: true)
+            if category == .home {
+                if indexPath.row == 0 {
+                    cell.configureUI(text: homeCategoriesData[indexPath.row], isHeader: true)
+                }else {
+                    cell.configureUI(text: homeCategoriesData[indexPath.row], isHeader: false)
+                }
             }else {
-                cell.configureUI(text: categoriesData?.body?[indexPath.row] ?? "", isHeader: false)
+                if indexPath.row == 0 {
+                    cell.configureUI(text: categoriesData?.body?[indexPath.row] ?? "", isHeader: true)
+                }else {
+                    cell.configureUI(text: categoriesData?.body?[indexPath.row] ?? "", isHeader: false)
+                }
             }
             
             return cell
