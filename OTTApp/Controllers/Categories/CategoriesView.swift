@@ -22,12 +22,16 @@ class CategoriesView: UIView {
     
     var categoriesData: CategoryModel?
     var homeCategoriesData: [String] = []
-    var category: Category = .movies
+    var category: Category = .home
     
     func setUpUI() {
         tableView.register(UINib(nibName: "LabelTableViewCell", bundle: nil), forCellReuseIdentifier: "LabelTableViewCell")
         
-        tableView.contentInset = UIEdgeInsets(top: 40, left: 0, bottom: 120, right: 0)
+        if category == .home {
+            tableView.contentInset = UIEdgeInsets(top: 180, left: 0, bottom: 120, right: 0)
+        }else {
+            tableView.contentInset = UIEdgeInsets(top: 40, left: 0, bottom: 120, right: 0)
+        }
         
         tableView.delegate = self
         tableView.dataSource = self

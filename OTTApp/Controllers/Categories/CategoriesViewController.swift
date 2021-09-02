@@ -16,6 +16,7 @@ class CategoriesViewController: UIViewController {
         
         viewModel.delegate = self
         categoriesView.delegate = self
+        categoriesView.category = viewModel.category
         categoriesView.setUpUI()
         viewModel.getData()
     }
@@ -33,7 +34,6 @@ extension CategoriesViewController: CategoriesViewModelDelegate {
     func updateUI() {
         let data = viewModel.categoriesData
         categoriesView.categoriesData = data
-        categoriesView.category = viewModel.category
         categoriesView.homeCategoriesData = viewModel.homeCategoriesData
         categoriesView.updateUI()
     }
