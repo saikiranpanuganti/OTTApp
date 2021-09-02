@@ -28,12 +28,27 @@ class HomeTabBarViewController: UIViewController {
 extension HomeTabBarViewController: HomeTabViewModelDeleagte{
     func updateUI() {
         let data = homeTabViewModel.homeData
+        homeTabView.category = homeTabViewModel.category
         homeTabView.homeData = data
+        homeTabView.tvShowsData = homeTabViewModel.tvShowsData
+        homeTabView.moviesData = homeTabViewModel.moviesData
         homeTabView.updateUI()
     }
 }
 
 extension HomeTabBarViewController: HomeTabViewDelegate {
+    func logoButtonTapped() {
+        homeTabViewModel.getData()
+    }
+    
+    func tvButtonTapped() {
+        homeTabViewModel.getTvShowsData()
+    }
+    
+    func moviesButtonTapped() {
+        homeTabViewModel.getMoviesData()
+    }
+    
     func homeCategoriesTapped() {
         if let controller = Controllers.categories.getControllers() as? CategoriesViewController {
             controller.viewModel.category = .home

@@ -11,6 +11,9 @@ protocol HomeTabViewDelegate: AnyObject {
     func movieSubButtonTapped()
     func tvSubButtonTapped()
     func homeCategoriesTapped()
+    func tvButtonTapped()
+    func moviesButtonTapped()
+    func logoButtonTapped()
 }
 
 class HomeTabView:UIView{
@@ -19,6 +22,9 @@ class HomeTabView:UIView{
     
     weak var delegate: HomeTabViewDelegate?
     var homeData:Home?
+    var tvShowsData:Home?
+    var moviesData:Home?
+    var category: Category = .home
     
     func setupUI(){
         collectionView.register(UINib(nibName: "MainCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "MainCollectionViewCell")
@@ -51,28 +57,46 @@ extension HomeTabView:UICollectionViewDelegate{
 extension HomeTabView:UICollectionViewDataSource{
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return (homeData?.body?.data?.playlists!.count ?? 0)+1
+        if category == .home {
+            return (homeData?.body?.data?.playlists!.count ?? 0)+1
+        }else if category == .movies {
+            return (moviesData?.body?.data?.playlists!.count ?? 0)+1
+        }else {
+            return (tvShowsData?.body?.data?.playlists!.count ?? 0)+1
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return  1//homeData?.body?.data?.playlists?[section].content?.count ?? 0
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
       
         if indexPath.section == 0{
             if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainImageViewCell", for: indexPath) as? MainImageViewCell{
-                cell.configUI(img: homeData?.body?.data?.banner?[0].imagery?.banner ?? "")
+                if category == .home {
+                    cell.configUI(img: homeData?.body?.data?.banner?[0].imagery?.banner ?? "")
+                }else if category == .movies {
+                    cell.configUI(img: moviesData?.body?.data?.banner?[0].imagery?.banner ?? "")
+                }else {
+                    cell.configUI(img: tvShowsData?.body?.data?.banner?[0].imagery?.banner ?? "")
+                }
+                
                 return cell
-            
             }
         }
         else{
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainCollectionViewCell", for: indexPath) as? MainCollectionViewCell{
-            cell.updateUI(data: homeData?.body?.data?.playlists?[indexPath.section-1])
-            return cell
-        }
+            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainCollectionViewCell", for: indexPath) as? MainCollectionViewCell{
+                if category == .home {
+                    cell.updateUI(data: homeData?.body?.data?.playlists?[indexPath.section-1])
+                }else if category == .movies {
+                    cell.updateUI(data: moviesData?.body?.data?.playlists?[indexPath.section-1])
+                }else {
+                    cell.updateUI(data: tvShowsData?.body?.data?.playlists?[indexPath.section-1])
+                }
+            
+                return cell
+            }
         }
         
         return UICollectionViewCell()
@@ -81,11 +105,17 @@ extension HomeTabView:UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
         if indexPath.section > 0 {
-        if let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "LabelCollectionReusableView", for: indexPath) as? LabelCollectionReusableView{
+            if let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "LabelCollectionReusableView", for: indexPath) as? LabelCollectionReusableView{
+                if category == .home {
+                    header.configUI(title: homeData?.body?.data?.playlists?[indexPath.section-1].title ?? "")
+                }else if category == .movies {
+                    header.configUI(title: moviesData?.body?.data?.playlists?[indexPath.section-1].title ?? "")
+                }else {
+                    header.configUI(title: tvShowsData?.body?.data?.playlists?[indexPath.section-1].title ?? "")
+                }
             
-            header.configUI(title: homeData?.body?.data?.playlists?[indexPath.section-1].title ?? "")
-            return header
-        }
+                return header
+            }
         }
         return UICollectionReusableView()
     }
@@ -122,11 +152,11 @@ extension HomeTabView:UICollectionViewDelegateFlowLayout{
 
 extension HomeTabView: MenuViewDelegate {
     func logoButtonTapped() {
-        
+        delegate?.logoButtonTapped()
     }
     
     func tvButtonTapped() {
-        
+        delegate?.tvButtonTapped()
     }
     
     func tvSubButtonTapped() {
@@ -134,7 +164,7 @@ extension HomeTabView: MenuViewDelegate {
     }
     
     func moviesButtonTapped() {
-        
+        delegate?.moviesButtonTapped()
     }
     
     func movieSubButtonTapped() {
