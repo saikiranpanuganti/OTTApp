@@ -10,6 +10,7 @@ import UIKit
 
 protocol CategoriesViewDelegate: AnyObject {
     func closeTapped()
+    func homeCategoryTapped(homeType: String)
 }
 
 
@@ -96,5 +97,13 @@ extension CategoriesView: UITableViewDataSource {
 extension CategoriesView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if category == .home {
+            delegate?.homeCategoryTapped(homeType: homeCategoriesData[indexPath.row])
+            delegate?.closeTapped()
+        }else {
+            
+        }
     }
 }

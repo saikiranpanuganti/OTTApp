@@ -51,6 +51,7 @@ extension HomeTabBarViewController: HomeTabViewDelegate {
     
     func homeCategoriesTapped() {
         if let controller = Controllers.categories.getControllers() as? CategoriesViewController {
+            controller.delegate = self
             controller.viewModel.category = .home
             controller.modalPresentationStyle = .overFullScreen
             present(controller, animated: true, completion: nil)
@@ -70,6 +71,22 @@ extension HomeTabBarViewController: HomeTabViewDelegate {
             controller.viewModel.category = .tvShows
             controller.modalPresentationStyle = .overFullScreen
             present(controller, animated: true, completion: nil)
+        }
+    }
+}
+
+extension HomeTabBarViewController: CategoriesViewControllerDelegate {
+    func homeCategoryTapped(homeTypeString: String) {
+        homeTabView.updateMenuView(selectedItem: homeTypeString)
+        
+        if homeTypeString == "Movies" {
+            homeTabViewModel.getMoviesData()
+        }else if homeTypeString == "TV Shows" {
+            homeTabViewModel.getTvShowsData()
+        }else if homeTypeString == "Home" {
+            homeTabViewModel.getData()
+        }else if homeTypeString == "My List" {
+            
         }
     }
 }

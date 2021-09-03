@@ -44,9 +44,19 @@ class HomeTabView:UIView{
         DispatchQueue.main.async {
             self.collectionView.reloadData()
         }
-        
     }
     
+    func updateMenuView(selectedItem: String) {
+        if selectedItem == "Home" {
+            menuView.selectedMenu = .none
+        }else if selectedItem == "TV Shows" {
+            menuView.selectedMenu = .tvShow
+        }else if selectedItem == "My List" {
+            menuView.selectedMenu = .myList
+        }else if selectedItem == "Movies" {
+            menuView.selectedMenu = .movie
+        }
+    }
 }
 
 extension HomeTabView:UICollectionViewDelegate{

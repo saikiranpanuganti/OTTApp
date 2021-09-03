@@ -7,9 +7,15 @@
 
 import UIKit
 
+protocol CategoriesViewControllerDelegate: AnyObject {
+    func homeCategoryTapped(homeTypeString: String)
+}
+
 class CategoriesViewController: UIViewController {
     @IBOutlet weak var categoriesView: CategoriesView!
     var viewModel: CategoriesViewModel = CategoriesViewModel()
+    
+    weak var delegate: CategoriesViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +31,11 @@ class CategoriesViewController: UIViewController {
 }
 
 extension CategoriesViewController: CategoriesViewDelegate {
+    func homeCategoryTapped(homeType: String) {
+        delegate?.homeCategoryTapped(homeTypeString: homeType)
+    }
     func closeTapped() {
+        print("closetapped")
         dismiss(animated: true, completion: nil)
     }
 }
