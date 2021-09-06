@@ -34,6 +34,7 @@ struct Video: Codable {
     let title: String?
     let contentType: ContentType?
     let imagery: Imagery?
+    let friendly_url: String?
 
     enum CodingKeys: String, CodingKey {
         case id
@@ -42,6 +43,7 @@ struct Video: Codable {
         case title
         case contentType = "content_type"
         case imagery
+        case friendly_url
     }
 }
 

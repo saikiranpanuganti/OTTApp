@@ -510,22 +510,18 @@ class MenuView: UIView {
     private func setSelectedMenu(menu: CurrentSection) {
         if menu == .movie {
             if currentSection != .movie {
-                print("Select Movie")
                 movieSelected()
             }
         }else if menu == .tvShow {
             if currentSection != .tvShow {
-                print("Select TV Shows")
                 tvShowSelecetd()
             }
         }else if menu == .myList {
             if currentSection != .myList {
-                print("Select My List")
                 myListSelecetd()
             }
         }else {
             if currentSection != .none {
-                print("Select Home")
                 logoTapped()
             }
         }

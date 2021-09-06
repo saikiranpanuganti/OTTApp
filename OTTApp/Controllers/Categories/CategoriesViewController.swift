@@ -9,6 +9,8 @@ import UIKit
 
 protocol CategoriesViewControllerDelegate: AnyObject {
     func homeCategoryTapped(homeTypeString: String)
+    func movieSubCategoryTapped(subCategory: String)
+    func tvShowsSubCategoryTapped(subCategory: String)
 }
 
 class CategoriesViewController: UIViewController {
@@ -31,11 +33,18 @@ class CategoriesViewController: UIViewController {
 }
 
 extension CategoriesViewController: CategoriesViewDelegate {
+    func movieSubCategoryTapped(subCategory: String) {
+        delegate?.movieSubCategoryTapped(subCategory: subCategory)
+    }
+    
+    func tvShowsSubCategoryTapped(subCategory: String) {
+        delegate?.tvShowsSubCategoryTapped(subCategory: subCategory)
+    }
+    
     func homeCategoryTapped(homeType: String) {
         delegate?.homeCategoryTapped(homeTypeString: homeType)
     }
     func closeTapped() {
-        print("closetapped")
         dismiss(animated: true, completion: nil)
     }
 }

@@ -32,6 +32,7 @@ extension HomeTabBarViewController: HomeTabViewModelDeleagte{
         homeTabView.homeData = data
         homeTabView.tvShowsData = homeTabViewModel.tvShowsData
         homeTabView.moviesData = homeTabViewModel.moviesData
+        homeTabView.subCategoryData = homeTabViewModel.subCategoryData
         homeTabView.updateUI()
     }
 }
@@ -60,6 +61,7 @@ extension HomeTabBarViewController: HomeTabViewDelegate {
     
     func movieSubButtonTapped() {
         if let controller = Controllers.categories.getControllers() as? CategoriesViewController {
+            controller.delegate = self
             controller.viewModel.category = .movies
             controller.modalPresentationStyle = .overFullScreen
             present(controller, animated: true, completion: nil)
@@ -68,6 +70,7 @@ extension HomeTabBarViewController: HomeTabViewDelegate {
     
     func tvSubButtonTapped() {
         if let controller = Controllers.categories.getControllers() as? CategoriesViewController {
+            controller.delegate = self
             controller.viewModel.category = .tvShows
             controller.modalPresentationStyle = .overFullScreen
             present(controller, animated: true, completion: nil)
@@ -76,6 +79,14 @@ extension HomeTabBarViewController: HomeTabViewDelegate {
 }
 
 extension HomeTabBarViewController: CategoriesViewControllerDelegate {
+    func movieSubCategoryTapped(subCategory: String) {
+        homeTabViewModel.movieSubCategoryTapped(subCategory: subCategory)
+    }
+    
+    func tvShowsSubCategoryTapped(subCategory: String) {
+        homeTabViewModel.tvShowsSubCategoryTapped(subCategory: subCategory)
+    }
+    
     func homeCategoryTapped(homeTypeString: String) {
         homeTabView.updateMenuView(selectedItem: homeTypeString)
         

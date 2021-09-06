@@ -11,6 +11,7 @@ enum Category {
     case movies
     case tvShows
     case home
+    case subCategory
 }
 
 protocol CategoriesViewModelDelegate: AnyObject {

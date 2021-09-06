@@ -25,10 +25,12 @@ class HomeTabView:UIView{
     var tvShowsData:Home?
     var moviesData:Home?
     var category: Category = .home
+    var subCategoryData: SubCategory?
     
     func setupUI(){
         collectionView.register(UINib(nibName: "MainCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "MainCollectionViewCell")
         collectionView.register(UINib(nibName: "MainImageViewCell", bundle: nil), forCellWithReuseIdentifier: "MainImageViewCell")
+        collectionView.register(UINib(nibName: "ImageCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ImageCollectionViewCell")
         collectionView.register(UINib(nibName: "LabelCollectionReusableView", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "LabelCollectionReusableView")
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -68,16 +70,26 @@ extension HomeTabView:UICollectionViewDataSource{
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         if category == .home {
-            return (homeData?.body?.data?.playlists!.count ?? 0)+1
+            return (homeData?.body?.data?.playlists?.count ?? 0)+1
         }else if category == .movies {
-            return (moviesData?.body?.data?.playlists!.count ?? 0)+1
-        }else {
-            return (tvShowsData?.body?.data?.playlists!.count ?? 0)+1
+            return (moviesData?.body?.data?.playlists?.count ?? 0)+1
+        }else if category == .tvShows {
+            return (tvShowsData?.body?.data?.playlists?.count ?? 0)+1
+        }else if category == .subCategory {
+            return 2
         }
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return  1//homeData?.body?.data?.playlists?[section].content?.count ?? 0
+        if category == .subCategory {
+            if section == 0 {
+                return 1
+            }else {
+                return subCategoryData?.body?.data?.playlists?.count ?? 0
+            }
+        }
+        return  1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -88,20 +100,29 @@ extension HomeTabView:UICollectionViewDataSource{
                     cell.configUI(img: homeData?.body?.data?.banner?[0].imagery?.banner ?? "")
                 }else if category == .movies {
                     cell.configUI(img: moviesData?.body?.data?.banner?[0].imagery?.banner ?? "")
-                }else {
+                }else if category == .tvShows {
                     cell.configUI(img: tvShowsData?.body?.data?.banner?[0].imagery?.banner ?? "")
+                }else if category == .subCategory {
+                    cell.configUI(img: subCategoryData?.body?.data?.banner?.imagery?.banner ?? "")
                 }
                 
                 return cell
             }
         }
         else{
-            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainCollectionViewCell", for: indexPath) as? MainCollectionViewCell{
+            if category == .subCategory {
+                if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCollectionViewCell", for: indexPath) as? ImageCollectionViewCell {
+                    cell.configUI(urlString: subCategoryData?.body?.data?.playlists?[indexPath.row].imagery?.thumbnail ?? "")
+                    return cell
+                }
+            }
+            
+            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainCollectionViewCell", for: indexPath) as? MainCollectionViewCell {
                 if category == .home {
                     cell.updateUI(data: homeData?.body?.data?.playlists?[indexPath.section-1])
                 }else if category == .movies {
                     cell.updateUI(data: moviesData?.body?.data?.playlists?[indexPath.section-1])
-                }else {
+                }else if category == .tvShows {
                     cell.updateUI(data: tvShowsData?.body?.data?.playlists?[indexPath.section-1])
                 }
             
@@ -120,7 +141,7 @@ extension HomeTabView:UICollectionViewDataSource{
                     header.configUI(title: homeData?.body?.data?.playlists?[indexPath.section-1].title ?? "")
                 }else if category == .movies {
                     header.configUI(title: moviesData?.body?.data?.playlists?[indexPath.section-1].title ?? "")
-                }else {
+                }else if category == .tvShows {
                     header.configUI(title: tvShowsData?.body?.data?.playlists?[indexPath.section-1].title ?? "")
                 }
             
@@ -137,6 +158,9 @@ extension HomeTabView:UICollectionViewDelegateFlowLayout{
         if indexPath.section == 0 {
             return CGSize(width: screenWidth, height: screenHeight/1.3)
         }else{
+            if category == .subCategory {
+                return CGSize(width: (screenWidth-8)/3, height: (screenWidth-8)/3)
+            }
             return CGSize(width: screenWidth, height: screenWidth/2)
         }
     }
@@ -144,18 +168,25 @@ extension HomeTabView:UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         if section == 0 {
            return CGSize(width: 0, height: 0)
-        }
-        else{
-            
+        }else{
+            if category == .subCategory {
+                return CGSize.zero
+            }
             return CGSize(width: screenWidth, height: 80)
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        if category == .subCategory {
+            return 4
+        }
         return 10
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        if category == .subCategory {
+            return 4
+        }
         return 10
     }
 }

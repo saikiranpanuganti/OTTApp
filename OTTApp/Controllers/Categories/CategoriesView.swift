@@ -11,6 +11,8 @@ import UIKit
 protocol CategoriesViewDelegate: AnyObject {
     func closeTapped()
     func homeCategoryTapped(homeType: String)
+    func movieSubCategoryTapped(subCategory: String)
+    func tvShowsSubCategoryTapped(subCategory: String)
 }
 
 
@@ -101,9 +103,11 @@ extension CategoriesView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if category == .home {
             delegate?.homeCategoryTapped(homeType: homeCategoriesData[indexPath.row])
-            delegate?.closeTapped()
-        }else {
-            
+        }else if category == .movies {
+            delegate?.movieSubCategoryTapped(subCategory: categoriesData?.body?[indexPath.row] ?? "")
+        }else if category == .tvShows {
+            delegate?.tvShowsSubCategoryTapped(subCategory: categoriesData?.body?[indexPath.row] ?? "")
         }
+        delegate?.closeTapped()
     }
 }

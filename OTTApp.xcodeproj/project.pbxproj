@@ -36,6 +36,7 @@
 		7F4487E826DFD22100CF597F /* LabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4487E626DFD22100CF597F /* LabelTableViewCell.swift */; };
 		7F4487E926DFD22100CF597F /* LabelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F4487E726DFD22100CF597F /* LabelTableViewCell.xib */; };
 		7F4487EB26DFDCE700CF597F /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4487EA26DFDCE700CF597F /* CategoryModel.swift */; };
+		7F7B428926E6680D000F23E0 /* SubCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7B428826E6680D000F23E0 /* SubCategory.swift */; };
 		7F8191C126D698040086753A /* LabelCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8191BF26D698040086753A /* LabelCollectionReusableView.swift */; };
 		7F8191C226D698040086753A /* LabelCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F8191C026D698040086753A /* LabelCollectionReusableView.xib */; };
 		7F8191C426D698D20086753A /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8191C326D698D20086753A /* Colors.swift */; };
@@ -98,6 +99,7 @@
 		7F4487E626DFD22100CF597F /* LabelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelTableViewCell.swift; sourceTree = "<group>"; };
 		7F4487E726DFD22100CF597F /* LabelTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LabelTableViewCell.xib; sourceTree = "<group>"; };
 		7F4487EA26DFDCE700CF597F /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
+		7F7B428826E6680D000F23E0 /* SubCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCategory.swift; sourceTree = "<group>"; };
 		7F8191BF26D698040086753A /* LabelCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelCollectionReusableView.swift; sourceTree = "<group>"; };
 		7F8191C026D698040086753A /* LabelCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LabelCollectionReusableView.xib; sourceTree = "<group>"; };
 		7F8191C326D698D20086753A /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				7F09C56526D54E2400B058FC /* HomeModel.swift */,
+				7F7B428826E6680D000F23E0 /* SubCategory.swift */,
 				7F09C55F26D549CF00B058FC /* HomeTabViewModel.swift */,
 				7F09C55726D5416100B058FC /* HomeTabViewController.swift */,
 				7F09C55D26D549C100B058FC /* HomeTabView.swift */,
@@ -441,6 +444,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F7B428926E6680D000F23E0 /* SubCategory.swift in Sources */,
 				7F09C55426D53D8100B058FC /* Fonts.swift in Sources */,
 				7F09C56026D549CF00B058FC /* HomeTabViewModel.swift in Sources */,
 				7F8191C126D698040086753A /* LabelCollectionReusableView.swift in Sources */,

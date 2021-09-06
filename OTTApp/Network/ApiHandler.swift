@@ -11,6 +11,8 @@ enum ApiHandler {
     case home
     case tvshows
     case movies
+    case movieSubCategory
+    case tvShowsCategory
     
     func url() -> String {
         let baseUrl = "https://yrc0uzwnw4.execute-api.ap-south-1.amazonaws.com/dev/"
@@ -22,6 +24,10 @@ enum ApiHandler {
             return baseUrl + "tvshows"
         case .movies:
             return baseUrl + "movies"
+        case .movieSubCategory:
+            return baseUrl + "moviecontent"
+        case .tvShowsCategory:
+            return baseUrl + "tvcontent"
         }
     }
 }

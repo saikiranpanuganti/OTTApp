@@ -18,6 +18,7 @@ class HomeTabViewModel{
     var tvShowsData:Home?
     var moviesData:Home?
     var category: Category = .home
+    var subCategoryData: SubCategory?
     
     func getData() {
         self.category = .home
@@ -92,4 +93,52 @@ class HomeTabViewModel{
         }
     }
     
+    
+    func movieSubCategoryTapped(subCategory: String) {
+        self.category = .subCategory
+        
+        let urlString = ApiHandler.movieSubCategory.url()
+        
+        var headers : [String:String] = [:]
+        headers["Authorization"] = "cf606825b8a045c1aae39f7fe39de6c6"
+        
+        var parameters: [String: String] = [:]
+        parameters["category"] = subCategory.replacingOccurrences(of: " ", with: "")
+        
+        NetworkAdaptor.request(url: urlString, method: .get, headers: headers, urlParameters: parameters) { data, response, error in
+            do{
+                if let data = data {
+                    self.subCategoryData = try JSONDecoder().decode(SubCategory.self, from: data)
+                    self.delegate?.updateUI()
+                }
+            }
+            catch{
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    func tvShowsSubCategoryTapped(subCategory: String) {
+        self.category = .subCategory
+        
+        let urlString = ApiHandler.tvShowsCategory.url()
+        
+        var headers : [String:String] = [:]
+        headers["Authorization"] = "cf606825b8a045c1aae39f7fe39de6c6"
+        
+        var parameters: [String: String] = [:]
+        parameters["category"] = subCategory.replacingOccurrences(of: " ", with: "")
+        
+        NetworkAdaptor.request(url: urlString, method: .get, headers: headers, urlParameters: parameters) { data, response, error in
+            do{
+                if let data = data {
+                    self.subCategoryData = try JSONDecoder().decode(SubCategory.self, from: data)
+                    self.delegate?.updateUI()
+                }
+            }
+            catch{
+                print(error.localizedDescription)
+            }
+        }
+    }
 }
