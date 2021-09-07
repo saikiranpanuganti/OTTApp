@@ -19,6 +19,8 @@ class HomeTabViewModel{
     var moviesData:Home?
     var category: Category = .home
     var subCategoryData: SubCategory?
+    var subCategoryDataDicTvShows: [String: SubCategory] = [:]
+    var subCategoryDataDicMovies: [String: SubCategory] = [:]
     
     func getData() {
         self.category = .home
@@ -93,12 +95,7 @@ class HomeTabViewModel{
         }
     }
     
-    
-    func movieSubCategoryTapped(subCategory: String) {
-        self.category = .subCategory
-        
-        let urlString = ApiHandler.movieSubCategory.url()
-        
+    func getSubCategoryData(subCategory: String, urlString: String, isMovies: Bool) {
         var headers : [String:String] = [:]
         headers["Authorization"] = "cf606825b8a045c1aae39f7fe39de6c6"
         
@@ -109,6 +106,12 @@ class HomeTabViewModel{
             do{
                 if let data = data {
                     self.subCategoryData = try JSONDecoder().decode(SubCategory.self, from: data)
+                    if isMovies {
+                        self.subCategoryDataDicMovies[subCategory] = self.subCategoryData
+                    }else {
+                        self.subCategoryDataDicTvShows[subCategory] = self.subCategoryData
+                    }
+                    
                     self.delegate?.updateUI()
                 }
             }
@@ -118,27 +121,27 @@ class HomeTabViewModel{
         }
     }
     
+    func movieSubCategoryTapped(subCategory: String) {
+        self.category = .subCategory
+        
+        if let data = subCategoryDataDicMovies[subCategory] {
+            subCategoryData = data
+            delegate?.updateUI()
+            return
+        }
+        
+        getSubCategoryData(subCategory: subCategory, urlString: ApiHandler.movieSubCategory.url(), isMovies: true)
+    }
+    
     func tvShowsSubCategoryTapped(subCategory: String) {
         self.category = .subCategory
         
-        let urlString = ApiHandler.tvShowsCategory.url()
-        
-        var headers : [String:String] = [:]
-        headers["Authorization"] = "cf606825b8a045c1aae39f7fe39de6c6"
-        
-        var parameters: [String: String] = [:]
-        parameters["category"] = subCategory.replacingOccurrences(of: " ", with: "")
-        
-        NetworkAdaptor.request(url: urlString, method: .get, headers: headers, urlParameters: parameters) { data, response, error in
-            do{
-                if let data = data {
-                    self.subCategoryData = try JSONDecoder().decode(SubCategory.self, from: data)
-                    self.delegate?.updateUI()
-                }
-            }
-            catch{
-                print(error.localizedDescription)
-            }
+        if let data = subCategoryDataDicTvShows[subCategory] {
+            subCategoryData = data
+            delegate?.updateUI()
+            return
         }
+
+        getSubCategoryData(subCategory: subCategory, urlString: ApiHandler.tvShowsCategory.url(), isMovies: false)
     }
 }
