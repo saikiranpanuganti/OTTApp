@@ -26,6 +26,7 @@ class CategoriesView: UIView {
     var categoriesData: CategoryModel?
     var homeCategoriesData: [String] = []
     var category: Category = .home
+    var categoryTitle: String = ""
     
     func setUpUI() {
         tableView.register(UINib(nibName: "LabelTableViewCell", bundle: nil), forCellReuseIdentifier: "LabelTableViewCell")
@@ -83,7 +84,7 @@ extension CategoriesView: UITableViewDataSource {
                     cell.configureUI(text: homeCategoriesData[indexPath.row], isHeader: false)
                 }
             }else {
-                if indexPath.row == 0 {
+                if categoryTitle == categoriesData?.body?[indexPath.row] {
                     cell.configureUI(text: categoriesData?.body?[indexPath.row] ?? "", isHeader: true)
                 }else {
                     cell.configureUI(text: categoriesData?.body?[indexPath.row] ?? "", isHeader: false)

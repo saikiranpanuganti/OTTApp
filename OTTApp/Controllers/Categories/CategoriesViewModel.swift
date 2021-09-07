@@ -24,6 +24,7 @@ class CategoriesViewModel {
     var category: Category = .movies
     var categoriesData: CategoryModel?
     var homeCategoriesData: [String] = ["Home", "TV Shows", "Movies", "My List"]
+    var categoryTitle: String = ""
     
     func getData() {
         if category == .movies {

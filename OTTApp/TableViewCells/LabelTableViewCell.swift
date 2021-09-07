@@ -24,7 +24,7 @@ class LabelTableViewCell: UITableViewCell {
         labelOutlet.text = text
         
         if isHeader {
-            labelOutlet.font = Fonts.shared.bold5
+            labelOutlet.font = Fonts.shared.bold6
         }else {
             labelOutlet.font = Fonts.shared.regular4
         }

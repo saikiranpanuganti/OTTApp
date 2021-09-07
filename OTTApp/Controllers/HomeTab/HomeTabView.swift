@@ -59,6 +59,22 @@ class HomeTabView:UIView{
             menuView.selectedMenu = .movie
         }
     }
+    
+    func getMovieSubCategoryTitle() -> String? {
+        return menuView.getMovieSubCategoryTitle()
+    }
+    
+    func getTvShowsSubCategoryTitle() -> String? {
+        return menuView.getTvShowsSubCategoryTitle()
+    }
+    
+    func setMovieSubCategoryTitle(title: String) {
+        menuView.movieSubTitle = title
+    }
+    
+    func setTvShowsSubCategoryTitle(title: String) {
+        menuView.tvSubTitle = title
+    }
 }
 
 extension HomeTabView:UICollectionViewDelegate{

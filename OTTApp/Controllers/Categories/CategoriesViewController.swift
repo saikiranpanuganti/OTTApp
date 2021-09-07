@@ -25,6 +25,7 @@ class CategoriesViewController: UIViewController {
         viewModel.delegate = self
         categoriesView.delegate = self
         categoriesView.category = viewModel.category
+        categoriesView.categoryTitle = viewModel.categoryTitle
         categoriesView.setUpUI()
         viewModel.getData()
     }

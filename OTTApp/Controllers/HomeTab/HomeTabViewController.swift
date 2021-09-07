@@ -63,6 +63,7 @@ extension HomeTabBarViewController: HomeTabViewDelegate {
         if let controller = Controllers.categories.getControllers() as? CategoriesViewController {
             controller.delegate = self
             controller.viewModel.category = .movies
+            controller.viewModel.categoryTitle = homeTabView.getMovieSubCategoryTitle() ?? ""
             controller.modalPresentationStyle = .overFullScreen
             present(controller, animated: true, completion: nil)
         }
@@ -72,6 +73,7 @@ extension HomeTabBarViewController: HomeTabViewDelegate {
         if let controller = Controllers.categories.getControllers() as? CategoriesViewController {
             controller.delegate = self
             controller.viewModel.category = .tvShows
+            controller.viewModel.categoryTitle = homeTabView.getTvShowsSubCategoryTitle() ?? ""
             controller.modalPresentationStyle = .overFullScreen
             present(controller, animated: true, completion: nil)
         }
@@ -80,10 +82,12 @@ extension HomeTabBarViewController: HomeTabViewDelegate {
 
 extension HomeTabBarViewController: CategoriesViewControllerDelegate {
     func movieSubCategoryTapped(subCategory: String) {
+        homeTabView.setMovieSubCategoryTitle(title: subCategory)
         homeTabViewModel.movieSubCategoryTapped(subCategory: subCategory)
     }
     
     func tvShowsSubCategoryTapped(subCategory: String) {
+        homeTabView.setTvShowsSubCategoryTitle(title: subCategory)
         homeTabViewModel.tvShowsSubCategoryTapped(subCategory: subCategory)
     }
     
