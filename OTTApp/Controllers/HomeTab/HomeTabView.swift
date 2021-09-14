@@ -14,6 +14,7 @@ protocol HomeTabViewDelegate: AnyObject {
     func tvButtonTapped()
     func moviesButtonTapped()
     func logoButtonTapped()
+    func videoTapped(video: Video?)
 }
 
 class HomeTabView:UIView{
@@ -134,6 +135,8 @@ extension HomeTabView:UICollectionViewDataSource{
             }
             
             if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainCollectionViewCell", for: indexPath) as? MainCollectionViewCell {
+                cell.delegate = self
+                
                 if category == .home {
                     cell.updateUI(data: homeData?.body?.data?.playlists?[indexPath.section-1])
                 }else if category == .movies {
@@ -205,6 +208,22 @@ extension HomeTabView:UICollectionViewDelegateFlowLayout{
         }
         return 10
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.section == 0{
+            if category == .home {
+                delegate?.videoTapped(video: homeData?.body?.data?.banner?[0])
+            }else if category == .movies {
+                delegate?.videoTapped(video: moviesData?.body?.data?.banner?[0])
+            }else if category == .tvShows {
+                delegate?.videoTapped(video: tvShowsData?.body?.data?.banner?[0])
+            }else if category == .subCategory {
+                delegate?.videoTapped(video: subCategoryData?.body?.data?.banner)
+            }
+        }else if category == .subCategory {
+            delegate?.videoTapped(video: subCategoryData?.body?.data?.playlists?[indexPath.row])
+        }
+    }
 }
 
 extension HomeTabView: MenuViewDelegate {
@@ -245,5 +264,11 @@ extension HomeTabView: MenuViewDelegate {
             print("My List tapped")
         }
         delegate?.homeCategoriesTapped()
+    }
+}
+
+extension HomeTabView: MainCollectionViewCellDelegate {
+    func videoTapped(video: Video?) {
+        delegate?.videoTapped(video: video)
     }
 }

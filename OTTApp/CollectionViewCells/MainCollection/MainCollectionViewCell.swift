@@ -7,10 +7,15 @@
 
 import UIKit
 
+protocol MainCollectionViewCellDelegate: AnyObject {
+    func videoTapped(video: Video?)
+}
+
 class MainCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var collectionView:UICollectionView!
     
+    weak var delegate: MainCollectionViewCellDelegate?
     var playListData:Playlist?
     
     override func awakeFromNib() {
@@ -70,5 +75,9 @@ extension MainCollectionViewCell:UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 10
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        delegate?.videoTapped(video: playListData?.content?[indexPath.row])
     }
 }

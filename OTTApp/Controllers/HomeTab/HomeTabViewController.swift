@@ -78,6 +78,14 @@ extension HomeTabBarViewController: HomeTabViewDelegate {
             present(controller, animated: true, completion: nil)
         }
     }
+    
+    func videoTapped(video: Video?) {
+        if let controller = Controllers.details.getControllers() as? DetailsViewController {
+            controller.viewModel.video = video
+//            controller.modalPresentationStyle = .overCurrentContext
+            present(controller, animated: true, completion: nil)
+        }
+    }
 }
 
 extension HomeTabBarViewController: CategoriesViewControllerDelegate {
