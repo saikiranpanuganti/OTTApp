@@ -14,6 +14,7 @@ class DetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        detailsView.delegate = self
         viewModel.delegate = self
         detailsView.setUpUI()
         viewModel.getData()
@@ -23,6 +24,14 @@ class DetailsViewController: UIViewController {
 
 extension DetailsViewController: DetailsViewModelDelegate {
     func updateUI() {
-        
+        let details = viewModel.details
+        detailsView.details = details
+        detailsView.updateUI()
+    }
+}
+
+extension DetailsViewController: DetailsViewDelegate {
+    func closeTapped() {
+        dismiss(animated: true, completion: nil)
     }
 }

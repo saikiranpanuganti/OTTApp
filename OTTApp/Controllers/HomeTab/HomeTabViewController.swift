@@ -82,7 +82,7 @@ extension HomeTabBarViewController: HomeTabViewDelegate {
     func videoTapped(video: Video?) {
         if let controller = Controllers.details.getControllers() as? DetailsViewController {
             controller.viewModel.video = video
-//            controller.modalPresentationStyle = .overCurrentContext
+            controller.modalPresentationStyle = .overCurrentContext
             present(controller, animated: true, completion: nil)
         }
     }
