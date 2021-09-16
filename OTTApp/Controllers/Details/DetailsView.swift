@@ -19,6 +19,7 @@ class DetailsView: UIView {
     
     func setUpUI() {
         tableView.register(UINib(nibName: "DetailsTableViewCell", bundle: nil), forCellReuseIdentifier: "DetailsTableViewCell")
+        tableView.register(UINib(nibName: "DetailsHeaderTableViewCell", bundle: nil), forHeaderFooterViewReuseIdentifier: "DetailsHeaderTableViewCell")
         tableView.delegate = self
         tableView.dataSource = self
     }
@@ -32,10 +33,13 @@ class DetailsView: UIView {
 
 extension DetailsView: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return 2
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        if section == 0 {
+            return 1
+        }
+        return 0
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "DetailsTableViewCell", for: indexPath) as? DetailsTableViewCell {
@@ -45,11 +49,25 @@ extension DetailsView: UITableViewDataSource {
         }
         return UITableViewCell()
     }
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if section == 1 {
+            if let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "DetailsHeaderTableViewCell") as? DetailsHeaderTableViewCell {
+                return header
+            }
+        }
+        return UIView()
+    }
 }
 
 extension DetailsView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
+    }
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if section == 1 {
+            return 70
+        }
+        return 0
     }
 }
 

@@ -29,6 +29,8 @@ class DetailsTableViewCell: UITableViewCell {
     @IBOutlet weak var genre: UILabel!
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var playView: UIView!
+    @IBOutlet weak var downlaodView: UIView!
     
     weak var delegate: DetailsTableViewCellDelegate?
 
@@ -41,6 +43,8 @@ class DetailsTableViewCell: UITableViewCell {
     func setUpUI() {
         closeButton.layer.cornerRadius = 20.0
         watchingView.isHidden = true
+        playView.layer.cornerRadius = 5.0
+        downlaodView.layer.cornerRadius = 5.0
     }
     
     func configureUI(details: Details?) {
@@ -49,7 +53,7 @@ class DetailsTableViewCell: UITableViewCell {
                 contentImageView.sd_setImage(with: url, placeholderImage: nil, options: .highPriority, context: nil)
             }
             
-            contentType.text = details.contentType ?? ""
+            contentType.text = details.contentType?.uppercased() ?? ""
             year.text = (details.productionYear?.count == 0) ? "2020" : details.productionYear
             ageRating.text = details.ageRating
             if let numberOfSeasons = details.seasons?.count {
@@ -63,13 +67,36 @@ class DetailsTableViewCell: UITableViewCell {
                 downloadLabel.text = "Download"
             }
             descriptionLabel.text = details.seoDescription
-            cast.text = details.cast?.first
-            genre.text = details.genres?.first
+            if let castArray = details.cast {
+                cast.text = getStringFromArray(type: "Cast", array: castArray)
+            }else {
+                cast.isHidden = true
+            }
+            if let genreArray = details.genres {
+                genre.text = getStringFromArray(type: "Genre", array: genreArray)
+            }else {
+                genre.isHidden = true
+            }
+            
             title.text = details.title
+            
         }
+    }
+    
+    func getStringFromArray(type: String, array: [String]) -> String {
+        let joinedString = array.joined(separator: ", ")
+        return type + ": " + joinedString
     }
 
     @IBAction func closeButton(_ sender: UIButton) {
         delegate?.closeTapped()
+    }
+    
+    @IBAction func playOrResumeTapped(_ sender: UIButton) {
+        
+    }
+    
+    @IBAction func downloadTapped(_ sender: UIButton) {
+        
     }
 }
