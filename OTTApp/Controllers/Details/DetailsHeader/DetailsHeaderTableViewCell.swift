@@ -17,6 +17,7 @@ class DetailsHeaderTableViewCell: UITableViewHeaderFooterView {
     @IBOutlet weak var episodesView: UIView!
     @IBOutlet weak var moreLikeThisView: UIView!
     @IBOutlet weak var trailersView: UIView!
+    @IBOutlet weak var seasonLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -32,6 +33,12 @@ class DetailsHeaderTableViewCell: UITableViewHeaderFooterView {
         trailersViewWidth.isActive = false
         trailersViewWidth.constant = 0
         trailersViewWidth.isActive = true
+    }
+    
+    func configureUI(season: Season?) {
+        if let season = season {
+            seasonLabel.text = "Season " + String(season.seasonNumber ?? 1)
+        }
     }
     
     @IBAction func episodestapped(_ sender: UIButton) {
@@ -88,5 +95,9 @@ class DetailsHeaderTableViewCell: UITableViewHeaderFooterView {
         UIView.animate(withDuration: 0.3) {
             self.layoutIfNeeded()
         }
+    }
+    
+    @IBAction func seasonTapped(_ sender: UIButton) {
+        print("seasonTapped")
     }
 }
