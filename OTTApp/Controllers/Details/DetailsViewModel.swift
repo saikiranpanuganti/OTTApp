@@ -15,6 +15,7 @@ class DetailsViewModel {
     weak var delegate: DetailsViewModelDelegate?
     var video: Video?
     var details: Details?
+    var moreLikeThisData: MoreLikeThisModel?
     
     func getData() {
         if let videoId = video?.id, let contentType = video?.contentType {
@@ -30,6 +31,7 @@ class DetailsViewModel {
             }
             
             getDetails(urlString: urlString, parameters: parameters, contentType: contentType)
+            getMoreLikeThisData()
         }
     }
     
@@ -53,6 +55,31 @@ class DetailsViewModel {
                 }
             }else {
                 print(error.debugDescription)
+            }
+        }
+    }
+    
+    func getMoreLikeThisData() {
+        if let contentType = video?.contentType {
+            var headers: [String: String] = [:]
+            headers["Authorization"] = "cf606825b8a045c1aae39f7fe39de6c6"
+            
+            var parameters: [String: String] = [:]
+            parameters["contenttype"] = contentType.rawValue
+            parameters["timestamp"] = String(Int(Date().timeIntervalSince1970))
+            
+            NetworkAdaptor.request(url: ApiHandler.relatedContent.url(), method: .get, headers: headers, urlParameters: parameters) { data, response, error in
+                if error == nil {
+                    do {
+                        if let data = data {
+                            self.moreLikeThisData = try JSONDecoder().decode(MoreLikeThisModel.self, from: data)
+                        }
+                    }catch {
+                        print(error.localizedDescription)
+                    }
+                }else {
+                    print(error.debugDescription)
+                }
             }
         }
     }

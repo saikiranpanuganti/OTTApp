@@ -26,6 +26,7 @@ extension DetailsViewController: DetailsViewModelDelegate {
     func updateUI() {
         let details = viewModel.details
         detailsView.details = details
+        detailsView.moreLikeThisData = viewModel.moreLikeThisData
         detailsView.updateUI()
     }
 }

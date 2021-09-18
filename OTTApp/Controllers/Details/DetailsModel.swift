@@ -111,3 +111,10 @@ struct Movie: Codable {
     let geoblock, digitalRighttype: Int?
 }
 
+
+
+
+struct MoreLikeThisModel: Codable {
+    let status: Int?
+    let response: [Video]?
+}

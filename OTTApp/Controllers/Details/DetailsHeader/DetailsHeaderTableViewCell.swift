@@ -7,6 +7,12 @@
 
 import UIKit
 
+protocol DetailsHeaderTableViewCellDelegate: AnyObject {
+    func episodestapped()
+    func moreLikeThistapped()
+    func seasonTapped()
+}
+
 class DetailsHeaderTableViewCell: UITableViewHeaderFooterView {
     @IBOutlet var episodeViewWidth: NSLayoutConstraint!
     @IBOutlet var moreLikeThisViewWidth: NSLayoutConstraint!
@@ -19,6 +25,10 @@ class DetailsHeaderTableViewCell: UITableViewHeaderFooterView {
     @IBOutlet weak var trailersView: UIView!
     @IBOutlet weak var seasonLabel: UILabel!
 
+    
+    weak var delegate: DetailsHeaderTableViewCellDelegate?
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -53,9 +63,11 @@ class DetailsHeaderTableViewCell: UITableViewHeaderFooterView {
         self.episodeViewWidth.isActive = false
         self.episodeViewWidth.constant = self.episodesLabel.frame.width
         self.episodeViewWidth.isActive = true
-        
+    
         UIView.animate(withDuration: 0.3) {
             self.layoutIfNeeded()
+        } completion: { bool in
+            self.delegate?.episodestapped()
         }
     }
     
@@ -74,6 +86,8 @@ class DetailsHeaderTableViewCell: UITableViewHeaderFooterView {
         
         UIView.animate(withDuration: 0.3) {
             self.layoutIfNeeded()
+        } completion: { bool in
+            self.delegate?.episodestapped()
         }
     }
     
@@ -91,13 +105,16 @@ class DetailsHeaderTableViewCell: UITableViewHeaderFooterView {
         self.moreLikeThisViewWidth.isActive = false
         self.moreLikeThisViewWidth.constant = self.moreLikeThisLabel.frame.width
         self.moreLikeThisViewWidth.isActive = true
-        
+  
         UIView.animate(withDuration: 0.3) {
             self.layoutIfNeeded()
+        } completion: { bool in
+            self.delegate?.moreLikeThistapped()
         }
     }
     
     @IBAction func seasonTapped(_ sender: UIButton) {
         print("seasonTapped")
+        delegate?.seasonTapped()
     }
 }

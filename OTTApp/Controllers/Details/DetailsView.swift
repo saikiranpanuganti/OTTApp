@@ -16,11 +16,14 @@ class DetailsView: UIView {
     
     weak var delegate: DetailsViewDelegate?
     var details: Details?
+    var showEpisodes: Bool = true
+    var moreLikeThisData: MoreLikeThisModel?
     
     func setUpUI() {
         tableView.register(UINib(nibName: "DetailsTableViewCell", bundle: nil), forCellReuseIdentifier: "DetailsTableViewCell")
         tableView.register(UINib(nibName: "DetailsHeaderTableViewCell", bundle: nil), forHeaderFooterViewReuseIdentifier: "DetailsHeaderTableViewCell")
         tableView.register(UINib(nibName: "EpisodeTableViewCell", bundle: nil), forCellReuseIdentifier: "EpisodeTableViewCell")
+        tableView.register(UINib(nibName: "MoreLikeThisTableViewCell", bundle: nil), forCellReuseIdentifier: "MoreLikeThisTableViewCell")
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -41,7 +44,11 @@ extension DetailsView: UITableViewDataSource {
         if section == 0 {
             return 1
         }else {
-            return details?.seasons?.first?.episodes?.count ?? 0
+            if showEpisodes {
+                return details?.seasons?.first?.episodes?.count ?? 0
+            }else {
+                return 1
+            }
         }
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -52,10 +59,17 @@ extension DetailsView: UITableViewDataSource {
                 return cell
             }
         }else {
-            if let cell = tableView.dequeueReusableCell(withIdentifier: "EpisodeTableViewCell", for: indexPath) as? EpisodeTableViewCell {
-                cell.configureUI(episode: details?.seasons?.first?.episodes?[indexPath.row])
-                cell.delegate = self
-                return cell
+            if showEpisodes {
+                if let cell = tableView.dequeueReusableCell(withIdentifier: "EpisodeTableViewCell", for: indexPath) as? EpisodeTableViewCell {
+                    cell.configureUI(episode: details?.seasons?.first?.episodes?[indexPath.row])
+                    cell.delegate = self
+                    return cell
+                }
+            }else {
+                if let cell = tableView.dequeueReusableCell(withIdentifier: "MoreLikeThisTableViewCell", for: indexPath) as? MoreLikeThisTableViewCell {
+                    cell.configureUI(data: moreLikeThisData)
+                    return cell
+                }
             }
         }
         
@@ -65,6 +79,7 @@ extension DetailsView: UITableViewDataSource {
         if section == 1 {
             if let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "DetailsHeaderTableViewCell") as? DetailsHeaderTableViewCell {
                 header.configureUI(season: details?.seasons?.first)
+                header.delegate = self
                 return header
             }
         }
@@ -74,6 +89,9 @@ extension DetailsView: UITableViewDataSource {
 
 extension DetailsView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section == 1 && !showEpisodes {
+            return ((screenWidth-8)/2)*4
+        }
         return UITableView.automaticDimension
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -92,4 +110,20 @@ extension DetailsView: DetailsTableViewCellDelegate {
 
 extension DetailsView: EpisodeTableViewCellDelegate {
     
+}
+
+extension DetailsView: DetailsHeaderTableViewCellDelegate {
+    func episodestapped() {
+        showEpisodes = true
+        updateUI()
+    }
+    
+    func moreLikeThistapped() {
+        showEpisodes = false
+        updateUI()
+    }
+    
+    func seasonTapped() {
+        
+    }
 }
