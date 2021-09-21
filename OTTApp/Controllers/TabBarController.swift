@@ -13,15 +13,23 @@ class TabBarController: UITabBarController {
         super.viewDidLoad()
         
         setupTabs()
-        
+        setUpTabBarView()
+    }
+    
+    func setUpTabBarView() {
+        tabBar.tintColor = UIColor.white
     }
     
     func setupTabs(){
         let homeTab = Controllers.home.getControllers()
-        let homeTabBarItem = UITabBarItem(title: "Home", image: Images.shared.homeUnselected, selectedImage: Images.shared.homeSelected)
+        let homeTabBarItem = UITabBarItem(title: "Home", image: Images.shared.homeUnselected?.withRenderingMode(.alwaysTemplate), selectedImage: Images.shared.homeSelected?.withRenderingMode(.alwaysTemplate))
         homeTab.tabBarItem = homeTabBarItem
         
-        self.viewControllers = [homeTab]
+        let searchTab = Controllers.searchTab.getControllers()
+        let searchTabBarItem = UITabBarItem(title: "Search", image: Images.shared.searchUnSelected?.withRenderingMode(.alwaysTemplate), selectedImage: Images.shared.searchSelected?.withRenderingMode(.alwaysTemplate))
+        searchTab.tabBarItem = searchTabBarItem
+        
+        self.viewControllers = [homeTab, searchTab]
     }
     
 

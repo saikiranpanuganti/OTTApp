@@ -12,8 +12,10 @@ class Images {
    static let shared :Images = Images()
     private init() { }
     
-    let homeUnselected = UIImage(named: "Home")
-    let homeSelected = UIImage(named: "HomeTap")
+    let homeUnselected = UIImage(named: "Home")?.withTintColor(.lightGray, renderingMode: .alwaysTemplate)
+    let homeSelected = UIImage(named: "Home")?.withTintColor(.white, renderingMode: .alwaysTemplate)
+    let searchUnSelected = UIImage(systemName: "magnifyingglass")?.withTintColor(.lightGray, renderingMode: .alwaysTemplate)
+    let searchSelected = UIImage(systemName: "magnifyingglass")?.withTintColor(.white, renderingMode: .alwaysTemplate)
     let userImage = UIImage(named: "imageee")
     let netflixLogo = UIImage(named: "netflixLogo")
     let downArrow = UIImage(named: "down-arrow")

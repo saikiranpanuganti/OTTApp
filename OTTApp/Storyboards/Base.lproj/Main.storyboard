@@ -73,6 +73,91 @@
             </objects>
             <point key="canvasLocation" x="657.97101449275362" y="45.535714285714285"/>
         </scene>
+        <!--Search View Controller-->
+        <scene sceneID="btU-I8-ZZb">
+            <objects>
+                <viewController storyboardIdentifier="SearchViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="JV4-Ce-aKL" customClass="SearchViewController" customModule="OTTApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GEU-qY-gis">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Xgz-0Y-1ei">
+                                <rect key="frame" x="10" y="49" width="394" height="40"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V5F-q0-1tE">
+                                        <rect key="frame" x="0.0" y="0.0" width="329" height="40"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="vbH-fW-nTl">
+                                                <rect key="frame" x="114.5" y="5" width="100" height="30"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="magnifyingglass" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="1fP-1T-RDt">
+                                                        <rect key="frame" x="0.0" y="2.5" width="30" height="24.5"/>
+                                                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="1fP-1T-RDt" secondAttribute="height" multiplier="1:1" id="EWo-Br-ikz"/>
+                                                        </constraints>
+                                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="small" weight="regular"/>
+                                                    </imageView>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BUV-1B-Iry">
+                                                        <rect key="frame" x="32" y="0.0" width="68" height="30"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <action selector="searchTextFieldValueChange:" destination="JV4-Ce-aKL" eventType="valueChanged" id="14f-Xb-9md"/>
+                                                        </connections>
+                                                    </textField>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="FAc-ML-2Ho"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="vbH-fW-nTl" firstAttribute="centerX" secondItem="V5F-q0-1tE" secondAttribute="centerX" id="Wik-vb-KAV"/>
+                                            <constraint firstItem="vbH-fW-nTl" firstAttribute="top" secondItem="V5F-q0-1tE" secondAttribute="top" constant="5" id="eu1-uJ-WFH"/>
+                                            <constraint firstAttribute="bottom" secondItem="vbH-fW-nTl" secondAttribute="bottom" constant="5" id="frp-Ud-JSi"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wwk-UI-Yvu">
+                                        <rect key="frame" x="334" y="0.0" width="60" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="vbj-70-6WH"/>
+                                        </constraints>
+                                        <state key="normal" title="Cancel">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="cancelTapped:" destination="JV4-Ce-aKL" eventType="touchUpInside" id="Q4r-s8-nNX"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="vzx-qP-kWW"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="xRz-7J-xTf"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="xRz-7J-xTf" firstAttribute="trailing" secondItem="Xgz-0Y-1ei" secondAttribute="trailing" constant="10" id="JCI-0s-Ivp"/>
+                            <constraint firstItem="Xgz-0Y-1ei" firstAttribute="leading" secondItem="xRz-7J-xTf" secondAttribute="leading" constant="10" id="JXw-c6-ILh"/>
+                            <constraint firstItem="Xgz-0Y-1ei" firstAttribute="top" secondItem="xRz-7J-xTf" secondAttribute="top" constant="5" id="RD6-ih-DGa"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cancelButton" destination="Wwk-UI-Yvu" id="SMJ-ke-5h1"/>
+                        <outlet property="searchTextField" destination="BUV-1B-Iry" id="moQ-XG-iIF"/>
+                        <outlet property="searchView" destination="V5F-q0-1tE" id="NjC-Ju-afl"/>
+                        <outlet property="stackWidth" destination="FAc-ML-2Ho" id="b8Z-UZ-hMe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QxI-p9-b7y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1416" y="46"/>
+        </scene>
         <!--Users View Controller-->
         <scene sceneID="78A-oL-MSY">
             <objects>
@@ -401,6 +486,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

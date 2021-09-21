@@ -42,6 +42,8 @@
 		7F4487EB26DFDCE700CF597F /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4487EA26DFDCE700CF597F /* CategoryModel.swift */; };
 		7F4ED46426F23F1900B5CBA6 /* DetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4ED46226F23F1900B5CBA6 /* DetailsTableViewCell.swift */; };
 		7F4ED46526F23F1900B5CBA6 /* DetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F4ED46326F23F1900B5CBA6 /* DetailsTableViewCell.xib */; };
+		7F514A3626FA26FA006A271A /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F514A3526FA26FA006A271A /* SearchViewController.swift */; };
+		7F514A3826FA28A4006A271A /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F514A3726FA28A4006A271A /* SearchViewModel.swift */; };
 		7F7B428926E6680D000F23E0 /* SubCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7B428826E6680D000F23E0 /* SubCategory.swift */; };
 		7F7C92BB26F0F22500F2A251 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7C92BA26F0F22500F2A251 /* DetailsViewController.swift */; };
 		7F7C92BD26F0F22F00F2A251 /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7C92BC26F0F22F00F2A251 /* DetailsView.swift */; };
@@ -117,6 +119,8 @@
 		7F4487EA26DFDCE700CF597F /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 		7F4ED46226F23F1900B5CBA6 /* DetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTableViewCell.swift; sourceTree = "<group>"; };
 		7F4ED46326F23F1900B5CBA6 /* DetailsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailsTableViewCell.xib; sourceTree = "<group>"; };
+		7F514A3526FA26FA006A271A /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		7F514A3726FA28A4006A271A /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		7F7B428826E6680D000F23E0 /* SubCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCategory.swift; sourceTree = "<group>"; };
 		7F7C92BA26F0F22500F2A251 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		7F7C92BC26F0F22F00F2A251 /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
@@ -272,6 +276,15 @@
 			path = DetailsCell;
 			sourceTree = "<group>";
 		};
+		7F514A3426FA26E8006A271A /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				7F514A3526FA26FA006A271A /* SearchViewController.swift */,
+				7F514A3726FA28A4006A271A /* SearchViewModel.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
 		7F7C92B926F0F21200F2A251 /* Details */ = {
 			isa = PBXGroup;
 			children = (
@@ -291,6 +304,7 @@
 			isa = PBXGroup;
 			children = (
 				7F09C55526D540E400B058FC /* TabBarController.swift */,
+				7F514A3426FA26E8006A271A /* Search */,
 				7F7C92B926F0F21200F2A251 /* Details */,
 				7F4487DE26DFCF1F00CF597F /* Categories */,
 				7F8191B926D697750086753A /* HomeTab */,
@@ -528,6 +542,7 @@
 				7F09C55426D53D8100B058FC /* Fonts.swift in Sources */,
 				7F09C56026D549CF00B058FC /* HomeTabViewModel.swift in Sources */,
 				7F8191C126D698040086753A /* LabelCollectionReusableView.swift in Sources */,
+				7F514A3826FA28A4006A271A /* SearchViewModel.swift in Sources */,
 				7F7C92C126F0FD1A00F2A251 /* DetailsModel.swift in Sources */,
 				7F09C52C26D53B3000B058FC /* AppDelegate.swift in Sources */,
 				7F09C55E26D549C100B058FC /* HomeTabView.swift in Sources */,
@@ -550,6 +565,7 @@
 				7F4487E026DFCF3900CF597F /* CategoriesViewController.swift in Sources */,
 				7F09C55626D540E400B058FC /* TabBarController.swift in Sources */,
 				7F8191C426D698D20086753A /* Colors.swift in Sources */,
+				7F514A3626FA26FA006A271A /* SearchViewController.swift in Sources */,
 				7F09C55A26D5419400B058FC /* Controllers.swift in Sources */,
 				7F09C56626D54E2400B058FC /* HomeModel.swift in Sources */,
 				CB80B3AA26D965CB00E2CE44 /* UsersView.swift in Sources */,
