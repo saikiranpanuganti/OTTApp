@@ -41,6 +41,9 @@ class SearchViewController: UIViewController {
         UIView.animate(withDuration: 0.2) {
             self.view.layoutIfNeeded()
         }
+        
+        viewModel.searchdata = nil
+        
         searchTextField.text = ""
         searchTextField.resignFirstResponder()
         updateUI()
@@ -60,8 +63,6 @@ extension SearchViewController: UITextFieldDelegate {
         if let searchQuery = textField.text?.replacingOccurrences(of: " ", with: "") {
             if searchQuery.count > 2 {
                 viewModel.getSearchData(queryString: searchQuery)
-            }else {
-                updateUI()
             }
         }
     }
@@ -80,9 +81,6 @@ extension SearchViewController: UITextFieldDelegate {
 }
 extension SearchViewController:UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if searchTextField.text == "" {
-            return 0
-        }
         return viewModel.searchdata?.response?.count ?? 0
     }
     
@@ -94,8 +92,6 @@ extension SearchViewController:UITableViewDataSource {
         
         return UITableViewCell()
     }
-    
-    
 }
 extension SearchViewController:UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
