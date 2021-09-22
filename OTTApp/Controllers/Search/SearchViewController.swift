@@ -15,6 +15,7 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var viewModel: SearchViewModel = SearchViewModel()
+     
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,9 +24,12 @@ class SearchViewController: UIViewController {
         
         let placeholderColor = UIColor.lightGray
         searchTextField.attributedPlaceholder = NSAttributedString(string: "Search", attributes: [NSAttributedString.Key.foregroundColor : placeholderColor])
+        tableView.register(UINib(nibName: "SearchDataTableViewCell", bundle: nil), forCellReuseIdentifier: "SearchDataTableViewCell")
         searchView.layer.cornerRadius = 10.0
         searchTextField.delegate = self
         cancelButton.isHidden = true
+        tableView.delegate = self
+        tableView.dataSource = self
     }
 
     @IBAction func cancelTapped(_ sender: UIButton) {
@@ -37,8 +41,9 @@ class SearchViewController: UIViewController {
         UIView.animate(withDuration: 0.2) {
             self.view.layoutIfNeeded()
         }
-        
+        searchTextField.text = ""
         searchTextField.resignFirstResponder()
+        updateUI()
     }
 }
 
@@ -55,6 +60,8 @@ extension SearchViewController: UITextFieldDelegate {
         if let searchQuery = textField.text?.replacingOccurrences(of: " ", with: "") {
             if searchQuery.count > 2 {
                 viewModel.getSearchData(queryString: searchQuery)
+            }else {
+                updateUI()
             }
         }
     }
@@ -69,5 +76,29 @@ extension SearchViewController: UITextFieldDelegate {
         UIView.animate(withDuration: 0.2) {
             self.view.layoutIfNeeded()
         }
+    }
+}
+extension SearchViewController:UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if searchTextField.text == "" {
+            return 0
+        }
+        return viewModel.searchdata?.response?.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "SearchDataTableViewCell", for: indexPath)as? SearchDataTableViewCell {
+            cell.configUI(img: viewModel.searchdata?.response?[indexPath.row].imagery?.thumbnail ?? "", mveLbl: viewModel.searchdata?.response?[indexPath.row].title ?? "")
+            return cell
+        }
+        
+        return UITableViewCell()
+    }
+    
+    
+}
+extension SearchViewController:UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 105
     }
 }

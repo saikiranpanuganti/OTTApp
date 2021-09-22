@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="112" id="KGk-i7-Jjw" customClass="SearchDataTableViewCell" customModule="OTTApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="384" height="112"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="384" height="112"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d9a-ml-WxW">
+                        <rect key="frame" x="0.0" y="0.0" width="384" height="112"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HEZ-XR-qcl">
+                                <rect key="frame" x="10" y="13.5" width="136" height="85"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="HEZ-XR-qcl" secondAttribute="height" multiplier="1.6:1" id="LXY-rk-4ee"/>
+                                    <constraint firstAttribute="height" constant="85" id="cV7-A4-5rG"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Byo-Ld-ZZM">
+                                <rect key="frame" x="156" y="46" width="148" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="play.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="DMc-B5-r3v">
+                                <rect key="frame" x="324" y="31.5" width="50" height="49"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="ef6-8M-pl9"/>
+                                    <constraint firstAttribute="width" secondItem="DMc-B5-r3v" secondAttribute="height" multiplier="1:1" id="fYb-2h-gOM"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HaQ-cs-Bml">
+                                <rect key="frame" x="324" y="31" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="V4D-2b-sLe"/>
+                                    <constraint firstAttribute="width" secondItem="HaQ-cs-Bml" secondAttribute="height" multiplier="1:1" id="XhS-A5-DJk"/>
+                                </constraints>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Byo-Ld-ZZM" firstAttribute="leading" secondItem="HEZ-XR-qcl" secondAttribute="trailing" constant="10" id="5CJ-Xw-XO9"/>
+                            <constraint firstAttribute="trailing" secondItem="DMc-B5-r3v" secondAttribute="trailing" constant="10" id="NLq-33-Smz"/>
+                            <constraint firstItem="HEZ-XR-qcl" firstAttribute="centerY" secondItem="d9a-ml-WxW" secondAttribute="centerY" id="e0X-yN-mDv"/>
+                            <constraint firstAttribute="trailing" secondItem="HaQ-cs-Bml" secondAttribute="trailing" constant="10" id="ext-wq-Lh4"/>
+                            <constraint firstItem="Byo-Ld-ZZM" firstAttribute="centerY" secondItem="d9a-ml-WxW" secondAttribute="centerY" id="gDx-7c-XcU"/>
+                            <constraint firstItem="DMc-B5-r3v" firstAttribute="leading" secondItem="Byo-Ld-ZZM" secondAttribute="trailing" constant="20" id="kRI-NM-XWI"/>
+                            <constraint firstItem="HEZ-XR-qcl" firstAttribute="leading" secondItem="d9a-ml-WxW" secondAttribute="leading" constant="10" id="ogE-j5-vHr"/>
+                            <constraint firstItem="HaQ-cs-Bml" firstAttribute="centerY" secondItem="d9a-ml-WxW" secondAttribute="centerY" id="tMl-3n-TCQ"/>
+                            <constraint firstItem="DMc-B5-r3v" firstAttribute="centerY" secondItem="d9a-ml-WxW" secondAttribute="centerY" id="tta-HX-lid"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="d9a-ml-WxW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Uft-zp-O6Q"/>
+                    <constraint firstAttribute="trailing" secondItem="d9a-ml-WxW" secondAttribute="trailing" id="fwE-fZ-g6w"/>
+                    <constraint firstAttribute="bottom" secondItem="d9a-ml-WxW" secondAttribute="bottom" id="i71-bb-f2R"/>
+                    <constraint firstItem="d9a-ml-WxW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="xaN-Qx-Mff"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="imgRef" destination="HEZ-XR-qcl" id="5Jr-KW-7xM"/>
+                <outlet property="movielblRef" destination="Byo-Ld-ZZM" id="A8t-1Q-GyO"/>
+                <outlet property="playBtnImgRef" destination="HaQ-cs-Bml" id="1DZ-eM-jyY"/>
+            </connections>
+            <point key="canvasLocation" x="181.15942028985509" y="95.758928571428569"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="play.circle" catalog="system" width="128" height="121"/>
+    </resources>
+</document>

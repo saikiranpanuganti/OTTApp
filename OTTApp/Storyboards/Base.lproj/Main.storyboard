@@ -138,13 +138,21 @@
                                     <constraint firstAttribute="height" constant="40" id="vzx-qP-kWW"/>
                                 </constraints>
                             </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8hq-Fd-C0A">
+                                <rect key="frame" x="0.0" y="89" width="414" height="773"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xRz-7J-xTf"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="8hq-Fd-C0A" firstAttribute="top" secondItem="Xgz-0Y-1ei" secondAttribute="bottom" id="5D6-7I-ECL"/>
+                            <constraint firstItem="xRz-7J-xTf" firstAttribute="trailing" secondItem="8hq-Fd-C0A" secondAttribute="trailing" id="Cag-uU-E0d"/>
                             <constraint firstItem="xRz-7J-xTf" firstAttribute="trailing" secondItem="Xgz-0Y-1ei" secondAttribute="trailing" constant="10" id="JCI-0s-Ivp"/>
                             <constraint firstItem="Xgz-0Y-1ei" firstAttribute="leading" secondItem="xRz-7J-xTf" secondAttribute="leading" constant="10" id="JXw-c6-ILh"/>
+                            <constraint firstItem="xRz-7J-xTf" firstAttribute="bottom" secondItem="8hq-Fd-C0A" secondAttribute="bottom" id="JgC-Ua-XDw"/>
                             <constraint firstItem="Xgz-0Y-1ei" firstAttribute="top" secondItem="xRz-7J-xTf" secondAttribute="top" constant="5" id="RD6-ih-DGa"/>
+                            <constraint firstItem="8hq-Fd-C0A" firstAttribute="leading" secondItem="xRz-7J-xTf" secondAttribute="leading" id="TJC-ZQ-PEW"/>
                         </constraints>
                     </view>
                     <connections>
@@ -152,6 +160,7 @@
                         <outlet property="searchTextField" destination="BUV-1B-Iry" id="moQ-XG-iIF"/>
                         <outlet property="searchView" destination="V5F-q0-1tE" id="NjC-Ju-afl"/>
                         <outlet property="stackWidth" destination="FAc-ML-2Ho" id="b8Z-UZ-hMe"/>
+                        <outlet property="tableView" destination="8hq-Fd-C0A" id="2lx-Fa-A7v"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QxI-p9-b7y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
