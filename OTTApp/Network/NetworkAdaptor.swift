@@ -10,7 +10,7 @@ import Foundation
 import Foundation
 
 class NetworkAdaptor {
-    static func request(url: String?, method: HTTPMethod, headers: [String: String]? = nil, urlParameters: [String: String]? = nil, bodyParameters: [String: String]? = nil, completionHandler:@escaping ((Data?, URLResponse?, Error?)->Void)) {
+    static func request(url: String?, method: HTTPMethod, headers: [String: String]? = nil, urlParameters: [String: String]? = nil, bodyParameters: [String: Any]? = nil, completionHandler:@escaping ((Data?, URLResponse?, Error?)->Void)) {
         guard var urlString = url else {
             completionHandler(nil, nil, nil)
             return

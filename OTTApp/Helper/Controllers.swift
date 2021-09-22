@@ -13,6 +13,7 @@ enum Controllers {
     case categories
     case details
     case searchTab
+    case register
     
     func getControllers()->UIViewController{
         var storyBoardName = ""
@@ -36,6 +37,9 @@ enum Controllers {
         case .searchTab:
             storyBoardName = "Main"
             storyBoardID = "SearchViewController"
+        case .register:
+            storyBoardName = "OnBoarding"
+            storyBoardID = "RegisterViewController"
         
         }
         return UIStoryboard(name: storyBoardName, bundle: nil).instantiateViewController(withIdentifier: storyBoardID)

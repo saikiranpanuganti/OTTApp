@@ -54,6 +54,9 @@
 		7F8191C426D698D20086753A /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8191C326D698D20086753A /* Colors.swift */; };
 		7FBF08A126F39B710007459F /* DetailsHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBF089F26F39B710007459F /* DetailsHeaderTableViewCell.swift */; };
 		7FBF08A226F39B710007459F /* DetailsHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FBF08A026F39B710007459F /* DetailsHeaderTableViewCell.xib */; };
+		7FC5100326FB7DED002358C0 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC5100226FB7DED002358C0 /* RegisterViewController.swift */; };
+		7FC5100526FB7E03002358C0 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC5100426FB7E03002358C0 /* RegisterViewModel.swift */; };
+		7FC5100726FB7E23002358C0 /* OnBoarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FC5100626FB7E23002358C0 /* OnBoarding.storyboard */; };
 		9438D2AF348A415468F74CFC /* Pods_OTTApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 517C0801E354D203F92D4662 /* Pods_OTTApp.framework */; };
 		CB80B3A426D9612000E2CE44 /* MainImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB80B3A226D9612000E2CE44 /* MainImageViewCell.swift */; };
 		CB80B3A526D9612000E2CE44 /* MainImageViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB80B3A326D9612000E2CE44 /* MainImageViewCell.xib */; };
@@ -133,6 +136,9 @@
 		7F8191C326D698D20086753A /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		7FBF089F26F39B710007459F /* DetailsHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		7FBF08A026F39B710007459F /* DetailsHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailsHeaderTableViewCell.xib; sourceTree = "<group>"; };
+		7FC5100226FB7DED002358C0 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		7FC5100426FB7E03002358C0 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		7FC5100626FB7E23002358C0 /* OnBoarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnBoarding.storyboard; sourceTree = "<group>"; };
 		9F3AAF70C64759FD37FE4944 /* Pods-OTTApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OTTApp.release.xcconfig"; path = "Target Support Files/Pods-OTTApp/Pods-OTTApp.release.xcconfig"; sourceTree = "<group>"; };
 		CB80B3A226D9612000E2CE44 /* MainImageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainImageViewCell.swift; sourceTree = "<group>"; };
 		CB80B3A326D9612000E2CE44 /* MainImageViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainImageViewCell.xib; sourceTree = "<group>"; };
@@ -247,6 +253,7 @@
 			children = (
 				7F09C53126D53B3000B058FC /* Main.storyboard */,
 				7F4487DB26DFCEB200CF597F /* Home.storyboard */,
+				7FC5100626FB7E23002358C0 /* OnBoarding.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -308,6 +315,7 @@
 			isa = PBXGroup;
 			children = (
 				7F09C55526D540E400B058FC /* TabBarController.swift */,
+				7FC5100126FB7DB4002358C0 /* Register */,
 				7F514A3426FA26E8006A271A /* Search */,
 				DAD05E8626FA51A80004BB69 /* Search cells */,
 				7F7C92B926F0F21200F2A251 /* Details */,
@@ -391,6 +399,15 @@
 				7FBF08A026F39B710007459F /* DetailsHeaderTableViewCell.xib */,
 			);
 			path = DetailsHeader;
+			sourceTree = "<group>";
+		};
+		7FC5100126FB7DB4002358C0 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				7FC5100226FB7DED002358C0 /* RegisterViewController.swift */,
+				7FC5100426FB7E03002358C0 /* RegisterViewModel.swift */,
+			);
+			path = Register;
 			sourceTree = "<group>";
 		};
 		CB80B3A626D964C800E2CE44 /* UserVC */ = {
@@ -501,6 +518,7 @@
 				7F4487E926DFD22100CF597F /* LabelTableViewCell.xib in Resources */,
 				7F09C56E26D5504900B058FC /* ImageCollectionViewCell.xib in Resources */,
 				7F4487DC26DFCEB200CF597F /* Home.storyboard in Resources */,
+				7FC5100726FB7E23002358C0 /* OnBoarding.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -564,10 +582,12 @@
 				7F7C92BB26F0F22500F2A251 /* DetailsViewController.swift in Sources */,
 				7F172F6226F4E6B0006503F9 /* EpisodeTableViewCell.swift in Sources */,
 				CB80B3A426D9612000E2CE44 /* MainImageViewCell.swift in Sources */,
+				7FC5100326FB7DED002358C0 /* RegisterViewController.swift in Sources */,
 				7F09C56226D54B4E00B058FC /* NetworkAdaptor.swift in Sources */,
 				7F18EB8626DA8CE7005B6680 /* MenuView.swift in Sources */,
 				7F4487E226DFCF5D00CF597F /* CategoriesView.swift in Sources */,
 				7F7C92BD26F0F22F00F2A251 /* DetailsView.swift in Sources */,
+				7FC5100526FB7E03002358C0 /* RegisterViewModel.swift in Sources */,
 				7F09C56D26D5504900B058FC /* ImageCollectionViewCell.swift in Sources */,
 				7F09C57026D5522900B058FC /* Constants.swift in Sources */,
 				7F4487E826DFD22100CF597F /* LabelTableViewCell.swift in Sources */,

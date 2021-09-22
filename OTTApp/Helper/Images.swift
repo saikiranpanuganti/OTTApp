@@ -21,4 +21,5 @@ class Images {
     let downArrow = UIImage(named: "down-arrow")
     let cast = UIImage(named: "cast")
     let close = UIImage(systemName: "xmark.circle.fill")
+    let netflix = UIImage(named: "netflix")
 }
