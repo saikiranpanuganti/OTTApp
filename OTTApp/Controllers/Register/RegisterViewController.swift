@@ -24,6 +24,10 @@ class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setUpUI()
+    }
+    
+    func setUpUI() {
         calenderView.isHidden = true
         calenderView.delegate = self
         viewModel.delegate = self
@@ -107,7 +111,8 @@ class RegisterViewController: UIViewController {
     }
     
     @IBAction func signInTapped(_ sender: UIButton) {
-        
+        let contoller = Controllers.login.getControllers()
+        navigationController?.pushViewController(contoller, animated: true)
     }
     
     @IBAction func learnMoreTapped(gesture: UITapGestureRecognizer) {

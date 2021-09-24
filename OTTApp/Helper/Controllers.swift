@@ -14,8 +14,10 @@ enum Controllers {
     case details
     case searchTab
     case register
+    case login
+    case forgotPassword
     
-    func getControllers()->UIViewController{
+    func getControllers()->UIViewController {
         var storyBoardName = ""
         var storyBoardID = ""
         switch self {
@@ -40,10 +42,15 @@ enum Controllers {
         case .register:
             storyBoardName = "OnBoarding"
             storyBoardID = "RegisterViewController"
-        
+        case .login:
+            storyBoardName = "OnBoarding"
+            storyBoardID = "LoginViewController"
+        case .forgotPassword:
+            storyBoardName = "OnBoarding"
+            storyBoardID = "ForgotPasswordViewController"
         }
-        return UIStoryboard(name: storyBoardName, bundle: nil).instantiateViewController(withIdentifier: storyBoardID)
         
+        return UIStoryboard(name: storyBoardName, bundle: nil).instantiateViewController(withIdentifier: storyBoardID)
     }
     
     

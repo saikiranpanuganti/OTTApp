@@ -59,6 +59,10 @@
 		7FC5100726FB7E23002358C0 /* OnBoarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FC5100626FB7E23002358C0 /* OnBoarding.storyboard */; };
 		7FC5100B26FE0494002358C0 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC5100A26FE0494002358C0 /* Extension.swift */; };
 		7FC5100D26FE1C93002358C0 /* CalenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC5100C26FE1C93002358C0 /* CalenderView.swift */; };
+		7FC5101026FE25B0002358C0 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC5100F26FE25B0002358C0 /* LoginViewModel.swift */; };
+		7FC5101226FE25BB002358C0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC5101126FE25BB002358C0 /* LoginViewController.swift */; };
+		7FC5101526FE2BB7002358C0 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC5101426FE2BB7002358C0 /* ForgotPasswordViewController.swift */; };
+		7FC5101726FE2BC2002358C0 /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC5101626FE2BC2002358C0 /* ForgotPasswordViewModel.swift */; };
 		9438D2AF348A415468F74CFC /* Pods_OTTApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 517C0801E354D203F92D4662 /* Pods_OTTApp.framework */; };
 		CB80B3A426D9612000E2CE44 /* MainImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB80B3A226D9612000E2CE44 /* MainImageViewCell.swift */; };
 		CB80B3A526D9612000E2CE44 /* MainImageViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB80B3A326D9612000E2CE44 /* MainImageViewCell.xib */; };
@@ -143,6 +147,10 @@
 		7FC5100626FB7E23002358C0 /* OnBoarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnBoarding.storyboard; sourceTree = "<group>"; };
 		7FC5100A26FE0494002358C0 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		7FC5100C26FE1C93002358C0 /* CalenderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalenderView.swift; sourceTree = "<group>"; };
+		7FC5100F26FE25B0002358C0 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		7FC5101126FE25BB002358C0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		7FC5101426FE2BB7002358C0 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		7FC5101626FE2BC2002358C0 /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
 		9F3AAF70C64759FD37FE4944 /* Pods-OTTApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OTTApp.release.xcconfig"; path = "Target Support Files/Pods-OTTApp/Pods-OTTApp.release.xcconfig"; sourceTree = "<group>"; };
 		CB80B3A226D9612000E2CE44 /* MainImageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainImageViewCell.swift; sourceTree = "<group>"; };
 		CB80B3A326D9612000E2CE44 /* MainImageViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainImageViewCell.xib; sourceTree = "<group>"; };
@@ -319,6 +327,8 @@
 			isa = PBXGroup;
 			children = (
 				7F09C55526D540E400B058FC /* TabBarController.swift */,
+				7FC5101326FE2BA3002358C0 /* Forgot Password */,
+				7FC5100E26FE259A002358C0 /* Login */,
 				7FC5100126FB7DB4002358C0 /* Register */,
 				7F514A3426FA26E8006A271A /* Search */,
 				DAD05E8626FA51A80004BB69 /* Search cells */,
@@ -414,6 +424,24 @@
 				7FC5100C26FE1C93002358C0 /* CalenderView.swift */,
 			);
 			path = Register;
+			sourceTree = "<group>";
+		};
+		7FC5100E26FE259A002358C0 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				7FC5100F26FE25B0002358C0 /* LoginViewModel.swift */,
+				7FC5101126FE25BB002358C0 /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		7FC5101326FE2BA3002358C0 /* Forgot Password */ = {
+			isa = PBXGroup;
+			children = (
+				7FC5101426FE2BB7002358C0 /* ForgotPasswordViewController.swift */,
+				7FC5101626FE2BC2002358C0 /* ForgotPasswordViewModel.swift */,
+			);
+			path = "Forgot Password";
 			sourceTree = "<group>";
 		};
 		CB80B3A626D964C800E2CE44 /* UserVC */ = {
@@ -595,12 +623,16 @@
 				7F4487E226DFCF5D00CF597F /* CategoriesView.swift in Sources */,
 				7F7C92BD26F0F22F00F2A251 /* DetailsView.swift in Sources */,
 				7FC5100526FB7E03002358C0 /* RegisterViewModel.swift in Sources */,
+				7FC5101226FE25BB002358C0 /* LoginViewController.swift in Sources */,
 				7F09C56D26D5504900B058FC /* ImageCollectionViewCell.swift in Sources */,
 				7F09C57026D5522900B058FC /* Constants.swift in Sources */,
 				7F4487E826DFD22100CF597F /* LabelTableViewCell.swift in Sources */,
 				7FBF08A126F39B710007459F /* DetailsHeaderTableViewCell.swift in Sources */,
 				DAD05E8426FA519B0004BB69 /* SearchDataTableViewCell.swift in Sources */,
+				7FC5101526FE2BB7002358C0 /* ForgotPasswordViewController.swift in Sources */,
+				7FC5101726FE2BC2002358C0 /* ForgotPasswordViewModel.swift in Sources */,
 				7F09C56426D54BBA00B058FC /* NetworkAdaptorHelper.swift in Sources */,
+				7FC5101026FE25B0002358C0 /* LoginViewModel.swift in Sources */,
 				7F1EB1B426E12406002E486B /* ApiHandler.swift in Sources */,
 				7F4487EB26DFDCE700CF597F /* CategoryModel.swift in Sources */,
 				7F172F6726F4F1DD006503F9 /* MoreLikeThisTableViewCell.swift in Sources */,
