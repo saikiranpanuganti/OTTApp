@@ -57,6 +57,8 @@
 		7FC5100326FB7DED002358C0 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC5100226FB7DED002358C0 /* RegisterViewController.swift */; };
 		7FC5100526FB7E03002358C0 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC5100426FB7E03002358C0 /* RegisterViewModel.swift */; };
 		7FC5100726FB7E23002358C0 /* OnBoarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FC5100626FB7E23002358C0 /* OnBoarding.storyboard */; };
+		7FC5100B26FE0494002358C0 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC5100A26FE0494002358C0 /* Extension.swift */; };
+		7FC5100D26FE1C93002358C0 /* CalenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC5100C26FE1C93002358C0 /* CalenderView.swift */; };
 		9438D2AF348A415468F74CFC /* Pods_OTTApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 517C0801E354D203F92D4662 /* Pods_OTTApp.framework */; };
 		CB80B3A426D9612000E2CE44 /* MainImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB80B3A226D9612000E2CE44 /* MainImageViewCell.swift */; };
 		CB80B3A526D9612000E2CE44 /* MainImageViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB80B3A326D9612000E2CE44 /* MainImageViewCell.xib */; };
@@ -139,6 +141,8 @@
 		7FC5100226FB7DED002358C0 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		7FC5100426FB7E03002358C0 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		7FC5100626FB7E23002358C0 /* OnBoarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnBoarding.storyboard; sourceTree = "<group>"; };
+		7FC5100A26FE0494002358C0 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		7FC5100C26FE1C93002358C0 /* CalenderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalenderView.swift; sourceTree = "<group>"; };
 		9F3AAF70C64759FD37FE4944 /* Pods-OTTApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OTTApp.release.xcconfig"; path = "Target Support Files/Pods-OTTApp/Pods-OTTApp.release.xcconfig"; sourceTree = "<group>"; };
 		CB80B3A226D9612000E2CE44 /* MainImageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainImageViewCell.swift; sourceTree = "<group>"; };
 		CB80B3A326D9612000E2CE44 /* MainImageViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainImageViewCell.xib; sourceTree = "<group>"; };
@@ -378,6 +382,7 @@
 				7F09C55B26D5433100B058FC /* Images.swift */,
 				7F09C55926D5419400B058FC /* Controllers.swift */,
 				7F8191C326D698D20086753A /* Colors.swift */,
+				7FC5100A26FE0494002358C0 /* Extension.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -406,6 +411,7 @@
 			children = (
 				7FC5100226FB7DED002358C0 /* RegisterViewController.swift */,
 				7FC5100426FB7E03002358C0 /* RegisterViewModel.swift */,
+				7FC5100C26FE1C93002358C0 /* CalenderView.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -580,6 +586,7 @@
 				7F09C52C26D53B3000B058FC /* AppDelegate.swift in Sources */,
 				7F09C55E26D549C100B058FC /* HomeTabView.swift in Sources */,
 				7F7C92BB26F0F22500F2A251 /* DetailsViewController.swift in Sources */,
+				7FC5100B26FE0494002358C0 /* Extension.swift in Sources */,
 				7F172F6226F4E6B0006503F9 /* EpisodeTableViewCell.swift in Sources */,
 				CB80B3A426D9612000E2CE44 /* MainImageViewCell.swift in Sources */,
 				7FC5100326FB7DED002358C0 /* RegisterViewController.swift in Sources */,
@@ -597,6 +604,7 @@
 				7F1EB1B426E12406002E486B /* ApiHandler.swift in Sources */,
 				7F4487EB26DFDCE700CF597F /* CategoryModel.swift in Sources */,
 				7F172F6726F4F1DD006503F9 /* MoreLikeThisTableViewCell.swift in Sources */,
+				7FC5100D26FE1C93002358C0 /* CalenderView.swift in Sources */,
 				7F09C56926D54F6D00B058FC /* MainCollectionViewCell.swift in Sources */,
 				7F4487E026DFCF3900CF597F /* CategoriesViewController.swift in Sources */,
 				7F09C55626D540E400B058FC /* TabBarController.swift in Sources */,

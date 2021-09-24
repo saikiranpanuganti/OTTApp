@@ -15,13 +15,20 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var dobTextField: UITextField!
     @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak var signInButton: UIButton!
+    @IBOutlet weak var signInMessage: UILabel!
+    @IBOutlet weak var calenderView: CalenderView!
     
     var viewModel: RegisterViewModel = RegisterViewModel()
+    var range: NSRange = NSRange()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        calenderView.isHidden = true
+        calenderView.delegate = self
         viewModel.delegate = self
+        
+        dobTextField.delegate = self
         
         registerButton.layer.borderWidth = 2.0
         registerButton.layer.borderColor = UIColor.black.cgColor
@@ -35,6 +42,18 @@ class RegisterViewController: UIViewController {
         passwordTextField.attributedPlaceholder = NSAttributedString(string: "Password", attributes: [NSAttributedString.Key.foregroundColor : UIColor.lightGray])
         confirmPasswordTextField.attributedPlaceholder = NSAttributedString(string: "Confirm Password", attributes: [NSAttributedString.Key.foregroundColor : UIColor.lightGray])
         dobTextField.attributedPlaceholder = NSAttributedString(string: "Date of Birth", attributes: [NSAttributedString.Key.foregroundColor : UIColor.lightGray])
+        
+        let text = "Sign in is protected by Google reCAPTCHA to ensure you're not a bot. Learn more."
+        signInMessage.text = text
+        let attributedString = NSMutableAttributedString(string: text)
+        range = (text as NSString).range(of: "Learn more.")
+        attributedString.addAttribute(NSAttributedString.Key.font, value: Fonts.shared.bold2, range: range)
+//        attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: Colors.shared.lightGrey, range: range)
+        signInMessage.font = Fonts.shared.regular2
+        signInMessage.textColor = Colors.shared.lightGrey
+        signInMessage.attributedText = attributedString
+        signInMessage.isUserInteractionEnabled = true
+        signInMessage.addGestureRecognizer(UITapGestureRecognizer(target:self, action: #selector(learnMoreTapped(gesture:))))
     }
     
     func isValidEmail(_ email: String) -> Bool {
@@ -90,6 +109,12 @@ class RegisterViewController: UIViewController {
     @IBAction func signInTapped(_ sender: UIButton) {
         
     }
+    
+    @IBAction func learnMoreTapped(gesture: UITapGestureRecognizer) {
+        if gesture.didTapAttributedTextInLabel(label: signInMessage, inRange: range) {
+            print("learnMoreTapped")
+        }
+    }
 }
 
 extension RegisterViewController: RegisterViewModelDelegate {
@@ -101,5 +126,25 @@ extension RegisterViewController: RegisterViewModelDelegate {
                 self.showAlert(title: "Error", message: message ?? "Server Error")
             }
         }
+    }
+}
+
+extension RegisterViewController: CalenderViewDelegate {
+    func dateSelected(date: Date?) {
+        calenderView.isHidden = true
+        if let formattedDate = date?.convertToDOBFormat() {
+            dobTextField.text = formattedDate
+            dobTextField.resignFirstResponder()
+        }
+        
+    }
+}
+
+extension RegisterViewController: UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        calenderView.isHidden = false
+    }
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        calenderView.isHidden = true
     }
 }

@@ -22,4 +22,6 @@ class Images {
     let cast = UIImage(named: "cast")
     let close = UIImage(systemName: "xmark.circle.fill")
     let netflix = UIImage(named: "netflix")
+    let leftIcon = UIImage(systemName: "chevron.left")
+    let rightIcon = UIImage(systemName: "chevron.right")
 }
