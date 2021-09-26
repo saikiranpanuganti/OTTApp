@@ -16,6 +16,7 @@ enum Controllers {
     case register
     case login
     case forgotPassword
+    case resetPassword
     
     func getControllers()->UIViewController {
         var storyBoardName = ""
@@ -48,6 +49,9 @@ enum Controllers {
         case .forgotPassword:
             storyBoardName = "OnBoarding"
             storyBoardID = "ForgotPasswordViewController"
+        case .resetPassword:
+            storyBoardName = "OnBoarding"
+            storyBoardID = "ResetPasswordViewController"
         }
         
         return UIStoryboard(name: storyBoardName, bundle: nil).instantiateViewController(withIdentifier: storyBoardID)
