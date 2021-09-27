@@ -72,7 +72,14 @@ class RegisterViewController: UIViewController {
         let passwordPred = NSPredicate(format:"SELF MATCHES %@", passwordRegEx)
         return passwordPred.evaluate(with: password)
     }
+    func isValidDOB(_ dob: String) -> Bool {
+        let dobRegEx = "(0[1-9]|[12][0-9]|3[01])-(0[1-9]|1[012])-((19|20)\\d\\d)"
+            
+        let dobPred = NSPredicate(format:"SELF MATCHES %@", dobRegEx)
+        return dobPred.evaluate(with: dob)
+    }
     
+
     func showAlert(title: String, message: String) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okButton = UIAlertAction(title: "OK", style: .cancel, handler: nil)
@@ -88,7 +95,11 @@ class RegisterViewController: UIViewController {
                         if let confirmPassword = confirmPasswordTextField.text {
                             if confirmPassword == password {
                                 if let dob = dobTextField.text {
+                                    if isValidDOB(dob){
                                     viewModel.registerUser(email: email, password: password, dob: dob)
+                                    }else{
+                                        showAlert(title: "Invalid DOB", message: "Please select date of birth")
+                                    }
                                 }else {
                                     showAlert(title: "Invalid DOB", message: "Please select date of birth")
                                 }

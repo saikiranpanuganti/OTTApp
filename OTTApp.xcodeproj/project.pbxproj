@@ -64,6 +64,9 @@
 		7FC5101526FE2BB7002358C0 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC5101426FE2BB7002358C0 /* ForgotPasswordViewController.swift */; };
 		7FC5101726FE2BC2002358C0 /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC5101626FE2BC2002358C0 /* ForgotPasswordViewModel.swift */; };
 		9438D2AF348A415468F74CFC /* Pods_OTTApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 517C0801E354D203F92D4662 /* Pods_OTTApp.framework */; };
+		CB2DA5AA27006CAA00DB2F3E /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2DA5A927006CAA00DB2F3E /* ResetPasswordViewController.swift */; };
+		CB2DA5AC27006CCA00DB2F3E /* ResetPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2DA5AB27006CCA00DB2F3E /* ResetPasswordViewModel.swift */; };
+		CB48587026FF50F400286787 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB48586F26FF50F400286787 /* LoginModel.swift */; };
 		CB80B3A426D9612000E2CE44 /* MainImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB80B3A226D9612000E2CE44 /* MainImageViewCell.swift */; };
 		CB80B3A526D9612000E2CE44 /* MainImageViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB80B3A326D9612000E2CE44 /* MainImageViewCell.xib */; };
 		CB80B3A826D9650C00E2CE44 /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB80B3A726D9650C00E2CE44 /* UsersViewController.swift */; };
@@ -152,6 +155,9 @@
 		7FC5101426FE2BB7002358C0 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		7FC5101626FE2BC2002358C0 /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
 		9F3AAF70C64759FD37FE4944 /* Pods-OTTApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OTTApp.release.xcconfig"; path = "Target Support Files/Pods-OTTApp/Pods-OTTApp.release.xcconfig"; sourceTree = "<group>"; };
+		CB2DA5A927006CAA00DB2F3E /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
+		CB2DA5AB27006CCA00DB2F3E /* ResetPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewModel.swift; sourceTree = "<group>"; };
+		CB48586F26FF50F400286787 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		CB80B3A226D9612000E2CE44 /* MainImageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainImageViewCell.swift; sourceTree = "<group>"; };
 		CB80B3A326D9612000E2CE44 /* MainImageViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainImageViewCell.xib; sourceTree = "<group>"; };
 		CB80B3A726D9650C00E2CE44 /* UsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
@@ -327,6 +333,7 @@
 			isa = PBXGroup;
 			children = (
 				7F09C55526D540E400B058FC /* TabBarController.swift */,
+				CB2DA5A827006C9200DB2F3E /* ResetPassword */,
 				7FC5101326FE2BA3002358C0 /* Forgot Password */,
 				7FC5100E26FE259A002358C0 /* Login */,
 				7FC5100126FB7DB4002358C0 /* Register */,
@@ -346,8 +353,8 @@
 				7F09C56526D54E2400B058FC /* HomeModel.swift */,
 				7F7B428826E6680D000F23E0 /* SubCategory.swift */,
 				7F09C55F26D549CF00B058FC /* HomeTabViewModel.swift */,
-				7F09C55726D5416100B058FC /* HomeTabViewController.swift */,
 				7F09C55D26D549C100B058FC /* HomeTabView.swift */,
+				7F09C55726D5416100B058FC /* HomeTabViewController.swift */,
 				7F18EB8526DA8CE7005B6680 /* MenuView.swift */,
 			);
 			path = HomeTab;
@@ -430,6 +437,7 @@
 			isa = PBXGroup;
 			children = (
 				7FC5100F26FE25B0002358C0 /* LoginViewModel.swift */,
+				CB48586F26FF50F400286787 /* LoginModel.swift */,
 				7FC5101126FE25BB002358C0 /* LoginViewController.swift */,
 			);
 			path = Login;
@@ -442,6 +450,15 @@
 				7FC5101626FE2BC2002358C0 /* ForgotPasswordViewModel.swift */,
 			);
 			path = "Forgot Password";
+			sourceTree = "<group>";
+		};
+		CB2DA5A827006C9200DB2F3E /* ResetPassword */ = {
+			isa = PBXGroup;
+			children = (
+				CB2DA5A927006CAA00DB2F3E /* ResetPasswordViewController.swift */,
+				CB2DA5AB27006CCA00DB2F3E /* ResetPasswordViewModel.swift */,
+			);
+			path = ResetPassword;
 			sourceTree = "<group>";
 		};
 		CB80B3A626D964C800E2CE44 /* UserVC */ = {
@@ -610,6 +627,7 @@
 				7F09C56026D549CF00B058FC /* HomeTabViewModel.swift in Sources */,
 				7F8191C126D698040086753A /* LabelCollectionReusableView.swift in Sources */,
 				7F514A3826FA28A4006A271A /* SearchViewModel.swift in Sources */,
+				CB2DA5AC27006CCA00DB2F3E /* ResetPasswordViewModel.swift in Sources */,
 				7F7C92C126F0FD1A00F2A251 /* DetailsModel.swift in Sources */,
 				7F09C52C26D53B3000B058FC /* AppDelegate.swift in Sources */,
 				7F09C55E26D549C100B058FC /* HomeTabView.swift in Sources */,
@@ -642,6 +660,7 @@
 				7F09C55626D540E400B058FC /* TabBarController.swift in Sources */,
 				7F8191C426D698D20086753A /* Colors.swift in Sources */,
 				7F514A3626FA26FA006A271A /* SearchViewController.swift in Sources */,
+				CB48587026FF50F400286787 /* LoginModel.swift in Sources */,
 				7F09C55A26D5419400B058FC /* Controllers.swift in Sources */,
 				7F09C56626D54E2400B058FC /* HomeModel.swift in Sources */,
 				CB80B3AA26D965CB00E2CE44 /* UsersView.swift in Sources */,
@@ -652,6 +671,7 @@
 				7F7C92BF26F0F23B00F2A251 /* DetailsViewModel.swift in Sources */,
 				7F4487E426DFCFA800CF597F /* CategoriesViewModel.swift in Sources */,
 				CB80B3A826D9650C00E2CE44 /* UsersViewController.swift in Sources */,
+				CB2DA5AA27006CAA00DB2F3E /* ResetPasswordViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
