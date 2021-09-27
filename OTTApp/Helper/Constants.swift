@@ -9,3 +9,5 @@ import UIKit
 
 let screenWidth : CGFloat = UIScreen.main.bounds.width
 let screenHeight : CGFloat = UIScreen.main.bounds.height
+let kLoggedIn = "loggedin"
+let kuserDetails = "userdetails"

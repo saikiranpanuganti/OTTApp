@@ -114,7 +114,6 @@ class DetailsHeaderTableViewCell: UITableViewHeaderFooterView {
     }
     
     @IBAction func seasonTapped(_ sender: UIButton) {
-        print("seasonTapped")
         delegate?.seasonTapped()
     }
 }

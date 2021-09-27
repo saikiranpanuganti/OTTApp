@@ -42,8 +42,6 @@ class RegisterViewModel {
                                     self.delegate?.registrationResponse(success: true, message: nil)
                                 }
                             }
-                        }else {
-                            print()
                         }
                     }catch {
                         print(error.localizedDescription)

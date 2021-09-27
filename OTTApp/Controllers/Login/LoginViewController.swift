@@ -55,33 +55,32 @@ class LoginViewController: UIViewController {
         alertController.addAction(okButton)
         self.present(alertController, animated: true, completion: nil)
     }
+    
+    func navigateToSplash() {
+        DispatchQueue.main.async {
+            let controller = Controllers.users.getControllers()
+            self.navigationController?.viewControllers = [controller]
+        }
+    }
 
     @IBAction func loginTapped() {
-        
         if let email = emailTextField.text {
             if isValidEmail(email){
-            if let password = passwordTextField.text{
-                if isValidPassword(password){
-                    
-                viewModel.loginUser(email: email, password: password)
-                    
+                if let password = passwordTextField.text{
+                    if isValidPassword(password) {
+                        viewModel.loginUser(email: email, password: password)
+                    }else {
+                        showAlert(title: "Invalid Password", message: "Please enter Valid password")
+                    }
                 }else {
-                    showAlert(title: "Invalid Password", message: "Please enter Valid password")
+                    showAlert(title: "Password Required ", message: "Please enter password")
                 }
-            }else {
-                showAlert(title: "Password Required ", message: "Please enter password")
-            }
-                
             }else {
                 showAlert(title: "Invalid Email", message: "Please enter valid Email")
             }
         }else {
             showAlert(title: "Email Requires", message: "Please enter Email")
-        
         }
-        
-        
-       // print("Call APi and print response from APi")
     }
     
     @IBAction func registerTapped() {
@@ -100,7 +99,7 @@ extension LoginViewController: LoginViewModelDelegate {
     func loginResponse(success: Bool, message: String?) {
         DispatchQueue.main.async {
             if success {
-                self.showAlert(title: "Success", message: "User Login Succesfully")
+                self.navigateToSplash()
             }else {
                 self.showAlert(title: "Error", message:  "Server Error")
             }

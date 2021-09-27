@@ -27,6 +27,7 @@
 		7F09C56D26D5504900B058FC /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F09C56B26D5504900B058FC /* ImageCollectionViewCell.swift */; };
 		7F09C56E26D5504900B058FC /* ImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F09C56C26D5504900B058FC /* ImageCollectionViewCell.xib */; };
 		7F09C57026D5522900B058FC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F09C56F26D5522900B058FC /* Constants.swift */; };
+		7F12E21027021CEA004EB27A /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F12E20F27021CEA004EB27A /* SplashViewController.swift */; };
 		7F172F6226F4E6B0006503F9 /* EpisodeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F172F6026F4E6B0006503F9 /* EpisodeTableViewCell.swift */; };
 		7F172F6326F4E6B0006503F9 /* EpisodeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F172F6126F4E6B0006503F9 /* EpisodeTableViewCell.xib */; };
 		7F172F6726F4F1DD006503F9 /* MoreLikeThisTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F172F6526F4F1DD006503F9 /* MoreLikeThisTableViewCell.swift */; };
@@ -118,6 +119,7 @@
 		7F09C56B26D5504900B058FC /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		7F09C56C26D5504900B058FC /* ImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCollectionViewCell.xib; sourceTree = "<group>"; };
 		7F09C56F26D5522900B058FC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		7F12E20F27021CEA004EB27A /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		7F172F6026F4E6B0006503F9 /* EpisodeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeTableViewCell.swift; sourceTree = "<group>"; };
 		7F172F6126F4E6B0006503F9 /* EpisodeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EpisodeTableViewCell.xib; sourceTree = "<group>"; };
 		7F172F6526F4F1DD006503F9 /* MoreLikeThisTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreLikeThisTableViewCell.swift; sourceTree = "<group>"; };
@@ -248,6 +250,14 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		7F12E20E27021CD6004EB27A /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				7F12E20F27021CEA004EB27A /* SplashViewController.swift */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
 		7F172F5F26F4E698006503F9 /* EpisodeCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -333,6 +343,7 @@
 			isa = PBXGroup;
 			children = (
 				7F09C55526D540E400B058FC /* TabBarController.swift */,
+				7F12E20E27021CD6004EB27A /* Splash */,
 				CB2DA5A827006C9200DB2F3E /* ResetPassword */,
 				7FC5101326FE2BA3002358C0 /* Forgot Password */,
 				7FC5100E26FE259A002358C0 /* Login */,
@@ -625,6 +636,7 @@
 				7F7B428926E6680D000F23E0 /* SubCategory.swift in Sources */,
 				7F09C55426D53D8100B058FC /* Fonts.swift in Sources */,
 				7F09C56026D549CF00B058FC /* HomeTabViewModel.swift in Sources */,
+				7F12E21027021CEA004EB27A /* SplashViewController.swift in Sources */,
 				7F8191C126D698040086753A /* LabelCollectionReusableView.swift in Sources */,
 				7F514A3826FA28A4006A271A /* SearchViewModel.swift in Sources */,
 				CB2DA5AC27006CCA00DB2F3E /* ResetPasswordViewModel.swift in Sources */,
@@ -822,6 +834,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MWRXZU8DP6;
 				INFOPLIST_FILE = OTTApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -842,6 +855,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MWRXZU8DP6;
 				INFOPLIST_FILE = OTTApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -36,13 +36,23 @@ class ResetPasswordViewController: UIViewController {
     
     func showAlert(title: String, message: String) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let okButton = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        let okButton = UIAlertAction(title: "OK", style: .default) { action in
+            if title == "Success" {
+                self.navigateToLogin()
+            }
+        }
         alertController.addAction(okButton)
         self.present(alertController, animated: true, completion: nil)
     }
     
+    func navigateToLogin() {
+        DispatchQueue.main.async {
+            let controller = Controllers.login.getControllers()
+            self.navigationController?.pushViewController(controller, animated: true)
+        }
+    }
+    
     @IBAction func submitTapped(){
-        
         if let password = newPasswordTxt.text{
             if isValidPassword(password){
                 if let confirmPassword = confirmPasswordTxt.text{
@@ -67,16 +77,12 @@ class ResetPasswordViewController: UIViewController {
 
 extension ResetPasswordViewController:ResetPasswordViewModelDelegate{
     func resetPassword(success: Bool, message: String) {
-        
         DispatchQueue.main.async {
-            
-                if success{
-                    self.showAlert(title: "Succes", message: message)
-                }else{
-                    self.showAlert(title: "Error", message: message)
+            if success{
+                self.showAlert(title: "Success", message: message)
+            }else{
+                self.showAlert(title: "Error", message: message)
             }
         }
-        
     }
-    
 }

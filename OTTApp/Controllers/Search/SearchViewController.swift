@@ -68,7 +68,6 @@ extension SearchViewController: UITextFieldDelegate {
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        print("textFieldDidBeginEditing")
         cancelButton.isHidden = false
         stackWidth.isActive = false
         stackWidth.constant = UIScreen.main.bounds.width - 95

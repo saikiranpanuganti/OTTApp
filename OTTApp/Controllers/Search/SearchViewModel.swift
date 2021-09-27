@@ -16,8 +16,6 @@ class SearchViewModel {
     var searchdata: SearchModel?
     
     func getSearchData(queryString: String) {
-        print("queryString", queryString)
-        
         var parameters: [String: String] = [:]
         parameters["search_query"] = queryString
         

@@ -78,13 +78,23 @@ class RegisterViewController: UIViewController {
         let dobPred = NSPredicate(format:"SELF MATCHES %@", dobRegEx)
         return dobPred.evaluate(with: dob)
     }
-    
 
     func showAlert(title: String, message: String) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let okButton = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        let okButton = UIAlertAction(title: "Ok", style: .default) { action in
+            if title == "Success" {
+                self.navigateToLoginScren()
+            }
+        }
         alertController.addAction(okButton)
         self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func navigateToLoginScren() {
+        DispatchQueue.main.async {
+            let contoller = Controllers.login.getControllers()
+            self.navigationController?.pushViewController(contoller, animated: true)
+        }
     }
 
     @IBAction func registerTapped(_ sender: UIButton) {
@@ -122,8 +132,7 @@ class RegisterViewController: UIViewController {
     }
     
     @IBAction func signInTapped(_ sender: UIButton) {
-        let contoller = Controllers.login.getControllers()
-        navigationController?.pushViewController(contoller, animated: true)
+        navigateToLoginScren()
     }
     
     @IBAction func learnMoreTapped(gesture: UITapGestureRecognizer) {

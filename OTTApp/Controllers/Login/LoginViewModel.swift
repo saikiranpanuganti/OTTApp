@@ -28,46 +28,32 @@ class LoginViewModel {
         headers["Content-Type"] = "application/json"
         
         NetworkAdaptor.request(url: ApiHandler.login.url(), method: .post, headers: headers, urlParameters: urlParameters, bodyParameters: bodyParameters) { data, response, error in
-            
             if let error = error{
                 print(error.localizedDescription)
             }else{
                 if let data = data {
-                    
                     do{
-                       if let jsonData = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String:Any]
-                       {
-                        if let status = jsonData["statusCode"] as? Int{
-                            if status != 200{
-                                
-                                self.delegate?.loginResponse(success: false, message: "Server Error")
-                                
-                            }else{
-                                
-                                self.delegate?.loginResponse(success: true, message: "Login Successful")
-                            }
-                            print(status)
+                        let loginData = try JSONDecoder().decode(LoginModel.self, from: data)
+                        if loginData.statusCode == 200 {
+                            UserDefaults.standard.setValue(true, forKey: kLoggedIn)
+                            
+                            let data = try JSONEncoder().encode(loginData.data)
+                            UserDefaults.standard.set(data, forKey: kuserDetails)
+                            
+                            self.delegate?.loginResponse(success: true, message: "User successfully logged in")
+                        }else {
+                            self.delegate?.loginResponse(success: false, message: "Server Error")
                         }
-                       }
-
-                    }
-                    catch{
-                        
+                    }catch {
                         print(error.localizedDescription)
+                        self.delegate?.loginResponse(success: false, message: "Server Error")
                     }
-                    
-                    
-                    
                 }
-                
-                
-                
-                
-                
-                
             }
         }
         
     }
     
 }
+
+

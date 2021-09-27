@@ -12,10 +12,10 @@ import Foundation
 // MARK: - LoginModel
 struct LoginModel: Codable {
     let statusCode: Int?
-    let data: DataClass?
+    let data: UserData?
 }
 
 // MARK: - DataClass
-struct DataClass: Codable {
+struct UserData: Codable {
     let password, email, userid, dob: String?
 }

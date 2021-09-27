@@ -416,7 +416,6 @@ fileprivate class CalenderCollectionViewCell: UICollectionViewCell {
     
     private func setUpUI() {
         let radius = (frame.height < frame.width) ? frame.height : frame.width
-        print(radius)
         roundedView.layer.cornerRadius = (radius-5)/2
     }
     
