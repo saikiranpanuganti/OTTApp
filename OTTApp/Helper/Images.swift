@@ -12,10 +12,15 @@ class Images {
    static let shared :Images = Images()
     private init() { }
     
-    let homeUnselected = UIImage(named: "Home")?.withTintColor(.lightGray, renderingMode: .alwaysTemplate)
-    let homeSelected = UIImage(named: "Home")?.withTintColor(.white, renderingMode: .alwaysTemplate)
+    let homeUnselected = UIImage(systemName: "house")?.withTintColor(.lightGray, renderingMode: .alwaysTemplate)
+    let homeSelected = UIImage(systemName: "house.fill")?.withTintColor(.white, renderingMode: .alwaysTemplate)
+    
     let searchUnSelected = UIImage(systemName: "magnifyingglass")?.withTintColor(.lightGray, renderingMode: .alwaysTemplate)
-    let searchSelected = UIImage(systemName: "magnifyingglass")?.withTintColor(.white, renderingMode: .alwaysTemplate)
+    let searchSelected = UIImage(systemName: "magnifyingglass.circle.fill")?.withTintColor(.white, renderingMode: .alwaysTemplate)
+    
+    let settingsUnSelected = UIImage(systemName: "gearshape")?.withTintColor(.lightGray, renderingMode: .alwaysTemplate)
+    let settingsSelected = UIImage(systemName: "gearshape.fill")?.withTintColor(.white, renderingMode: .alwaysTemplate)
+    
     let userImage = UIImage(named: "imageee")
     let netflixLogo = UIImage(named: "netflixLogo")
     let downArrow = UIImage(named: "down-arrow")

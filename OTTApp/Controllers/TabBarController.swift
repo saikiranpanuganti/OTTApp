@@ -29,7 +29,11 @@ class TabBarController: UITabBarController {
         let searchTabBarItem = UITabBarItem(title: "Search", image: Images.shared.searchUnSelected?.withRenderingMode(.alwaysTemplate), selectedImage: Images.shared.searchSelected?.withRenderingMode(.alwaysTemplate))
         searchTab.tabBarItem = searchTabBarItem
         
-        self.viewControllers = [homeTab, searchTab]
+        let settingsTab = Controllers.settingsTab.getControllers()
+        let settingsTabBarItem = UITabBarItem(title: "Settings", image: Images.shared.settingsUnSelected?.withRenderingMode(.alwaysTemplate), selectedImage: Images.shared.settingsSelected?.withRenderingMode(.alwaysTemplate))
+        settingsTab.tabBarItem = settingsTabBarItem
+        
+        self.viewControllers = [homeTab, searchTab, settingsTab]
     }
     
 

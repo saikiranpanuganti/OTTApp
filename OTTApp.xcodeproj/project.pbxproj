@@ -30,6 +30,7 @@
 		7F12E21027021CEA004EB27A /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F12E20F27021CEA004EB27A /* SplashViewController.swift */; };
 		7F12E38327036539004EB27A /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F12E38227036539004EB27A /* AppData.swift */; };
 		7F12E38527036B14004EB27A /* netflixGif.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7F12E38427036B14004EB27A /* netflixGif.gif */; };
+		7F12E38827037548004EB27A /* SettingsTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F12E38727037548004EB27A /* SettingsTabViewController.swift */; };
 		7F172F6226F4E6B0006503F9 /* EpisodeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F172F6026F4E6B0006503F9 /* EpisodeTableViewCell.swift */; };
 		7F172F6326F4E6B0006503F9 /* EpisodeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F172F6126F4E6B0006503F9 /* EpisodeTableViewCell.xib */; };
 		7F172F6726F4F1DD006503F9 /* MoreLikeThisTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F172F6526F4F1DD006503F9 /* MoreLikeThisTableViewCell.swift */; };
@@ -124,6 +125,7 @@
 		7F12E20F27021CEA004EB27A /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		7F12E38227036539004EB27A /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
 		7F12E38427036B14004EB27A /* netflixGif.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = netflixGif.gif; sourceTree = "<group>"; };
+		7F12E38727037548004EB27A /* SettingsTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTabViewController.swift; sourceTree = "<group>"; };
 		7F172F6026F4E6B0006503F9 /* EpisodeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeTableViewCell.swift; sourceTree = "<group>"; };
 		7F172F6126F4E6B0006503F9 /* EpisodeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EpisodeTableViewCell.xib; sourceTree = "<group>"; };
 		7F172F6526F4F1DD006503F9 /* MoreLikeThisTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreLikeThisTableViewCell.swift; sourceTree = "<group>"; };
@@ -263,6 +265,14 @@
 			path = Splash;
 			sourceTree = "<group>";
 		};
+		7F12E38627037525004EB27A /* SettingsTab */ = {
+			isa = PBXGroup;
+			children = (
+				7F12E38727037548004EB27A /* SettingsTabViewController.swift */,
+			);
+			path = SettingsTab;
+			sourceTree = "<group>";
+		};
 		7F172F5F26F4E698006503F9 /* EpisodeCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -348,6 +358,7 @@
 			isa = PBXGroup;
 			children = (
 				7F09C55526D540E400B058FC /* TabBarController.swift */,
+				7F12E38627037525004EB27A /* SettingsTab */,
 				7F12E20E27021CD6004EB27A /* Splash */,
 				CB2DA5A827006C9200DB2F3E /* ResetPassword */,
 				7FC5101326FE2BA3002358C0 /* Forgot Password */,
@@ -649,6 +660,7 @@
 				CB2DA5AC27006CCA00DB2F3E /* ResetPasswordViewModel.swift in Sources */,
 				7F7C92C126F0FD1A00F2A251 /* DetailsModel.swift in Sources */,
 				7F09C52C26D53B3000B058FC /* AppDelegate.swift in Sources */,
+				7F12E38827037548004EB27A /* SettingsTabViewController.swift in Sources */,
 				7F09C55E26D549C100B058FC /* HomeTabView.swift in Sources */,
 				7F7C92BB26F0F22500F2A251 /* DetailsViewController.swift in Sources */,
 				7FC5100B26FE0494002358C0 /* Extension.swift in Sources */,
