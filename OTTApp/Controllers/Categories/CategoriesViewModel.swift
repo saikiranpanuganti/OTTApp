@@ -37,46 +37,51 @@ class CategoriesViewModel {
     }
     
     func getMovieCategories() {
-        let urlString = "https://yrc0uzwnw4.execute-api.ap-south-1.amazonaws.com/dev/moviecategories"
-        
-        var headers: [String: String] = [:]
-        headers["Authorization"] = "cf606825b8a045c1aae39f7fe39de6c6"
-        
-        NetworkAdaptor.request(url: urlString, method: .get, headers: headers, urlParameters: nil, bodyParameters: nil) { data, response, error in
-            if error == nil {
-                if let data = data {
-                    do {
-                        self.categoriesData = try JSONDecoder().decode(CategoryModel.self, from: data)
-                        self.delegate?.updateUI()
-                    }catch  {
-                        print(error.localizedDescription)
-                    }
-                }
-            }else {
-                print("Show Alert")
-            }
-        }
+        categoriesData = AppData.shared.moviesCategoriesData
+        delegate?.updateUI()
+//        let urlString = "https://yrc0uzwnw4.execute-api.ap-south-1.amazonaws.com/dev/moviecategories"
+//
+//        var headers: [String: String] = [:]
+//        headers["Authorization"] = "cf606825b8a045c1aae39f7fe39de6c6"
+//
+//        NetworkAdaptor.request(url: urlString, method: .get, headers: headers, urlParameters: nil, bodyParameters: nil) { data, response, error in
+//            if error == nil {
+//                if let data = data {
+//                    do {
+//                        self.categoriesData = try JSONDecoder().decode(CategoryModel.self, from: data)
+//                        self.delegate?.updateUI()
+//                    }catch  {
+//                        print(error.localizedDescription)
+//                    }
+//                }
+//            }else {
+//                print("Show Alert")
+//            }
+//        }
     }
     
     func getTvShowsCategories() {
-        let urlString = "https://yrc0uzwnw4.execute-api.ap-south-1.amazonaws.com/dev/tvcategories"
+        categoriesData = AppData.shared.tvCategoriesData
+        delegate?.updateUI()
         
-        var headers: [String: String] = [:]
-        headers["Authorization"] = "cf606825b8a045c1aae39f7fe39de6c6"
-        
-        NetworkAdaptor.request(url: urlString, method: .get, headers: headers, urlParameters: nil, bodyParameters: nil) { data, response, error in
-            if error == nil {
-                if let data = data {
-                    do {
-                        self.categoriesData = try JSONDecoder().decode(CategoryModel.self, from: data)
-                        self.delegate?.updateUI()
-                    }catch  {
-                        print(error.localizedDescription)
-                    }
-                }
-            }else {
-                print("Show Alert")
-            }
-        }
+//        let urlString = "https://yrc0uzwnw4.execute-api.ap-south-1.amazonaws.com/dev/tvcategories"
+//
+//        var headers: [String: String] = [:]
+//        headers["Authorization"] = "cf606825b8a045c1aae39f7fe39de6c6"
+//
+//        NetworkAdaptor.request(url: urlString, method: .get, headers: headers, urlParameters: nil, bodyParameters: nil) { data, response, error in
+//            if error == nil {
+//                if let data = data {
+//                    do {
+//                        self.categoriesData = try JSONDecoder().decode(CategoryModel.self, from: data)
+//                        self.delegate?.updateUI()
+//                    }catch  {
+//                        print(error.localizedDescription)
+//                    }
+//                }
+//            }else {
+//                print("Show Alert")
+//            }
+//        }
     }
 }

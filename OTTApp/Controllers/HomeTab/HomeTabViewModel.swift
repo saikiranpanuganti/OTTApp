@@ -24,27 +24,30 @@ class HomeTabViewModel{
     
     func getData() {
         self.category = .home
+        homeData = AppData.shared.homeData
+        delegate?.updateUI()
         
-        if homeData != nil {
-            delegate?.updateUI()
-            return
-        }
+//        if homeData != nil {
+//            delegate?.updateUI()
+//            return
+//        }
+//
+//        var headers : [String:String] = [:]
+//        headers["Authorization"] = "cf606825b8a045c1aae39f7fe39de6c6"
+//
+//        NetworkAdaptor.request(url: ApiHandler.home.url(), method: .get,headers: headers) { data, response, error in
+//            do{
+//                if let data = data {
+//                    self.homeData = try JSONDecoder().decode(Home.self, from: data)
+//                    self.category = .home
+//                    self.delegate?.updateUI()
+//                }
+//            }
+//            catch{
+//                print(error.localizedDescription)
+//            }
+//        }
         
-        var headers : [String:String] = [:]
-        headers["Authorization"] = "cf606825b8a045c1aae39f7fe39de6c6"
-        
-        NetworkAdaptor.request(url: ApiHandler.home.url(), method: .get,headers: headers) { data, response, error in
-            do{
-                if let data = data {
-                    self.homeData = try JSONDecoder().decode(Home.self, from: data)
-                    self.category = .home
-                    self.delegate?.updateUI()
-                }
-            }
-            catch{
-                print(error.localizedDescription)
-            }
-        }
     }
     
     func getTvShowsData() {

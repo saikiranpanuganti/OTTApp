@@ -14,6 +14,7 @@ class UsersViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print("Loading UsersViewController")
         usersView.delegate = self
         usersView.setupUI()
     }
@@ -23,6 +24,6 @@ class UsersViewController: UIViewController {
 extension UsersViewController: UsersViewDelegate {
     func userTapped() {
         let controller = Controllers.tabBar.getControllers()
-        navigationController?.pushViewController(controller, animated: true)
+        navigationController?.viewControllers = [controller]
     }
 }

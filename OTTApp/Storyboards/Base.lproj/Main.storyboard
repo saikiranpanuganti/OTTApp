@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cte-Rq-60F">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -483,10 +484,27 @@
                     <view key="view" contentMode="scaleToFill" id="1yP-tt-dJj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hkl-1E-Oh6">
+                                <rect key="frame" x="214" y="388" width="160" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="BSt-Gy-4tA"/>
+                                    <constraint firstAttribute="height" constant="120" id="aNm-vy-QtZ"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="r4F-Rv-tgs"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="r4F-Rv-tgs" firstAttribute="trailing" secondItem="Hkl-1E-Oh6" secondAttribute="trailing" constant="40" id="9lP-LZ-iGp"/>
+                            <constraint firstItem="Hkl-1E-Oh6" firstAttribute="centerY" secondItem="1yP-tt-dJj" secondAttribute="centerY" id="j2I-Fv-etW"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Qu1-fN-ute"/>
+                    <connections>
+                        <outlet property="logoImage" destination="Hkl-1E-Oh6" id="vNe-f4-uat"/>
+                        <outlet property="logoImageWidth" destination="BSt-Gy-4tA" id="m88-bT-ttE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="psB-qa-vyW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

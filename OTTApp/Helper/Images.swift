@@ -24,4 +24,6 @@ class Images {
     let netflix = UIImage(named: "netflix")
     let leftIcon = UIImage(systemName: "chevron.left")
     let rightIcon = UIImage(systemName: "chevron.right")
+    var netflixGif = UIImage.gifImageWithName("netflixGif")
+    var netflixImage = UIImage(named: "netflixImage")
 }

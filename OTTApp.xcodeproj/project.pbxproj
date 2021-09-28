@@ -28,6 +28,8 @@
 		7F09C56E26D5504900B058FC /* ImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F09C56C26D5504900B058FC /* ImageCollectionViewCell.xib */; };
 		7F09C57026D5522900B058FC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F09C56F26D5522900B058FC /* Constants.swift */; };
 		7F12E21027021CEA004EB27A /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F12E20F27021CEA004EB27A /* SplashViewController.swift */; };
+		7F12E38327036539004EB27A /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F12E38227036539004EB27A /* AppData.swift */; };
+		7F12E38527036B14004EB27A /* netflixGif.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7F12E38427036B14004EB27A /* netflixGif.gif */; };
 		7F172F6226F4E6B0006503F9 /* EpisodeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F172F6026F4E6B0006503F9 /* EpisodeTableViewCell.swift */; };
 		7F172F6326F4E6B0006503F9 /* EpisodeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F172F6126F4E6B0006503F9 /* EpisodeTableViewCell.xib */; };
 		7F172F6726F4F1DD006503F9 /* MoreLikeThisTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F172F6526F4F1DD006503F9 /* MoreLikeThisTableViewCell.swift */; };
@@ -120,6 +122,8 @@
 		7F09C56C26D5504900B058FC /* ImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCollectionViewCell.xib; sourceTree = "<group>"; };
 		7F09C56F26D5522900B058FC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		7F12E20F27021CEA004EB27A /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		7F12E38227036539004EB27A /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
+		7F12E38427036B14004EB27A /* netflixGif.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = netflixGif.gif; sourceTree = "<group>"; };
 		7F172F6026F4E6B0006503F9 /* EpisodeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeTableViewCell.swift; sourceTree = "<group>"; };
 		7F172F6126F4E6B0006503F9 /* EpisodeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EpisodeTableViewCell.xib; sourceTree = "<group>"; };
 		7F172F6526F4F1DD006503F9 /* MoreLikeThisTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreLikeThisTableViewCell.swift; sourceTree = "<group>"; };
@@ -211,6 +215,7 @@
 				7F4487DD26DFCF0D00CF597F /* Storyboards */,
 				7F09C53F26D53CCC00B058FC /* Resources */,
 				7F09C53426D53B3300B058FC /* Assets.xcassets */,
+				7F12E38427036B14004EB27A /* netflixGif.gif */,
 				7F09C53626D53B3300B058FC /* LaunchScreen.storyboard */,
 				7F09C53926D53B3300B058FC /* Info.plist */,
 			);
@@ -411,6 +416,7 @@
 				7F09C55926D5419400B058FC /* Controllers.swift */,
 				7F8191C326D698D20086753A /* Colors.swift */,
 				7FC5100A26FE0494002358C0 /* Extension.swift */,
+				7F12E38227036539004EB27A /* AppData.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -568,6 +574,7 @@
 			files = (
 				7F4ED46526F23F1900B5CBA6 /* DetailsTableViewCell.xib in Resources */,
 				DAD05E8526FA519B0004BB69 /* SearchDataTableViewCell.xib in Resources */,
+				7F12E38527036B14004EB27A /* netflixGif.gif in Resources */,
 				7F172F6326F4E6B0006503F9 /* EpisodeTableViewCell.xib in Resources */,
 				7F09C53826D53B3300B058FC /* LaunchScreen.storyboard in Resources */,
 				7F172F6826F4F1DD006503F9 /* MoreLikeThisTableViewCell.xib in Resources */,
@@ -677,6 +684,7 @@
 				7F09C56626D54E2400B058FC /* HomeModel.swift in Sources */,
 				CB80B3AA26D965CB00E2CE44 /* UsersView.swift in Sources */,
 				7F09C55C26D5433100B058FC /* Images.swift in Sources */,
+				7F12E38327036539004EB27A /* AppData.swift in Sources */,
 				7F4ED46426F23F1900B5CBA6 /* DetailsTableViewCell.swift in Sources */,
 				7F09C52E26D53B3000B058FC /* SceneDelegate.swift in Sources */,
 				7F09C55826D5416100B058FC /* HomeTabViewController.swift in Sources */,
