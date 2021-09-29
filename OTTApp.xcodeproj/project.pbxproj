@@ -77,6 +77,16 @@
 		CB80B3AA26D965CB00E2CE44 /* UsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB80B3A926D965CB00E2CE44 /* UsersView.swift */; };
 		DAD05E8426FA519B0004BB69 /* SearchDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD05E8226FA519B0004BB69 /* SearchDataTableViewCell.swift */; };
 		DAD05E8526FA519B0004BB69 /* SearchDataTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DAD05E8326FA519B0004BB69 /* SearchDataTableViewCell.xib */; };
+		DAEEB4DC2703946100691CEA /* MobileDataUsageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEEB4DA2703946100691CEA /* MobileDataUsageTableViewCell.swift */; };
+		DAEEB4DD2703946100691CEA /* MobileDataUsageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DAEEB4DB2703946100691CEA /* MobileDataUsageTableViewCell.xib */; };
+		DAEEB4E02703993B00691CEA /* SettingsHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEEB4DE2703993B00691CEA /* SettingsHeaderTableViewCell.swift */; };
+		DAEEB4E12703993B00691CEA /* SettingsHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DAEEB4DF2703993B00691CEA /* SettingsHeaderTableViewCell.xib */; };
+		DAEEB4E427039B3B00691CEA /* WifiOnlyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEEB4E227039B3B00691CEA /* WifiOnlyTableViewCell.swift */; };
+		DAEEB4E527039B3B00691CEA /* WifiOnlyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DAEEB4E327039B3B00691CEA /* WifiOnlyTableViewCell.xib */; };
+		DAEEB4E82703B5A500691CEA /* InternetSpeedTestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEEB4E62703B5A500691CEA /* InternetSpeedTestTableViewCell.swift */; };
+		DAEEB4E92703B5A500691CEA /* InternetSpeedTestTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DAEEB4E72703B5A500691CEA /* InternetSpeedTestTableViewCell.xib */; };
+		DAFC475127049909005A024C /* MemoryCalculationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFC474F27049909005A024C /* MemoryCalculationTableViewCell.swift */; };
+		DAFC475227049909005A024C /* MemoryCalculationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DAFC475027049909005A024C /* MemoryCalculationTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -172,6 +182,16 @@
 		CB80B3A926D965CB00E2CE44 /* UsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersView.swift; sourceTree = "<group>"; };
 		DAD05E8226FA519B0004BB69 /* SearchDataTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDataTableViewCell.swift; sourceTree = "<group>"; };
 		DAD05E8326FA519B0004BB69 /* SearchDataTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchDataTableViewCell.xib; sourceTree = "<group>"; };
+		DAEEB4DA2703946100691CEA /* MobileDataUsageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileDataUsageTableViewCell.swift; sourceTree = "<group>"; };
+		DAEEB4DB2703946100691CEA /* MobileDataUsageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MobileDataUsageTableViewCell.xib; sourceTree = "<group>"; };
+		DAEEB4DE2703993B00691CEA /* SettingsHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		DAEEB4DF2703993B00691CEA /* SettingsHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsHeaderTableViewCell.xib; sourceTree = "<group>"; };
+		DAEEB4E227039B3B00691CEA /* WifiOnlyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WifiOnlyTableViewCell.swift; sourceTree = "<group>"; };
+		DAEEB4E327039B3B00691CEA /* WifiOnlyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WifiOnlyTableViewCell.xib; sourceTree = "<group>"; };
+		DAEEB4E62703B5A500691CEA /* InternetSpeedTestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetSpeedTestTableViewCell.swift; sourceTree = "<group>"; };
+		DAEEB4E72703B5A500691CEA /* InternetSpeedTestTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InternetSpeedTestTableViewCell.xib; sourceTree = "<group>"; };
+		DAFC474F27049909005A024C /* MemoryCalculationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryCalculationTableViewCell.swift; sourceTree = "<group>"; };
+		DAFC475027049909005A024C /* MemoryCalculationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MemoryCalculationTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -315,6 +335,7 @@
 		7F4487E526DFD20200CF597F /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				DAEEB4D9270393D800691CEA /* SettingsVC */,
 				7F4487E626DFD22100CF597F /* LabelTableViewCell.swift */,
 				7F4487E726DFD22100CF597F /* LabelTableViewCell.xib */,
 			);
@@ -507,6 +528,23 @@
 			path = "Search cells";
 			sourceTree = "<group>";
 		};
+		DAEEB4D9270393D800691CEA /* SettingsVC */ = {
+			isa = PBXGroup;
+			children = (
+				DAEEB4DA2703946100691CEA /* MobileDataUsageTableViewCell.swift */,
+				DAEEB4DB2703946100691CEA /* MobileDataUsageTableViewCell.xib */,
+				DAEEB4E227039B3B00691CEA /* WifiOnlyTableViewCell.swift */,
+				DAEEB4E327039B3B00691CEA /* WifiOnlyTableViewCell.xib */,
+				DAEEB4DE2703993B00691CEA /* SettingsHeaderTableViewCell.swift */,
+				DAEEB4DF2703993B00691CEA /* SettingsHeaderTableViewCell.xib */,
+				DAEEB4E62703B5A500691CEA /* InternetSpeedTestTableViewCell.swift */,
+				DAEEB4E72703B5A500691CEA /* InternetSpeedTestTableViewCell.xib */,
+				DAFC474F27049909005A024C /* MemoryCalculationTableViewCell.swift */,
+				DAFC475027049909005A024C /* MemoryCalculationTableViewCell.xib */,
+			);
+			path = SettingsVC;
+			sourceTree = "<group>";
+		};
 		E1695BFDCBF4540E0B090984 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -583,13 +621,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAEEB4E92703B5A500691CEA /* InternetSpeedTestTableViewCell.xib in Resources */,
 				7F4ED46526F23F1900B5CBA6 /* DetailsTableViewCell.xib in Resources */,
 				DAD05E8526FA519B0004BB69 /* SearchDataTableViewCell.xib in Resources */,
 				7F12E38527036B14004EB27A /* netflixGif.gif in Resources */,
 				7F172F6326F4E6B0006503F9 /* EpisodeTableViewCell.xib in Resources */,
 				7F09C53826D53B3300B058FC /* LaunchScreen.storyboard in Resources */,
 				7F172F6826F4F1DD006503F9 /* MoreLikeThisTableViewCell.xib in Resources */,
+				DAEEB4E527039B3B00691CEA /* WifiOnlyTableViewCell.xib in Resources */,
 				7FBF08A226F39B710007459F /* DetailsHeaderTableViewCell.xib in Resources */,
+				DAEEB4E12703993B00691CEA /* SettingsHeaderTableViewCell.xib in Resources */,
+				DAEEB4DD2703946100691CEA /* MobileDataUsageTableViewCell.xib in Resources */,
 				7F09C53526D53B3300B058FC /* Assets.xcassets in Resources */,
 				7F09C53326D53B3000B058FC /* Main.storyboard in Resources */,
 				CB80B3A526D9612000E2CE44 /* MainImageViewCell.xib in Resources */,
@@ -598,6 +640,7 @@
 				7F4487E926DFD22100CF597F /* LabelTableViewCell.xib in Resources */,
 				7F09C56E26D5504900B058FC /* ImageCollectionViewCell.xib in Resources */,
 				7F4487DC26DFCEB200CF597F /* Home.storyboard in Resources */,
+				DAFC475227049909005A024C /* MemoryCalculationTableViewCell.xib in Resources */,
 				7FC5100726FB7E23002358C0 /* OnBoarding.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -665,9 +708,12 @@
 				7F7C92BB26F0F22500F2A251 /* DetailsViewController.swift in Sources */,
 				7FC5100B26FE0494002358C0 /* Extension.swift in Sources */,
 				7F172F6226F4E6B0006503F9 /* EpisodeTableViewCell.swift in Sources */,
+				DAFC475127049909005A024C /* MemoryCalculationTableViewCell.swift in Sources */,
 				CB80B3A426D9612000E2CE44 /* MainImageViewCell.swift in Sources */,
 				7FC5100326FB7DED002358C0 /* RegisterViewController.swift in Sources */,
 				7F09C56226D54B4E00B058FC /* NetworkAdaptor.swift in Sources */,
+				DAEEB4E82703B5A500691CEA /* InternetSpeedTestTableViewCell.swift in Sources */,
+				DAEEB4DC2703946100691CEA /* MobileDataUsageTableViewCell.swift in Sources */,
 				7F18EB8626DA8CE7005B6680 /* MenuView.swift in Sources */,
 				7F4487E226DFCF5D00CF597F /* CategoriesView.swift in Sources */,
 				7F7C92BD26F0F22F00F2A251 /* DetailsView.swift in Sources */,
@@ -689,8 +735,10 @@
 				7F09C56926D54F6D00B058FC /* MainCollectionViewCell.swift in Sources */,
 				7F4487E026DFCF3900CF597F /* CategoriesViewController.swift in Sources */,
 				7F09C55626D540E400B058FC /* TabBarController.swift in Sources */,
+				DAEEB4E02703993B00691CEA /* SettingsHeaderTableViewCell.swift in Sources */,
 				7F8191C426D698D20086753A /* Colors.swift in Sources */,
 				7F514A3626FA26FA006A271A /* SearchViewController.swift in Sources */,
+				DAEEB4E427039B3B00691CEA /* WifiOnlyTableViewCell.swift in Sources */,
 				CB48587026FF50F400286787 /* LoginModel.swift in Sources */,
 				7F09C55A26D5419400B058FC /* Controllers.swift in Sources */,
 				7F09C56626D54E2400B058FC /* HomeModel.swift in Sources */,
