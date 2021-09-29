@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -167,6 +168,70 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QxI-p9-b7y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2326.0869565217395" y="45.535714285714285"/>
+        </scene>
+        <!--Web View View Controller-->
+        <scene sceneID="seJ-Nb-jtz">
+            <objects>
+                <viewController storyboardIdentifier="WebViewViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="JEy-Fh-2dd" customClass="WebViewViewController" customModule="OTTApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tW5-Me-unp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tVL-pU-lHs">
+                                <rect key="frame" x="0.0" y="128" width="414" height="768"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SGG-hD-CZq">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="128"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g8i-hS-2Wj">
+                                        <rect key="frame" x="10" y="88" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="BwI-tU-3Q1"/>
+                                            <constraint firstAttribute="width" secondItem="g8i-hS-2Wj" secondAttribute="height" multiplier="1:1" id="HeG-Sd-k1R"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal">
+                                            <imageReference key="image" image="chevron.left" catalog="system" symbolScale="large"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="medium"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="backTapped" destination="JEy-Fh-2dd" eventType="touchUpInside" id="ByG-DD-kwg"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="g8i-hS-2Wj" firstAttribute="leading" secondItem="SGG-hD-CZq" secondAttribute="leading" constant="10" id="AGv-J4-C1P"/>
+                                    <constraint firstAttribute="bottom" secondItem="g8i-hS-2Wj" secondAttribute="bottom" constant="10" id="GkA-JY-JTp"/>
+                                    <constraint firstAttribute="height" constant="128" id="YfJ-8i-ThU"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="HNj-ef-3Qx"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="tVL-pU-lHs" firstAttribute="top" secondItem="SGG-hD-CZq" secondAttribute="bottom" id="2hU-v6-2ED"/>
+                            <constraint firstAttribute="bottom" secondItem="tVL-pU-lHs" secondAttribute="bottom" id="5jN-dp-4Zm"/>
+                            <constraint firstItem="HNj-ef-3Qx" firstAttribute="trailing" secondItem="tVL-pU-lHs" secondAttribute="trailing" id="8Ru-8g-QY7"/>
+                            <constraint firstItem="SGG-hD-CZq" firstAttribute="top" secondItem="tW5-Me-unp" secondAttribute="top" id="GIr-1n-fyW"/>
+                            <constraint firstItem="tVL-pU-lHs" firstAttribute="leading" secondItem="HNj-ef-3Qx" secondAttribute="leading" id="Knp-li-xcY"/>
+                            <constraint firstItem="HNj-ef-3Qx" firstAttribute="trailing" secondItem="SGG-hD-CZq" secondAttribute="trailing" id="Tnb-au-Hcp"/>
+                            <constraint firstItem="SGG-hD-CZq" firstAttribute="leading" secondItem="HNj-ef-3Qx" secondAttribute="leading" id="h6e-eG-bYp"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="navBarHeight" destination="YfJ-8i-ThU" id="fP1-8n-dlK"/>
+                        <outlet property="webKit" destination="tVL-pU-lHs" id="id6-2w-uCT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Yd-30-doX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3142.0289855072465" y="45.535714285714285"/>
         </scene>
         <!--Users View Controller-->
         <scene sceneID="78A-oL-MSY">
@@ -529,6 +594,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="chevron.left" catalog="system" width="96" height="128"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -19,6 +19,7 @@ enum Controllers {
     case resetPassword
     case splash
     case settingsTab
+    case webView
     
     func getControllers()->UIViewController {
         var storyBoardName = ""
@@ -60,6 +61,9 @@ enum Controllers {
         case .settingsTab:
             storyBoardName = "Home"
             storyBoardID = "SettingsTabViewController"
+        case .webView:
+            storyBoardName = "Main"
+            storyBoardID = "WebViewViewController"
         }
         
         return UIStoryboard(name: storyBoardName, bundle: nil).instantiateViewController(withIdentifier: storyBoardID)

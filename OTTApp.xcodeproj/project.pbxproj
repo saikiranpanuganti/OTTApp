@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F0147A42704BF580000ADFF /* Device+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0147A32704BF580000ADFF /* Device+Extension.swift */; };
+		7F0147A72704C3600000ADFF /* WebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0147A62704C3600000ADFF /* WebViewViewController.swift */; };
 		7F09C52C26D53B3000B058FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F09C52B26D53B3000B058FC /* AppDelegate.swift */; };
 		7F09C52E26D53B3000B058FC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F09C52D26D53B3000B058FC /* SceneDelegate.swift */; };
 		7F09C53326D53B3000B058FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F09C53126D53B3000B058FC /* Main.storyboard */; };
@@ -92,6 +94,8 @@
 /* Begin PBXFileReference section */
 		517C0801E354D203F92D4662 /* Pods_OTTApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OTTApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		55AF95FCF12226C99A83B410 /* Pods-OTTApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OTTApp.debug.xcconfig"; path = "Target Support Files/Pods-OTTApp/Pods-OTTApp.debug.xcconfig"; sourceTree = "<group>"; };
+		7F0147A32704BF580000ADFF /* Device+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Device+Extension.swift"; sourceTree = "<group>"; };
+		7F0147A62704C3600000ADFF /* WebViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewViewController.swift; sourceTree = "<group>"; };
 		7F09C52826D53B3000B058FC /* OTTApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OTTApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F09C52B26D53B3000B058FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7F09C52D26D53B3000B058FC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -206,6 +210,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7F0147A52704C33D0000ADFF /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				7F0147A62704C3600000ADFF /* WebViewViewController.swift */,
+			);
+			path = WebView;
+			sourceTree = "<group>";
+		};
 		7F09C51F26D53B3000B058FC = {
 			isa = PBXGroup;
 			children = (
@@ -379,8 +391,8 @@
 			isa = PBXGroup;
 			children = (
 				7F09C55526D540E400B058FC /* TabBarController.swift */,
+				7F0147A52704C33D0000ADFF /* WebView */,
 				7F12E38627037525004EB27A /* SettingsTab */,
-				7F12E20E27021CD6004EB27A /* Splash */,
 				CB2DA5A827006C9200DB2F3E /* ResetPassword */,
 				7FC5101326FE2BA3002358C0 /* Forgot Password */,
 				7FC5100E26FE259A002358C0 /* Login */,
@@ -414,6 +426,7 @@
 				7F8191BC26D697AB0086753A /* Image */,
 				7F8191BB26D6979B0086753A /* MainCollection */,
 				7F8191BF26D698040086753A /* LabelCollectionReusableView.swift */,
+				7F12E20E27021CD6004EB27A /* Splash */,
 				7F8191C026D698040086753A /* LabelCollectionReusableView.xib */,
 			);
 			path = CollectionViewCells;
@@ -448,6 +461,7 @@
 				7F09C55926D5419400B058FC /* Controllers.swift */,
 				7F8191C326D698D20086753A /* Colors.swift */,
 				7FC5100A26FE0494002358C0 /* Extension.swift */,
+				7F0147A32704BF580000ADFF /* Device+Extension.swift */,
 				7F12E38227036539004EB27A /* AppData.swift */,
 			);
 			path = Helper;
@@ -704,6 +718,7 @@
 				7F7C92C126F0FD1A00F2A251 /* DetailsModel.swift in Sources */,
 				7F09C52C26D53B3000B058FC /* AppDelegate.swift in Sources */,
 				7F12E38827037548004EB27A /* SettingsTabViewController.swift in Sources */,
+				7F0147A72704C3600000ADFF /* WebViewViewController.swift in Sources */,
 				7F09C55E26D549C100B058FC /* HomeTabView.swift in Sources */,
 				7F7C92BB26F0F22500F2A251 /* DetailsViewController.swift in Sources */,
 				7FC5100B26FE0494002358C0 /* Extension.swift in Sources */,
@@ -747,6 +762,7 @@
 				7F12E38327036539004EB27A /* AppData.swift in Sources */,
 				7F4ED46426F23F1900B5CBA6 /* DetailsTableViewCell.swift in Sources */,
 				7F09C52E26D53B3000B058FC /* SceneDelegate.swift in Sources */,
+				7F0147A42704BF580000ADFF /* Device+Extension.swift in Sources */,
 				7F09C55826D5416100B058FC /* HomeTabViewController.swift in Sources */,
 				7F7C92BF26F0F23B00F2A251 /* DetailsViewModel.swift in Sources */,
 				7F4487E426DFCFA800CF597F /* CategoriesViewModel.swift in Sources */,

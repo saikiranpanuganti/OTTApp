@@ -18,6 +18,7 @@ class TabBarController: UITabBarController {
     
     func setUpTabBarView() {
         tabBar.tintColor = UIColor.white
+        tabBar.barTintColor = UIColor.black
     }
     
     func setupTabs(){
@@ -35,8 +36,5 @@ class TabBarController: UITabBarController {
         
         self.viewControllers = [homeTab, searchTab, settingsTab]
     }
-    
-
-    
 
 }
