@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="84" id="KGk-i7-Jjw" customClass="MobileDataUsageTableViewCell" customModule="OTTApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="428" height="84"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="428" height="84"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nur-g9-xja">
+                        <rect key="frame" x="5" y="0.0" width="418" height="84"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wifi" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="AVT-Eb-SzY">
+                                <rect key="frame" x="20" y="29" width="30" height="26"/>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="AVT-Eb-SzY" secondAttribute="height" multiplier="1:1" id="Y7U-cz-hQu"/>
+                                    <constraint firstAttribute="height" constant="30" id="hTG-g9-AR4"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mobile Data Usage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2qH-hZ-vBt">
+                                <rect key="frame" x="75" y="20" width="144" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Automatic" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ezj-We-714">
+                                <rect key="frame" x="75" y="51" width="69.5" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="99A-cS-tQi">
+                                <rect key="frame" x="383" y="34" width="15" height="16.5"/>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="15" id="2tK-1E-FTA"/>
+                                    <constraint firstAttribute="height" constant="20" id="Vmu-89-Mnw"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.070588235294117646" green="0.070588235294117646" blue="0.070588235294117646" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="AVT-Eb-SzY" firstAttribute="centerY" secondItem="Nur-g9-xja" secondAttribute="centerY" id="0Vc-TC-d7H"/>
+                            <constraint firstAttribute="trailing" secondItem="99A-cS-tQi" secondAttribute="trailing" constant="20" id="EJz-aw-yTB"/>
+                            <constraint firstItem="2qH-hZ-vBt" firstAttribute="leading" secondItem="AVT-Eb-SzY" secondAttribute="trailing" constant="25" id="LYL-sf-FrP"/>
+                            <constraint firstItem="2qH-hZ-vBt" firstAttribute="top" secondItem="Nur-g9-xja" secondAttribute="top" constant="20" id="YY5-Is-CLf"/>
+                            <constraint firstItem="Ezj-We-714" firstAttribute="leading" secondItem="AVT-Eb-SzY" secondAttribute="trailing" constant="25" id="i5Y-Es-g6m"/>
+                            <constraint firstAttribute="bottom" secondItem="Ezj-We-714" secondAttribute="bottom" constant="15" id="kfb-iY-4EV"/>
+                            <constraint firstItem="99A-cS-tQi" firstAttribute="centerY" secondItem="Nur-g9-xja" secondAttribute="centerY" id="pnA-WI-eFd"/>
+                            <constraint firstItem="AVT-Eb-SzY" firstAttribute="leading" secondItem="Nur-g9-xja" secondAttribute="leading" constant="20" id="xat-Z5-Otg"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                <constraints>
+                    <constraint firstItem="Nur-g9-xja" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="7EY-It-apZ"/>
+                    <constraint firstAttribute="bottom" secondItem="Nur-g9-xja" secondAttribute="bottom" id="Dbh-pi-jSI"/>
+                    <constraint firstAttribute="trailing" secondItem="Nur-g9-xja" secondAttribute="trailing" constant="5" id="MaY-Jp-21p"/>
+                    <constraint firstItem="Nur-g9-xja" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Oj7-0V-QiJ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="automaticLblRef" destination="Ezj-We-714" id="QIL-P1-UXs"/>
+                <outlet property="mobileDataUsageLblRef" destination="2qH-hZ-vBt" id="N7R-9V-22L"/>
+                <outlet property="topHeightMobilefdata" destination="YY5-Is-CLf" id="U7a-Nn-u47"/>
+            </connections>
+            <point key="canvasLocation" x="218.84057971014494" y="82.366071428571431"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="chevron.right" catalog="system" width="96" height="128"/>
+        <image name="wifi" catalog="system" width="128" height="91"/>
+    </resources>
+</document>
