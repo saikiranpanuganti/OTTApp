@@ -6,25 +6,30 @@
 //
 
 import UIKit
+import CoreLocation
 
 class SplashViewController: UIViewController {
     @IBOutlet weak var logoImage: UIImageView!
     @IBOutlet weak var logoImageWidth: NSLayoutConstraint!
 
+    var locationManger: CLLocationManager?
     var category: Category = .home
     let dispatchGroup = DispatchGroup()
     let concurrentQueue = DispatchQueue(label: "com.ottapp.Concurrent", attributes: .concurrent)
     var dataFetchComplete: Bool = false
     var isAnimationComplete: Bool = false
+    var permissionGranted: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        checkForPermission()
         
         checkLoggedStatus()
         
         dispatchGroup.notify(queue: .main) {
             print("dispatchGroup notifier")
-            
+
             if self.isAnimationComplete {
                 let controller = Controllers.users.getControllers()
                 self.navigationController?.pushViewController(controller, animated: true)
@@ -34,10 +39,41 @@ class SplashViewController: UIViewController {
         }
     }
     
+    func requestForLocationAuthorization() {
+        locationManger = CLLocationManager()
+        locationManger?.delegate = self
+        locationManger?.requestAlwaysAuthorization()
+    }
+    
+    func requestLocation() {
+        locationManger = CLLocationManager()
+        locationManger?.delegate = self
+        locationManger?.requestLocation()
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         setUpUI()
+    }
+    
+    func checkForPermission() {
+        let status = CLLocationManager.authorizationStatus()
+
+        switch status {
+            case .authorizedAlways:
+                requestLocation()
+            case .authorizedWhenInUse:
+                requestLocation()
+            case .denied:
+                requestForLocationAuthorization()
+            case .notDetermined:
+                requestForLocationAuthorization()
+            case .restricted:
+                requestForLocationAuthorization()
+        @unknown default:
+            print("")
+        }
     }
     
     func setUpUI() {
@@ -237,4 +273,40 @@ class SplashViewController: UIViewController {
     
     
     
+}
+
+
+extension SplashViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        print(locations.first?.coordinate.latitude, locations.first?.coordinate.longitude)
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error)
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        switch status {
+            case .authorizedAlways:
+                if !permissionGranted {
+                    print("authorizedAlways")
+                    permissionGranted = true
+                    requestLocation()
+                }
+            case .authorizedWhenInUse:
+                if !permissionGranted {
+                    print("authorizedWhenInUse")
+                    permissionGranted = true
+                    requestLocation()
+                }
+            case .denied:
+                print("denied")
+            case .notDetermined:
+                print("notDetermined")
+            case .restricted:
+                print("restricted")
+        @unknown default:
+            print("")
+        }
+    }
 }
