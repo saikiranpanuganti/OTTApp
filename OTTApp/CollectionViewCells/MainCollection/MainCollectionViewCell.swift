@@ -56,7 +56,7 @@ extension MainCollectionViewCell:UICollectionViewDataSource{
         
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCollectionViewCell", for: indexPath) as? ImageCollectionViewCell{
             
-            cell.configUI(urlString: playListData?.content?[indexPath.row].imagery?.thumbnail ?? "")
+            cell.configUI(urlString: (playListData?.content?[indexPath.row].imagery?.thumbnail ?? "") + "?d=200x200")
             return cell
         }
         return UICollectionViewCell()

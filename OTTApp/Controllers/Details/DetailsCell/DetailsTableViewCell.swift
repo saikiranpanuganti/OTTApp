@@ -54,7 +54,7 @@ class DetailsTableViewCell: UITableViewCell {
             }
             
             contentType.text = details.contentType?.uppercased() ?? ""
-            year.text = (details.productionYear?.count == 0) ? "2020" : details.productionYear
+            year.text = "2020"
             ageRating.text = details.ageRating
             if let numberOfSeasons = details.seasons?.count {
                 seasons.text = "\(numberOfSeasons) Seasons"

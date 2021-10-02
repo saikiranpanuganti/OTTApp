@@ -23,7 +23,7 @@ struct SeriesData: Codable {
 struct Details: Codable {
     let id: Int?
     let ageRating, videoID, friendlyURL, contentType: String?
-    let synopsis, productionYear: String?
+    let synopsis: String?
     let length: Int?
     let title: String?
     let cast: [String]?
@@ -43,7 +43,6 @@ struct Details: Codable {
         case friendlyURL = "friendly_url"
         case contentType = "content_type"
         case synopsis
-        case productionYear = "production_year"
         case length, title, cast
         case seoDescription = "seo_description"
         case translatedTitle = "translated_title"
