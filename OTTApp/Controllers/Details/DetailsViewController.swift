@@ -32,6 +32,14 @@ extension DetailsViewController: DetailsViewModelDelegate {
 }
 
 extension DetailsViewController: DetailsViewDelegate {
+    func playOrResumeTapped() {
+        if let controller = Controllers.player.getControllers() as? PlayerViewController {
+            controller.viewModel.contentDetails = viewModel.details
+            controller.modalPresentationStyle = .overFullScreen
+            present(controller, animated: true, completion: nil)
+        }
+    }
+    
     func closeTapped() {
         dismiss(animated: true, completion: nil)
     }

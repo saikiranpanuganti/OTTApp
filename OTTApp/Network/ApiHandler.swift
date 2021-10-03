@@ -21,6 +21,7 @@ enum ApiHandler {
     case login
     case forgotPassword
     case resetPassword
+    case videoUrl
     
     func url() -> String {
         let baseUrl = "https://yrc0uzwnw4.execute-api.ap-south-1.amazonaws.com/dev/"
@@ -53,6 +54,8 @@ enum ApiHandler {
             return baseUrl1 + "forgot-password"
         case .resetPassword:
             return baseUrl1 + "reset-password"
+        case .videoUrl:
+            return baseUrl + "video-url"
         }
     }
 }

@@ -19,7 +19,7 @@ class NetworkAdaptor {
         if let urlParameters = urlParameters {
             let parametersString = (urlParameters.compactMap({ (key, value) -> String in
                 return "\(key)=\(value)"
-            }) as Array).joined(separator: ";")
+            }) as Array).joined(separator: "&")
             
             urlString = urlString + "?" + parametersString
         }

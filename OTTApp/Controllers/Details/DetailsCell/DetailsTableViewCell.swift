@@ -10,6 +10,7 @@ import SDWebImage
 
 protocol DetailsTableViewCellDelegate: AnyObject {
     func closeTapped()
+    func playOrResumeTapped()
 }
 
 class DetailsTableViewCell: UITableViewCell {
@@ -93,7 +94,7 @@ class DetailsTableViewCell: UITableViewCell {
     }
     
     @IBAction func playOrResumeTapped(_ sender: UIButton) {
-        
+        delegate?.playOrResumeTapped()
     }
     
     @IBAction func downloadTapped(_ sender: UIButton) {

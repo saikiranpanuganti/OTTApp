@@ -9,6 +9,7 @@ import UIKit
 
 protocol DetailsViewDelegate: AnyObject {
     func closeTapped()
+    func playOrResumeTapped()
 }
 
 class DetailsView: UIView {
@@ -103,6 +104,10 @@ extension DetailsView: UITableViewDelegate {
 }
 
 extension DetailsView: DetailsTableViewCellDelegate {
+    func playOrResumeTapped() {
+        delegate?.playOrResumeTapped()
+    }
+    
     func closeTapped() {
         delegate?.closeTapped()
     }

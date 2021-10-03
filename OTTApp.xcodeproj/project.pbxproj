@@ -58,6 +58,10 @@
 		7F8191C126D698040086753A /* LabelCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8191BF26D698040086753A /* LabelCollectionReusableView.swift */; };
 		7F8191C226D698040086753A /* LabelCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F8191C026D698040086753A /* LabelCollectionReusableView.xib */; };
 		7F8191C426D698D20086753A /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8191C326D698D20086753A /* Colors.swift */; };
+		7F88E37B2709B39E0072C081 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F88E37A2709B39E0072C081 /* PlayerViewController.swift */; };
+		7F88E37D2709B3AF0072C081 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F88E37C2709B3AF0072C081 /* PlayerView.swift */; };
+		7F88E37F2709B3BA0072C081 /* PlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F88E37E2709B3BA0072C081 /* PlayerViewModel.swift */; };
+		7F88E3812709B51D0072C081 /* VideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F88E3802709B51D0072C081 /* VideoPlayerView.swift */; };
 		7FBF08A126F39B710007459F /* DetailsHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBF089F26F39B710007459F /* DetailsHeaderTableViewCell.swift */; };
 		7FBF08A226F39B710007459F /* DetailsHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FBF08A026F39B710007459F /* DetailsHeaderTableViewCell.xib */; };
 		7FC5100326FB7DED002358C0 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC5100226FB7DED002358C0 /* RegisterViewController.swift */; };
@@ -165,6 +169,10 @@
 		7F8191BF26D698040086753A /* LabelCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelCollectionReusableView.swift; sourceTree = "<group>"; };
 		7F8191C026D698040086753A /* LabelCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LabelCollectionReusableView.xib; sourceTree = "<group>"; };
 		7F8191C326D698D20086753A /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		7F88E37A2709B39E0072C081 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
+		7F88E37C2709B3AF0072C081 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
+		7F88E37E2709B3BA0072C081 /* PlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewModel.swift; sourceTree = "<group>"; };
+		7F88E3802709B51D0072C081 /* VideoPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerView.swift; sourceTree = "<group>"; };
 		7FBF089F26F39B710007459F /* DetailsHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		7FBF08A026F39B710007459F /* DetailsHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailsHeaderTableViewCell.xib; sourceTree = "<group>"; };
 		7FC5100226FB7DED002358C0 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -391,6 +399,7 @@
 			isa = PBXGroup;
 			children = (
 				7F09C55526D540E400B058FC /* TabBarController.swift */,
+				7F88E3792709B3900072C081 /* Player */,
 				7F0147A52704C33D0000ADFF /* WebView */,
 				7F12E38627037525004EB27A /* SettingsTab */,
 				CB2DA5A827006C9200DB2F3E /* ResetPassword */,
@@ -475,6 +484,17 @@
 				7F1EB1B326E12406002E486B /* ApiHandler.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		7F88E3792709B3900072C081 /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				7F88E37A2709B39E0072C081 /* PlayerViewController.swift */,
+				7F88E37C2709B3AF0072C081 /* PlayerView.swift */,
+				7F88E37E2709B3BA0072C081 /* PlayerViewModel.swift */,
+				7F88E3802709B51D0072C081 /* VideoPlayerView.swift */,
+			);
+			path = Player;
 			sourceTree = "<group>";
 		};
 		7FBF089E26F39B4D0007459F /* DetailsHeader */ = {
@@ -709,10 +729,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F7B428926E6680D000F23E0 /* SubCategory.swift in Sources */,
+				7F88E37D2709B3AF0072C081 /* PlayerView.swift in Sources */,
 				7F09C55426D53D8100B058FC /* Fonts.swift in Sources */,
 				7F09C56026D549CF00B058FC /* HomeTabViewModel.swift in Sources */,
 				7F12E21027021CEA004EB27A /* SplashViewController.swift in Sources */,
 				7F8191C126D698040086753A /* LabelCollectionReusableView.swift in Sources */,
+				7F88E37B2709B39E0072C081 /* PlayerViewController.swift in Sources */,
 				7F514A3826FA28A4006A271A /* SearchViewModel.swift in Sources */,
 				CB2DA5AC27006CCA00DB2F3E /* ResetPasswordViewModel.swift in Sources */,
 				7F7C92C126F0FD1A00F2A251 /* DetailsModel.swift in Sources */,
@@ -753,6 +775,7 @@
 				DAEEB4E02703993B00691CEA /* SettingsHeaderTableViewCell.swift in Sources */,
 				7F8191C426D698D20086753A /* Colors.swift in Sources */,
 				7F514A3626FA26FA006A271A /* SearchViewController.swift in Sources */,
+				7F88E3812709B51D0072C081 /* VideoPlayerView.swift in Sources */,
 				DAEEB4E427039B3B00691CEA /* WifiOnlyTableViewCell.swift in Sources */,
 				CB48587026FF50F400286787 /* LoginModel.swift in Sources */,
 				7F09C55A26D5419400B058FC /* Controllers.swift in Sources */,
@@ -760,6 +783,7 @@
 				CB80B3AA26D965CB00E2CE44 /* UsersView.swift in Sources */,
 				7F09C55C26D5433100B058FC /* Images.swift in Sources */,
 				7F12E38327036539004EB27A /* AppData.swift in Sources */,
+				7F88E37F2709B3BA0072C081 /* PlayerViewModel.swift in Sources */,
 				7F4ED46426F23F1900B5CBA6 /* DetailsTableViewCell.swift in Sources */,
 				7F09C52E26D53B3000B058FC /* SceneDelegate.swift in Sources */,
 				7F0147A42704BF580000ADFF /* Device+Extension.swift in Sources */,
