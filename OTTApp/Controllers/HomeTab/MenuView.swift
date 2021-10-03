@@ -359,7 +359,7 @@ class MenuView: UIView {
     private func setUpConstraints() {
         logoView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 20).isActive = true
         logoView.widthAnchor.constraint(equalToConstant: 40).isActive = true
-        logoView.topAnchor.constraint(equalTo: self.topAnchor, constant: 10).isActive = true
+        logoView.topAnchor.constraint(equalTo: self.topAnchor, constant: topSafeArea + 10).isActive = true
         logoView.heightAnchor.constraint(equalToConstant: 40).isActive = true
         
         logoImageView.widthAnchor.constraint(equalTo: logoView.widthAnchor).isActive = true

@@ -18,6 +18,7 @@ protocol HomeTabViewDelegate: AnyObject {
 }
 
 class HomeTabView:UIView{
+    @IBOutlet weak var menuViewHeight: NSLayoutConstraint!
     @IBOutlet weak var menuView: MenuView!
     @IBOutlet weak var collectionView:UICollectionView!
     
@@ -29,6 +30,7 @@ class HomeTabView:UIView{
     var subCategoryData: SubCategory?
     
     func setupUI(){
+        menuViewHeight.constant = topSafeArea + 130
         collectionView.register(UINib(nibName: "MainCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "MainCollectionViewCell")
         collectionView.register(UINib(nibName: "MainImageViewCell", bundle: nil), forCellWithReuseIdentifier: "MainImageViewCell")
         collectionView.register(UINib(nibName: "ImageCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ImageCollectionViewCell")

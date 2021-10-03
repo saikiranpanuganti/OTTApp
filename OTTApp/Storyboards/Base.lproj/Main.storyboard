@@ -65,6 +65,7 @@
                         <connections>
                             <outlet property="collectionView" destination="fYJ-X6-JCD" id="z2A-xn-qdf"/>
                             <outlet property="menuView" destination="az0-j1-9Op" id="R8R-IJ-9ee"/>
+                            <outlet property="menuViewHeight" destination="oRT-sD-U7U" id="8m6-qz-m08"/>
                         </connections>
                     </view>
                     <connections>
