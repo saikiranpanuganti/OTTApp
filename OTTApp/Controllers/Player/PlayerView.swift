@@ -15,6 +15,7 @@ class PlayerView: UIView {
     @IBOutlet weak var playerView: UIView!
     @IBOutlet weak var controlsView: UIView!
     @IBOutlet weak var playPauseImage: UIImageView!
+    @IBOutlet weak var closeButtonViewOutlet: UIView!
     
     weak var delegate: PlayerViewDelegate?
     var videoPlayerView: VideoPlayerView?
@@ -45,6 +46,7 @@ class PlayerView: UIView {
     
     func addTapGesture() {
         controlsView.isHidden = true
+        closeButtonViewOutlet.isHidden = true
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideUnhideControlsView))
         tapGesture.numberOfTapsRequired = 1
@@ -53,6 +55,7 @@ class PlayerView: UIView {
     
     @objc func hideUnhideControlsView() {
         controlsView.isHidden = !controlsView.isHidden
+        closeButtonViewOutlet.isHidden = !closeButtonViewOutlet.isHidden
     }
     
     @IBAction func closeTapped() {
