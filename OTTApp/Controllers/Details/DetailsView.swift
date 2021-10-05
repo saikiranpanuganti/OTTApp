@@ -22,7 +22,7 @@ class DetailsView: UIView {
     
     func setUpUI() {
         tableView.register(UINib(nibName: "DetailsTableViewCell", bundle: nil), forCellReuseIdentifier: "DetailsTableViewCell")
-        tableView.register(UINib(nibName: "DetailsHeaderTableViewCell", bundle: nil), forHeaderFooterViewReuseIdentifier: "DetailsHeaderTableViewCell")
+        tableView.register(UINib(nibName: "DetailsHeaderTableViewCell", bundle: nil), forCellReuseIdentifier: "DetailsHeaderTableViewCell")
         tableView.register(UINib(nibName: "EpisodeTableViewCell", bundle: nil), forCellReuseIdentifier: "EpisodeTableViewCell")
         tableView.register(UINib(nibName: "MoreLikeThisTableViewCell", bundle: nil), forCellReuseIdentifier: "MoreLikeThisTableViewCell")
         
@@ -39,12 +39,16 @@ class DetailsView: UIView {
 
 extension DetailsView: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 3
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
             return 1
-        }else {
+        }
+        else if section == 1 {
+            return 1
+        }
+        else {
             if showEpisodes {
                 return details?.seasons?.first?.episodes?.count ?? 0
             }else {
@@ -59,7 +63,16 @@ extension DetailsView: UITableViewDataSource {
                 cell.delegate = self
                 return cell
             }
-        }else {
+        }
+        else if indexPath.section == 1{
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "DetailsHeaderTableViewCell", for: indexPath) as? DetailsHeaderTableViewCell {
+                cell.configureUI(season: details?.seasons?.first)
+                cell.delegate = self
+                return cell
+            }
+        }
+        
+        else {
             if showEpisodes {
                 if let cell = tableView.dequeueReusableCell(withIdentifier: "EpisodeTableViewCell", for: indexPath) as? EpisodeTableViewCell {
                     cell.configureUI(episode: details?.seasons?.first?.episodes?[indexPath.row])
@@ -76,31 +89,19 @@ extension DetailsView: UITableViewDataSource {
         
         return UITableViewCell()
     }
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        if section == 1 {
-            if let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "DetailsHeaderTableViewCell") as? DetailsHeaderTableViewCell {
-                header.configureUI(season: details?.seasons?.first)
-                header.delegate = self
-                return header
-            }
-        }
-        return UIView()
-    }
+
 }
 
 extension DetailsView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.section == 1 && !showEpisodes {
+        if indexPath.section == 2 && !showEpisodes {
             return ((screenWidth-8)/2)*4
+        }else if indexPath.section == 1{
+            return 110
         }
         return UITableView.automaticDimension
     }
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        if section == 1 {
-            return 110
-        }
-        return 0
-    }
+
 }
 
 extension DetailsView: DetailsTableViewCellDelegate {
