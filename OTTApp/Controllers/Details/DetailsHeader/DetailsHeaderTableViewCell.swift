@@ -13,7 +13,7 @@ protocol DetailsHeaderTableViewCellDelegate: AnyObject {
     func seasonTapped()
 }
 
-class DetailsHeaderTableViewCell: UITableViewHeaderFooterView {
+class DetailsHeaderTableViewCell: UITableViewCell {
     @IBOutlet var episodeViewWidth: NSLayoutConstraint!
     @IBOutlet var moreLikeThisViewWidth: NSLayoutConstraint!
     @IBOutlet var trailersViewWidth: NSLayoutConstraint!
