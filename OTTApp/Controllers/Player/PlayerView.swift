@@ -28,6 +28,7 @@ class PlayerView: UIView {
     func updateUI() {
         if videoPlayerView == nil {
             createVideoPlayerView()
+            videoPlayerView?.setVolumeIfDeviceInSilent()
             addTapGesture()
         }
         

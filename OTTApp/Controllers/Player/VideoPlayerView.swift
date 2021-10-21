@@ -35,10 +35,13 @@ class VideoPlayerView: UIView {
                 layer.addSublayer(videolayer)
             }
             
-            player?.addPeriodicTimeObserver(forInterval: CMTimeMakeWithSeconds(1, preferredTimescale: 1), queue: DispatchQueue.main) { (CMTime) -> Void in
-                if self.player?.currentItem?.status == .readyToPlay {
-                    let currentTime = self.getCurrentTime()
-                    self.delegate?.updateProgress(progress: currentTime)
+            player?.addPeriodicTimeObserver(forInterval: CMTimeMakeWithSeconds(1, preferredTimescale: 1), queue: DispatchQueue.main) { [weak self] (CMTime) -> Void in
+                
+                guard let strongSelf = self else { return }
+                
+                if strongSelf.player?.currentItem?.status == .readyToPlay {
+                    let currentTime = strongSelf.getCurrentTime()
+                    strongSelf.delegate?.updateProgress(progress: currentTime)
                 }
             }
         }
@@ -48,6 +51,14 @@ class VideoPlayerView: UIView {
         super.layoutSubviews()
         
         videoLayer?.frame = self.bounds
+    }
+    
+    func setVolumeIfDeviceInSilent() {
+        do {
+           try AVAudioSession.sharedInstance().setCategory(.playback)
+        } catch(let error) {
+            print(error.localizedDescription)
+        }
     }
     
     func seekToTime(toTime: Float) {

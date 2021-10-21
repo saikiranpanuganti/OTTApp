@@ -33,15 +33,18 @@ class PlayerViewModel {
             urlParameters["videoid"] = String(contentDetails?.id ?? 0)
         }
         
-        NetworkAdaptor.request(url: ApiHandler.videoUrl.url(), method: .post, headers: headers, urlParameters: urlParameters, bodyParameters: bodyparameters) { data, response, error in
+        NetworkAdaptor.request(url: ApiHandler.videoUrl.url(), method: .post, headers: headers, urlParameters: urlParameters, bodyParameters: bodyparameters) { [weak self] data, response, error in
+            
+            guard let strongSelf = self else { return }
+            
             if error == nil {
                 if let data = data {
                     do {
                         let jsonData = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any]
                         if let videoUrl = jsonData?["video-url"] as? String{
                             print(videoUrl)
-                            self.videoUrl = videoUrl
-                            self.delegate?.updateUI()
+                            strongSelf.videoUrl = videoUrl
+                            strongSelf.delegate?.updateUI()
                     }
                     }catch {
                         print(error.localizedDescription)

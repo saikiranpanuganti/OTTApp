@@ -90,14 +90,14 @@ extension SettingsTabViewController:UITableViewDataSource{
                 if let vc = tableViewRef.dequeueReusableCell(withIdentifier: "MobileDataUsageTableViewCell", for: indexPath) as? MobileDataUsageTableViewCell {
                     vc.automaticLblRef.isHidden = true
                     vc.configUI(mobileData: "Internet speed test", automatic: "", image: "speedometer")
-                    vc.topHeightMobilefdata.constant = 30
+                    vc.topHeightMobilefdata.constant = 20
                     return vc
                 }
             case 1:
                 if let vc = tableViewRef.dequeueReusableCell(withIdentifier: "MobileDataUsageTableViewCell", for: indexPath) as? MobileDataUsageTableViewCell {
                     vc.automaticLblRef.isHidden = true
                     vc.configUI(mobileData: "Privacy Policy", automatic: "", image: "doc")
-                    vc.topHeightMobilefdata.constant = 30
+                    vc.topHeightMobilefdata.constant = 20
                     return vc
                 }
             default:

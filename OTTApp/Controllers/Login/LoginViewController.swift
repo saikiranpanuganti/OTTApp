@@ -22,7 +22,6 @@ class LoginViewController: UIViewController {
     }
     
     func setUpUI() {
-        
         viewModel.delegate = self
         emailTextField.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [NSAttributedString.Key.foregroundColor : UIColor.lightGray])
         passwordTextField.attributedPlaceholder = NSAttributedString(string: "Password", attributes: [NSAttributedString.Key.foregroundColor : UIColor.lightGray])

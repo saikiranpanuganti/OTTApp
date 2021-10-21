@@ -95,9 +95,23 @@ extension DetailsView: UITableViewDataSource {
 extension DetailsView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 2 && !showEpisodes {
-            return ((screenWidth-8)/2)*4
-        }else if indexPath.section == 1{
-            return 110
+            var requiredNumberOfRows: CGFloat = 0
+            
+            if let count = moreLikeThisData?.response?.count {
+                if count/3 == 0 {
+                    requiredNumberOfRows = CGFloat(count/3)
+                }else {
+                    requiredNumberOfRows = CGFloat(count/3) + 1
+                }
+            }
+            
+            return ((screenWidth-8)/2)*requiredNumberOfRows
+        }else if indexPath.section == 1 {
+            if showEpisodes {
+                return 110
+            }else {
+                return 65
+            }
         }
         return UITableView.automaticDimension
     }
