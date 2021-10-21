@@ -25,18 +25,10 @@ class SplashViewController: UIViewController {
         
         checkForPermission()
         
-        checkLoggedStatus()
+//        checkLoggedStatus()
+        getConfigData()
         
-        dispatchGroup.notify(queue: .main) {
-            print("dispatchGroup notifier")
-
-            if self.isAnimationComplete {
-                let controller = Controllers.users.getControllers()
-                self.navigationController?.pushViewController(controller, animated: true)
-            }else {
-                self.dataFetchComplete = true
-            }
-        }
+        
     }
     
     func requestForLocationAuthorization() {
@@ -138,6 +130,17 @@ class SplashViewController: UIViewController {
                 concurrentQueue.async {
                     self.getTvShowsCategories()
                 }
+                
+                dispatchGroup.notify(queue: .main) {
+                    print("dispatchGroup notifier")
+
+                    if self.isAnimationComplete {
+                        let controller = Controllers.users.getControllers()
+                        self.navigationController?.pushViewController(controller, animated: true)
+                    }else {
+                        self.dataFetchComplete = true
+                    }
+                }
             }else {
                 let controller = Controllers.login.getControllers()
                 navigationController?.viewControllers = [controller]
@@ -174,54 +177,57 @@ class SplashViewController: UIViewController {
         }
     }
     
-//    func getTvShowsData() {
-//        self.category = .tvShows
-//
-//        var headers : [String:String] = [:]
-//        headers["Authorization"] = "cf606825b8a045c1aae39f7fe39de6c6"
-//
-//        NetworkAdaptor.request(url: ApiHandler.tvshows.url(), method: .get,headers: headers) { data, response, error in
-//            do{
-//                if let error = error {
-//                    print(error.localizedDescription)
-//                }else{
-//                    if let data = data {
-//                        let tvShowsData = try JSONDecoder().decode(Home.self, from: data)
-//                    }
-//                }
-//            }
-//
-//            catch{
-//                print(error.localizedDescription)
-//            }
-//        }
-//    }
+    func navigateToAppstore() {
+        if let url = URL(string: "https://google.com") {
+            UIApplication.shared.open(url)
+        }
+    }
     
-//    func getMoviesData() {
-//        self.category = .movies
-//
-//        var headers : [String:String] = [:]
-//        headers["Authorization"] = "cf606825b8a045c1aae39f7fe39de6c6"
-//
-//        NetworkAdaptor.request(url: ApiHandler.movies.url(), method: .get,headers: headers) { data, response, error in
-//            do{
-//                if let error = error {
-//                    print(error.localizedDescription)
-//                }else{
-//                if let data = data {
-//                    let moviesData = try JSONDecoder().decode(Home.self, from: data)
-//                  //  print(moviesData)
-//                   // self.delegate?.updateUI()
-//                }
-//                }
-//            }
-//            catch{
-//                print(error.localizedDescription)
-//            }
-//        }
-//    }
+    func showForceUpdateAlert(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let updateButton = UIAlertAction(title: "Update", style: .default) { action in
+            self.navigateToAppstore()
+            self.showForceUpdateAlert(title: title, message: message)
+        }
+        alertController.addAction(updateButton)
+        present(alertController, animated: true, completion: nil)
+    }
     
     
+    func checkConfig(configData: ConfigData) {
+        if let updateVersion = configData.data["1.0"]?.appUpdate.appVersion {
+            if let currentAppVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
+                print("version", updateVersion, currentAppVersion)
+                if currentAppVersion < updateVersion {
+                    print("Show Alert")
+                    DispatchQueue.main.async {
+                        self.showForceUpdateAlert(title: "Update", message: configData.data["1.0"]?.appUpdate.updateMessage ?? "")
+                    }
+                }else {
+                    checkLoggedStatus()
+                }
+            }
+            
+        }
+    }
+    
+    func getConfigData() {
+        let urlString = "https://n6lih99291.execute-api.ap-south-1.amazonaws.com/dev/config"
+        NetworkAdaptor.request(url: urlString, method: .get) { data, resonse, error in
+            if error == nil {
+                if let data = data {
+                    do {
+                        let configData = try JSONDecoder().decode(ConfigData.self, from: data)
+                        self.checkConfig(configData: configData)
+                    }catch  {
+                        print(error.localizedDescription)
+                    }
+                }
+            }else {
+                print("Show Alert")
+            }
+        }
+    }
     
     func getMovieCategories() {
         let urlString = "https://yrc0uzwnw4.execute-api.ap-south-1.amazonaws.com/dev/moviecategories"

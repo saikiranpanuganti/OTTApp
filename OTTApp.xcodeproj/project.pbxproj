@@ -50,6 +50,7 @@
 		7F4ED46526F23F1900B5CBA6 /* DetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F4ED46326F23F1900B5CBA6 /* DetailsTableViewCell.xib */; };
 		7F514A3626FA26FA006A271A /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F514A3526FA26FA006A271A /* SearchViewController.swift */; };
 		7F514A3826FA28A4006A271A /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F514A3726FA28A4006A271A /* SearchViewModel.swift */; };
+		7F660A0E2721B4C0000F7ACF /* ConfigData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F660A0D2721B4C0000F7ACF /* ConfigData.swift */; };
 		7F7B428926E6680D000F23E0 /* SubCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7B428826E6680D000F23E0 /* SubCategory.swift */; };
 		7F7C92BB26F0F22500F2A251 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7C92BA26F0F22500F2A251 /* DetailsViewController.swift */; };
 		7F7C92BD26F0F22F00F2A251 /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7C92BC26F0F22F00F2A251 /* DetailsView.swift */; };
@@ -161,6 +162,7 @@
 		7F4ED46326F23F1900B5CBA6 /* DetailsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailsTableViewCell.xib; sourceTree = "<group>"; };
 		7F514A3526FA26FA006A271A /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		7F514A3726FA28A4006A271A /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		7F660A0D2721B4C0000F7ACF /* ConfigData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigData.swift; sourceTree = "<group>"; };
 		7F7B428826E6680D000F23E0 /* SubCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCategory.swift; sourceTree = "<group>"; };
 		7F7C92BA26F0F22500F2A251 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		7F7C92BC26F0F22F00F2A251 /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
@@ -301,6 +303,7 @@
 			isa = PBXGroup;
 			children = (
 				7F12E20F27021CEA004EB27A /* SplashViewController.swift */,
+				7F660A0D2721B4C0000F7ACF /* ConfigData.swift */,
 			);
 			path = Splash;
 			sourceTree = "<group>";
@@ -762,6 +765,7 @@
 				7FBF08A126F39B710007459F /* DetailsHeaderTableViewCell.swift in Sources */,
 				DAD05E8426FA519B0004BB69 /* SearchDataTableViewCell.swift in Sources */,
 				7FC5101526FE2BB7002358C0 /* ForgotPasswordViewController.swift in Sources */,
+				7F660A0E2721B4C0000F7ACF /* ConfigData.swift in Sources */,
 				7FC5101726FE2BC2002358C0 /* ForgotPasswordViewModel.swift in Sources */,
 				7F09C56426D54BBA00B058FC /* NetworkAdaptorHelper.swift in Sources */,
 				7FC5101026FE25B0002358C0 /* LoginViewModel.swift in Sources */,
@@ -947,6 +951,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.saikiran.OTTApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -968,6 +973,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.saikiran.OTTApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
