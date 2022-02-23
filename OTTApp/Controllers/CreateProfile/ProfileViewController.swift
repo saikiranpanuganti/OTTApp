@@ -19,6 +19,8 @@ class ProfileViewController: UIViewController {
         createButton.backgroundColor = UIColor.red
         createButton.layer.cornerRadius = 5.0
         
+        profileImage.layer.cornerRadius = 8.0
+        
         nameTextfield.attributedPlaceholder = NSAttributedString(string: "Enter profile name", attributes: [NSAttributedString.Key.foregroundColor : UIColor.lightGray])
     }
     
