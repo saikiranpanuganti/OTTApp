@@ -552,9 +552,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GXv-Rw-5mr">
-                                <rect key="frame" x="50" y="305.5" width="314" height="285"/>
+                                <rect key="frame" x="50" y="265.5" width="314" height="285"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aRs-8E-ZlC">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageee" translatesAutoresizingMaskIntoConstraints="NO" id="aRs-8E-ZlC">
                                         <rect key="frame" x="97" y="0.0" width="120" height="120"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="120" id="Qjp-kD-OFV"/>
@@ -576,35 +576,56 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="rvk-DH-8Lq"/>
                                         </constraints>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Create">
-                                            <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="20"/>
-                                        </buttonConfiguration>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Create">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
                                             <action selector="createProfileTapped:" destination="Btq-Kr-hK5" eventType="touchUpInside" id="CRP-Zv-5Vw"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1c7-hJ-IVt">
+                                        <rect key="frame" x="97" y="0.0" width="120" height="120"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <connections>
+                                            <action selector="profileImageTapped:" destination="Btq-Kr-hK5" eventType="touchUpInside" id="gBF-ho-9iK"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="1c7-hJ-IVt" firstAttribute="centerY" secondItem="aRs-8E-ZlC" secondAttribute="centerY" id="Q1R-kG-ahS"/>
                                     <constraint firstAttribute="bottom" secondItem="cAh-9H-1Zk" secondAttribute="bottom" id="UbR-2h-l4T"/>
                                     <constraint firstItem="aRs-8E-ZlC" firstAttribute="centerX" secondItem="GXv-Rw-5mr" secondAttribute="centerX" id="Wmx-AW-Fa2"/>
                                     <constraint firstItem="XNw-wp-a1N" firstAttribute="top" secondItem="aRs-8E-ZlC" secondAttribute="bottom" constant="35" id="ZxA-Ix-Vbn"/>
                                     <constraint firstAttribute="trailing" secondItem="cAh-9H-1Zk" secondAttribute="trailing" id="dmR-q0-Yw1"/>
                                     <constraint firstItem="cAh-9H-1Zk" firstAttribute="top" secondItem="XNw-wp-a1N" secondAttribute="bottom" constant="40" id="eSf-b3-sOY"/>
+                                    <constraint firstItem="1c7-hJ-IVt" firstAttribute="height" secondItem="aRs-8E-ZlC" secondAttribute="height" id="fYw-Qy-x8k"/>
                                     <constraint firstItem="cAh-9H-1Zk" firstAttribute="leading" secondItem="GXv-Rw-5mr" secondAttribute="leading" id="hIL-2T-K06"/>
+                                    <constraint firstItem="1c7-hJ-IVt" firstAttribute="centerX" secondItem="aRs-8E-ZlC" secondAttribute="centerX" id="jEA-Im-K7x"/>
                                     <constraint firstItem="XNw-wp-a1N" firstAttribute="leading" secondItem="GXv-Rw-5mr" secondAttribute="leading" id="ojS-l0-tDu"/>
                                     <constraint firstItem="aRs-8E-ZlC" firstAttribute="top" secondItem="GXv-Rw-5mr" secondAttribute="top" id="plW-WG-deq"/>
+                                    <constraint firstItem="1c7-hJ-IVt" firstAttribute="width" secondItem="aRs-8E-ZlC" secondAttribute="width" id="tLx-uo-uRg"/>
                                     <constraint firstAttribute="trailing" secondItem="XNw-wp-a1N" secondAttribute="trailing" id="zoY-Ks-gCT"/>
                                 </constraints>
                             </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="netflixImage" translatesAutoresizingMaskIntoConstraints="NO" id="gMJ-sS-vhr">
+                                <rect key="frame" x="157" y="54" width="100" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="gMJ-sS-vhr" secondAttribute="height" multiplier="2:1" id="15K-2L-FUY"/>
+                                    <constraint firstAttribute="height" constant="50" id="4to-4g-6fe"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Oe8-Jf-KIl"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="gMJ-sS-vhr" firstAttribute="top" secondItem="Oe8-Jf-KIl" secondAttribute="top" constant="10" id="QqD-AF-Aer"/>
                             <constraint firstItem="GXv-Rw-5mr" firstAttribute="leading" secondItem="Oe8-Jf-KIl" secondAttribute="leading" constant="50" id="dxu-gc-krT"/>
-                            <constraint firstItem="GXv-Rw-5mr" firstAttribute="centerY" secondItem="Tuf-d8-Y4i" secondAttribute="centerY" id="iQM-e2-Yre"/>
+                            <constraint firstItem="GXv-Rw-5mr" firstAttribute="centerY" secondItem="Tuf-d8-Y4i" secondAttribute="centerY" constant="-40" id="iQM-e2-Yre"/>
                             <constraint firstItem="Oe8-Jf-KIl" firstAttribute="trailing" secondItem="GXv-Rw-5mr" secondAttribute="trailing" constant="50" id="lft-v5-fhM"/>
+                            <constraint firstItem="gMJ-sS-vhr" firstAttribute="centerX" secondItem="Tuf-d8-Y4i" secondAttribute="centerX" id="v0i-8e-0gz"/>
                         </constraints>
                     </view>
                     <connections>
@@ -670,7 +691,9 @@
     </scenes>
     <resources>
         <image name="chevron.left" catalog="system" width="96" height="128"/>
+        <image name="imageee" width="259" height="194"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="netflixImage" width="1113" height="413"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

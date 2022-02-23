@@ -19,6 +19,11 @@ class ProfileViewController: UIViewController {
         createButton.backgroundColor = UIColor.red
         createButton.layer.cornerRadius = 5.0
         
+        nameTextfield.attributedPlaceholder = NSAttributedString(string: "Enter profile name", attributes: [NSAttributedString.Key.foregroundColor : UIColor.lightGray])
+    }
+    
+    @IBAction func profileImageTapped(_ sender: UIButton) {
+        print("Show profile images selection screen")
     }
 
     @IBAction func createProfileTapped(_ sender: UIButton) {
