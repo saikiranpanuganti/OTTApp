@@ -24,9 +24,8 @@ class ForgotPasswordViewController: UIViewController {
         emailTextField.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [NSAttributedString.Key.foregroundColor : UIColor.lightGray])
         dobTextField.attributedPlaceholder = NSAttributedString(string: "Date of Birth", attributes: [NSAttributedString.Key.foregroundColor : UIColor.lightGray])
         
-        submitButton.layer.borderWidth = 2.0
-        submitButton.layer.borderColor = UIColor.black.cgColor
-        submitButton.layer.cornerRadius = 10.0
+        submitButton.backgroundColor = UIColor.red
+        submitButton.layer.cornerRadius = 5.0
     }
     
     @IBAction func backTapped(){

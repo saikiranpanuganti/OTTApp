@@ -11,6 +11,7 @@ class ResetPasswordViewController: UIViewController {
     
     @IBOutlet weak var newPasswordTxt:UITextField!
     @IBOutlet weak var confirmPasswordTxt:UITextField!
+    @IBOutlet weak var submitButton: UIButton!
     
     var emailStr:String = ""
     
@@ -21,6 +22,8 @@ class ResetPasswordViewController: UIViewController {
         viewModel.delegate = self
         newPasswordTxt.attributedPlaceholder = NSAttributedString(string: "New Password", attributes: [NSAttributedString.Key.foregroundColor : UIColor.lightGray])
         confirmPasswordTxt.attributedPlaceholder = NSAttributedString(string: "Confirm Password", attributes: [NSAttributedString.Key.foregroundColor : UIColor.lightGray])
+        submitButton.backgroundColor = UIColor.red
+        submitButton.layer.cornerRadius = 5.0
     }
     
     @IBAction func backTapped(){

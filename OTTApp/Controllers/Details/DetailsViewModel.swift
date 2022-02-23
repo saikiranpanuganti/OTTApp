@@ -48,7 +48,7 @@ class DetailsViewModel {
                             let detailsData = try JSONDecoder().decode(SeriesDetailsModel.self, from: data)
                             self.details = detailsData.data?.response
                         }
-//                        self.delegate?.updateUI()
+                        self.delegate?.updateUI()
                     }
                 }catch {
                     print(error.localizedDescription)

@@ -34,13 +34,13 @@ class RegisterViewController: UIViewController {
         
         dobTextField.delegate = self
         
-        registerButton.layer.borderWidth = 2.0
         registerButton.layer.borderColor = UIColor.black.cgColor
-        registerButton.layer.cornerRadius = 10.0
+        registerButton.layer.cornerRadius = 5.0
+        registerButton.backgroundColor = UIColor.red
         
-        signInButton.layer.borderWidth = 2.0
-        signInButton.layer.borderColor = UIColor.black.cgColor
-        signInButton.layer.cornerRadius = 10.0
+        signInButton.layer.borderWidth = 1.0
+        signInButton.layer.borderColor = UIColor.red.cgColor
+        signInButton.layer.cornerRadius = 5.0
         
         emailTextField.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [NSAttributedString.Key.foregroundColor : UIColor.lightGray])
         passwordTextField.attributedPlaceholder = NSAttributedString(string: "Password", attributes: [NSAttributedString.Key.foregroundColor : UIColor.lightGray])

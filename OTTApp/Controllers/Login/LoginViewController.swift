@@ -26,13 +26,13 @@ class LoginViewController: UIViewController {
         emailTextField.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [NSAttributedString.Key.foregroundColor : UIColor.lightGray])
         passwordTextField.attributedPlaceholder = NSAttributedString(string: "Password", attributes: [NSAttributedString.Key.foregroundColor : UIColor.lightGray])
         
-        registerButton.layer.borderWidth = 2.0
-        registerButton.layer.borderColor = UIColor.black.cgColor
-        registerButton.layer.cornerRadius = 10.0
+        registerButton.layer.borderWidth = 1.0
+        registerButton.layer.borderColor = UIColor.red.cgColor
+        registerButton.layer.cornerRadius = 5.0
         
-        loginButton.layer.borderWidth = 2.0
         loginButton.layer.borderColor = UIColor.black.cgColor
-        loginButton.layer.cornerRadius = 10.0
+        loginButton.layer.cornerRadius = 5.0
+        loginButton.backgroundColor = UIColor.red
     }
     
     func isValidEmail(_ email: String) -> Bool {

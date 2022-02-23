@@ -142,12 +142,16 @@ class SplashViewController: UIViewController {
                     }
                 }
             }else {
-                let controller = Controllers.login.getControllers()
-                navigationController?.viewControllers = [controller]
+                DispatchQueue.main.async {
+                    let controller = Controllers.login.getControllers()
+                    self.navigationController?.viewControllers = [controller]
+                }
             }
         }else {
-            let controller = Controllers.login.getControllers()
-            navigationController?.viewControllers = [controller]
+            DispatchQueue.main.async {
+                let controller = Controllers.login.getControllers()
+                self.navigationController?.viewControllers = [controller]
+            }
         }
     }
 
