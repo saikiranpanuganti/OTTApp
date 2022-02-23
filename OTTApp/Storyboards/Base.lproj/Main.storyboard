@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cte-Rq-60F">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cte-Rq-60F">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -94,7 +94,7 @@
                                                 <rect key="frame" x="114.5" y="5" width="100" height="30"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="magnifyingglass" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="1fP-1T-RDt">
-                                                        <rect key="frame" x="0.0" y="2.5" width="30" height="24.5"/>
+                                                        <rect key="frame" x="0.0" y="2.5" width="30" height="25"/>
                                                         <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="1fP-1T-RDt" secondAttribute="height" multiplier="1:1" id="EWo-Br-ikz"/>
@@ -542,6 +542,80 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Hk-sl-GEF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="89.855072463768124" y="45.535714285714285"/>
+        </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="6qI-4y-mn1">
+            <objects>
+                <viewController storyboardIdentifier="ProfileViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Btq-Kr-hK5" customClass="ProfileViewController" customModule="OTTApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Tuf-d8-Y4i">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GXv-Rw-5mr">
+                                <rect key="frame" x="50" y="305.5" width="314" height="285"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aRs-8E-ZlC">
+                                        <rect key="frame" x="97" y="0.0" width="120" height="120"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="120" id="Qjp-kD-OFV"/>
+                                            <constraint firstAttribute="width" secondItem="aRs-8E-ZlC" secondAttribute="height" multiplier="1:1" id="vsc-Gx-zKV"/>
+                                        </constraints>
+                                    </imageView>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Profile Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XNw-wp-a1N">
+                                        <rect key="frame" x="0.0" y="155" width="314" height="45"/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="lfg-yY-fdA"/>
+                                        </constraints>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cAh-9H-1Zk">
+                                        <rect key="frame" x="0.0" y="240" width="314" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="rvk-DH-8Lq"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Create">
+                                            <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="20"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="createProfileTapped:" destination="Btq-Kr-hK5" eventType="touchUpInside" id="CRP-Zv-5Vw"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="cAh-9H-1Zk" secondAttribute="bottom" id="UbR-2h-l4T"/>
+                                    <constraint firstItem="aRs-8E-ZlC" firstAttribute="centerX" secondItem="GXv-Rw-5mr" secondAttribute="centerX" id="Wmx-AW-Fa2"/>
+                                    <constraint firstItem="XNw-wp-a1N" firstAttribute="top" secondItem="aRs-8E-ZlC" secondAttribute="bottom" constant="35" id="ZxA-Ix-Vbn"/>
+                                    <constraint firstAttribute="trailing" secondItem="cAh-9H-1Zk" secondAttribute="trailing" id="dmR-q0-Yw1"/>
+                                    <constraint firstItem="cAh-9H-1Zk" firstAttribute="top" secondItem="XNw-wp-a1N" secondAttribute="bottom" constant="40" id="eSf-b3-sOY"/>
+                                    <constraint firstItem="cAh-9H-1Zk" firstAttribute="leading" secondItem="GXv-Rw-5mr" secondAttribute="leading" id="hIL-2T-K06"/>
+                                    <constraint firstItem="XNw-wp-a1N" firstAttribute="leading" secondItem="GXv-Rw-5mr" secondAttribute="leading" id="ojS-l0-tDu"/>
+                                    <constraint firstItem="aRs-8E-ZlC" firstAttribute="top" secondItem="GXv-Rw-5mr" secondAttribute="top" id="plW-WG-deq"/>
+                                    <constraint firstAttribute="trailing" secondItem="XNw-wp-a1N" secondAttribute="trailing" id="zoY-Ks-gCT"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Oe8-Jf-KIl"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="GXv-Rw-5mr" firstAttribute="leading" secondItem="Oe8-Jf-KIl" secondAttribute="leading" constant="50" id="dxu-gc-krT"/>
+                            <constraint firstItem="GXv-Rw-5mr" firstAttribute="centerY" secondItem="Tuf-d8-Y4i" secondAttribute="centerY" id="iQM-e2-Yre"/>
+                            <constraint firstItem="Oe8-Jf-KIl" firstAttribute="trailing" secondItem="GXv-Rw-5mr" secondAttribute="trailing" constant="50" id="lft-v5-fhM"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="createButton" destination="cAh-9H-1Zk" id="tTN-aN-eEc"/>
+                        <outlet property="nameTextfield" destination="XNw-wp-a1N" id="3Nh-Qr-xeN"/>
+                        <outlet property="profileImage" destination="aRs-8E-ZlC" id="p7I-Ms-CCx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PcQ-hY-5d9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="90" y="739"/>
         </scene>
         <!--Splash View Controller-->
         <scene sceneID="vHs-as-3Vs">
