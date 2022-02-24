@@ -43,7 +43,7 @@ class SettingsTabViewController: UIViewController {
 }
 extension SettingsTabViewController:UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return 4
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -54,6 +54,8 @@ extension SettingsTabViewController:UITableViewDataSource{
             return 3
         case 2:
             return 2
+        case 3:
+            return 1
         default:
             break
         }
@@ -103,6 +105,13 @@ extension SettingsTabViewController:UITableViewDataSource{
             default:
                 break
             }
+        case 3:
+            if let vc = tableViewRef.dequeueReusableCell(withIdentifier: "MobileDataUsageTableViewCell", for: indexPath) as? MobileDataUsageTableViewCell {
+                vc.automaticLblRef.isHidden = true
+                vc.configUI(mobileData: "Logout", automatic: "", image: "power")
+                vc.topHeightMobilefdata.constant = 20
+                return vc
+            }
         default:
             break
         }
@@ -118,6 +127,8 @@ extension SettingsTabViewController:UITableViewDataSource{
                 header.configUI(header: "Downloads")
             case 2:
                 header.configUI(header: "About")
+            case 3:
+                header.configUI(header: "Sign Out")
             default:
                 break
             }
@@ -151,7 +162,7 @@ extension SettingsTabViewController:UITableViewDelegate {
             default:
                 break
             }
-        case 2:
+        case 2, 3:
             return 60
         default:
             break

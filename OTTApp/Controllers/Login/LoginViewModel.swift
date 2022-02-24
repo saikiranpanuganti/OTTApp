@@ -46,6 +46,8 @@ class LoginViewModel {
                         }
                     }catch {
                         print(error.localizedDescription)
+                        let errorData = try? JSONSerialization.jsonObject(with: data, options: .allowFragments)
+                        print(errorData)
                         self.delegate?.loginResponse(success: false, message: "Server Error")
                     }
                 }
