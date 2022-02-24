@@ -40,6 +40,12 @@ class SettingsTabViewController: UIViewController {
         let controller = Controllers.webView.getControllers()
         navigationController?.pushViewController(controller, animated: true)
     }
+    
+    func logoutUser() {
+        let controller = Controllers.login.getControllers()
+        navigationController?.viewControllers = [controller]
+        navigationController?.popToRootViewController(animated: true)
+    }
 }
 extension SettingsTabViewController:UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -145,6 +151,8 @@ extension SettingsTabViewController:UITableViewDelegate {
             }else if indexPath.row == 1 {
                 openWebKit()
             }
+        }else if indexPath.section == 3 {
+            logoutUser()
         }
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
