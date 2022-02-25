@@ -24,8 +24,6 @@ class SplashViewController: UIViewController {
         super.viewDidLoad()
         
         checkForPermission()
-        
-//        checkLoggedStatus()
         getConfigData()
         
         
@@ -106,56 +104,62 @@ class SplashViewController: UIViewController {
     
     func animationComplete() {
         if dataFetchComplete {
-            let controller = Controllers.users.getControllers()
-            self.navigationController?.pushViewController(controller, animated: true)
+            checkLoginStatusAndNavigate()
         }else {
             isAnimationComplete = true
         }
     }
     
     func checkLoggedStatus() {
-        if let isLoggedIn = UserDefaults.standard.value(forKey: kLoggedIn) as? Bool {
-            if isLoggedIn {
-                dispatchGroup.enter()
-                concurrentQueue.async {
-                    self.getData()
-                }
-                
-                dispatchGroup.enter()
-                concurrentQueue.async {
-                    self.getMovieCategories()
-                }
-                
-                dispatchGroup.enter()
-                concurrentQueue.async {
-                    self.getTvShowsCategories()
-                }
-                
-                dispatchGroup.notify(queue: .main) {
-                    print("dispatchGroup notifier")
+        dispatchGroup.enter()
+        concurrentQueue.async {
+            self.getData()
+        }
+        
+        dispatchGroup.enter()
+        concurrentQueue.async {
+            self.getMovieCategories()
+        }
+        
+        dispatchGroup.enter()
+        concurrentQueue.async {
+            self.getTvShowsCategories()
+        }
+        
+        dispatchGroup.notify(queue: .main) {
+            print("dispatchGroup notifier")
 
-                    if self.isAnimationComplete {
-                        let controller = Controllers.users.getControllers()
-                        self.navigationController?.pushViewController(controller, animated: true)
-                    }else {
-                        self.dataFetchComplete = true
-                    }
+            if self.isAnimationComplete {
+                self.checkLoginStatusAndNavigate()
+            }else {
+                self.dataFetchComplete = true
+            }
+        }
+    }
+
+    func checkLoginStatusAndNavigate() {
+        if let isLoggedIn = UserDefaults.standard.value(forKey: kLoggedIn) as? Bool, isLoggedIn {
+            if User.shared.savedUser?.profiles != nil {
+                DispatchQueue.main.async {
+                    let controller = Controllers.users.getControllers()
+                    self.navigationController?.viewControllers = [controller]
+                    self.navigationController?.popToRootViewController(animated: true)
                 }
             }else {
                 DispatchQueue.main.async {
-                    let controller = Controllers.login.getControllers()
+                    let controller = Controllers.createProfile.getControllers()
                     self.navigationController?.viewControllers = [controller]
+                    self.navigationController?.popToRootViewController(animated: true)
                 }
             }
         }else {
             DispatchQueue.main.async {
                 let controller = Controllers.login.getControllers()
                 self.navigationController?.viewControllers = [controller]
+                self.navigationController?.popToRootViewController(animated: true)
             }
         }
     }
-
-    
     
     func getData() {
         self.category = .home

@@ -15,7 +15,19 @@ struct LoginModel: Codable {
     let data: UserData?
 }
 
-// MARK: - DataClass
+// MARK: - UserData
 struct UserData: Codable {
     let password, email, userid, dob: String?
+    let profiles: [Profile]?
+}
+
+// MARK: - Profile
+struct Profile: Codable {
+    let profileName, profileID, profileImage: String?
+
+    enum CodingKeys: String, CodingKey {
+        case profileName
+        case profileID = "profileId"
+        case profileImage
+    }
 }

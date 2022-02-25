@@ -95,6 +95,13 @@ class LoginViewController: UIViewController {
 
 
 extension LoginViewController: LoginViewModelDelegate {
+    func navigateToCreateProfilesVC() {
+        DispatchQueue.main.async {
+            let controller = Controllers.createProfile.getControllers()
+            self.navigationController?.pushViewController(controller, animated: true)
+        }
+    }
+    
     func loginResponse(success: Bool, message: String?) {
         DispatchQueue.main.async {
             if success {

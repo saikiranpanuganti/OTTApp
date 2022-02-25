@@ -9,79 +9,70 @@ import UIKit
 
 
 protocol UsersViewDelegate: AnyObject {
-    func userTapped()
+    func profileTapped()
+    func addProfile()
 }
 
 class UsersView:UIView{
-    @IBOutlet weak var userOneImg:UIImageView!
-    @IBOutlet weak var userTwoImg:UIImageView!
-    @IBOutlet weak var userThreeImg:UIImageView!
-    @IBOutlet weak var userFourImg:UIImageView!
-    @IBOutlet weak var userFiveImg:UIImageView!
-    
-    @IBOutlet weak var userOneLbl:UILabel!
-    @IBOutlet weak var userTwoLbl:UILabel!
-    @IBOutlet weak var userThreeLbl:UILabel!
-    @IBOutlet weak var userFourLbl:UILabel!
-    @IBOutlet weak var userFiveLbl:UILabel!
-    
-    @IBOutlet weak var UserOneView:UIImageView!
-    @IBOutlet weak var UserTwoView:UIImageView!
-    @IBOutlet weak var UserThreeView:UIImageView!
-    @IBOutlet weak var UserFourView:UIImageView!
-    @IBOutlet weak var UserFiveView:UIImageView!
+    @IBOutlet weak var collectionView: UICollectionView!
     
     weak var delegate: UsersViewDelegate?
     
-    func setupUI(){
-        userOneImg.image = Images.shared.userImage
-        userTwoImg.image = Images.shared.userImage
-        userThreeImg.image = Images.shared.userImage
-        userFourImg.image = Images.shared.userImage
-        userFiveImg.image = Images.shared.userImage
-        
-        UserOneView.layer.cornerRadius = 8
-        UserTwoView.layer.cornerRadius = 8
-        UserThreeView.layer.cornerRadius = 8
-        UserFourView.layer.cornerRadius = 8
-        UserFiveView.layer.cornerRadius = 8
-        
-        userOneLbl.text = "User 1"
-        userTwoLbl.text = "User 2"
-        userThreeLbl.text = "User 3"
-        userFourLbl.text = "User 4"
-        userFiveLbl.text = "User 5"
-        
-        userOneLbl.font = Fonts.shared.medium5
-        userTwoLbl.font = Fonts.shared.medium5
-        userThreeLbl.font = Fonts.shared.medium5
-        userFourLbl.font = Fonts.shared.medium5
-        userFiveLbl.font = Fonts.shared.medium5
-        
-        userOneLbl.textColor = Colors.shared.whiteColor
-        userTwoLbl.textColor = Colors.shared.whiteColor
-        userThreeLbl.textColor = Colors.shared.whiteColor
-        userFourLbl.textColor = Colors.shared.whiteColor
-        userFiveLbl.textColor = Colors.shared.whiteColor
+    var profiles = User.shared.savedUser?.profiles ?? []
+    var isEditOn: Bool = false
+    
+    func setupUI() {
+        collectionView.register(UINib(nibName: "ProfileCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ProfileCollectionViewCell")
+        collectionView.register(UINib(nibName: "ImageCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ImageCollectionViewCell")
+        collectionView.dataSource = self
+        collectionView.delegate = self
     }
     
-    @IBAction func profile1Tapped() {
-        delegate?.userTapped()
+}
+
+extension UsersView: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if profiles.count < 5 {
+            return profiles.count + 1
+        }else {
+            return profiles.count
+        }
     }
     
-    @IBAction func profile2Tapped() {
-        delegate?.userTapped()
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProfileCollectionViewCell", for: indexPath) as? ProfileCollectionViewCell {
+            if indexPath.row < profiles.count {
+                cell.configureUI(profile: profiles[indexPath.row], editOn: isEditOn)
+            }else {
+                cell.configureUI(systemImage: "plus.circle")
+            }
+            return cell
+        }
+        return UICollectionViewCell()
+    }
+}
+
+extension UsersView: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.row < profiles.count {
+            User.shared.selectedProfile = profiles[indexPath.row]
+            delegate?.profileTapped()
+        }else {
+            delegate?.addProfile()
+        }
+    }
+}
+
+extension UsersView: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 110, height: 160)
     }
     
-    @IBAction func profile3Tapped() {
-        delegate?.userTapped()
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 10
     }
     
-    @IBAction func profile4Tapped() {
-        delegate?.userTapped()
-    }
-    
-    @IBAction func profile5Tapped() {
-        delegate?.userTapped()
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 30
     }
 }

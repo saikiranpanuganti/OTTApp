@@ -22,8 +22,12 @@ class UsersViewController: UIViewController {
 }
 
 extension UsersViewController: UsersViewDelegate {
-    func userTapped() {
+    func profileTapped() {
         let controller = Controllers.tabBar.getControllers()
         navigationController?.viewControllers = [controller]
+    }
+    
+    func addProfile() {
+        
     }
 }

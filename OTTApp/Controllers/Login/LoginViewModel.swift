@@ -9,6 +9,7 @@ import Foundation
 
 protocol LoginViewModelDelegate:AnyObject{
     func loginResponse(success: Bool, message: String?)
+    func navigateToCreateProfilesVC()
 }
 
 class LoginViewModel {
@@ -40,20 +41,26 @@ class LoginViewModel {
                             let data = try JSONEncoder().encode(loginData.data)
                             UserDefaults.standard.set(data, forKey: kuserDetails)
                             
-                            self.delegate?.loginResponse(success: true, message: "User successfully logged in")
+                            self.handleLoginSuccess(user: loginData)
                         }else {
                             self.delegate?.loginResponse(success: false, message: "Server Error")
                         }
                     }catch {
                         print(error.localizedDescription)
                         let errorData = try? JSONSerialization.jsonObject(with: data, options: .allowFragments)
-                        print(errorData)
                         self.delegate?.loginResponse(success: false, message: "Server Error")
                     }
                 }
             }
         }
-        
+    }
+    
+    func handleLoginSuccess(user: LoginModel) {
+        if let profiles = user.data?.profiles, profiles.count > 0 {
+            self.delegate?.loginResponse(success: true, message: "User successfully logged in")
+        }else {
+            delegate?.navigateToCreateProfilesVC()
+        }
     }
     
 }

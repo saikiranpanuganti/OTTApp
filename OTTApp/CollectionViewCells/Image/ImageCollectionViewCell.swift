@@ -23,4 +23,12 @@ class ImageCollectionViewCell: UICollectionViewCell {
         images.sd_setImage(with: url, completed: nil)
     }
 
+    func configureUI(image: String) {
+        images.image = UIImage(named: image)
+        images.backgroundColor = UIColor.darkGray
+    }
+    
+    func configureUI(systemImage: String) {
+        images.image = UIImage(systemName: systemImage)
+    }
 }

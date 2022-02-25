@@ -1,0 +1,36 @@
+//
+//  ProfileCollectionViewCell.swift
+//  OTTApp
+//
+//  Created by SaiKiran Panuganti on 25/02/22.
+//
+
+import UIKit
+
+class ProfileCollectionViewCell: UICollectionViewCell {
+    @IBOutlet weak var profileImageBackground: UIView!
+    @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var profileName: UILabel!
+    @IBOutlet weak var editView: UIView!
+    @IBOutlet weak var editImage: UIImageView!
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        editView.isHidden = true
+        profileImageBackground.layer.cornerRadius = 10.0
+    }
+    
+    func configureUI(profile: Profile?, editOn: Bool) {
+        if let profile = profile {
+            profileImage.image = UIImage(named: profile.profileImage ?? "")
+            profileName.text = profile.profileName
+            editView.isHidden = !editOn
+        }
+    }
+    
+    func configureUI(systemImage: String) {
+        profileImage.image = UIImage(systemName: systemImage)?.withTintColor(UIColor.white, renderingMode: .alwaysTemplate)
+    }
+    
+}
