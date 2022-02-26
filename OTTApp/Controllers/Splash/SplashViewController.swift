@@ -126,6 +126,13 @@ class SplashViewController: UIViewController {
             self.getTvShowsCategories()
         }
         
+        if let isLoggedIn = UserDefaults.standard.value(forKey: kLoggedIn) as? Bool, isLoggedIn {
+            dispatchGroup.enter()
+            concurrentQueue.async {
+                self.getUserDetails()
+            }
+        }
+        
         dispatchGroup.notify(queue: .main) {
             print("dispatchGroup notifier")
 
@@ -215,7 +222,6 @@ class SplashViewController: UIViewController {
                     checkLoggedStatus()
                 }
             }
-            
         }
     }
     
@@ -285,7 +291,39 @@ class SplashViewController: UIViewController {
         }
     }
     
-    
+    func getUserDetails() {
+        let urlString = "https://n6lih99291.execute-api.ap-south-1.amazonaws.com/dev/user-details"
+        
+        var headers: [String: String] = [:]
+        headers["Content-Type"] = "application/json"
+        
+        var urlParams: [String: String] = [:]
+        urlParams["email"] = User.shared.savedUser?.email ?? ""
+        
+        NetworkAdaptor.request(url: urlString, method: .get, headers: headers, urlParameters: urlParams, bodyParameters: nil) { data, response, error in
+            if error == nil {
+                if let data = data {
+                    do {
+                        let userData = try JSONDecoder().decode(LoginModel.self, from: data)
+                        if userData.statusCode == 200 {
+                            let data = try JSONEncoder().encode(userData.data)
+                            UserDefaults.standard.set(data, forKey: kuserDetails)
+                            
+                            print("Get User details Success")
+                        }else {
+                            print("Show Error")
+                        }
+                    }catch {
+                        print(error.localizedDescription)
+                        print("Show Error")
+                    }
+                }
+            }else {
+                print("Show Error")
+            }
+            self.dispatchGroup.leave()
+        }
+    }
     
 }
 

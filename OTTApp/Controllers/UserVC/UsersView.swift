@@ -11,14 +11,17 @@ import UIKit
 protocol UsersViewDelegate: AnyObject {
     func profileTapped()
     func addProfile()
+    func deleteProfile(profile: Profile)
 }
 
-class UsersView:UIView{
+class UsersView: UIView {
     @IBOutlet weak var collectionView: UICollectionView!
     
     weak var delegate: UsersViewDelegate?
     
-    var profiles = User.shared.savedUser?.profiles ?? []
+    var profiles: [Profile] {
+        return User.shared.savedUser?.profiles ?? []
+    }
     var isEditOn: Bool = false
     
     func setupUI() {
@@ -28,6 +31,20 @@ class UsersView:UIView{
         collectionView.delegate = self
     }
     
+    func updateUI() {
+        DispatchQueue.main.async {
+            self.collectionView.reloadData()
+        }
+    }
+    
+    @IBAction func editTapped(_ sender: UIButton) {
+        if profiles.count > 1 {
+            DispatchQueue.main.async {
+                self.isEditOn = !self.isEditOn
+                self.collectionView.reloadData()
+            }
+        }
+    }
 }
 
 extension UsersView: UICollectionViewDataSource {
@@ -54,11 +71,23 @@ extension UsersView: UICollectionViewDataSource {
 
 extension UsersView: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if indexPath.row < profiles.count {
-            User.shared.selectedProfile = profiles[indexPath.row]
-            delegate?.profileTapped()
+        if isEditOn {
+            if indexPath.row < profiles.count {
+                isEditOn = false
+                updateUI()
+                delegate?.deleteProfile(profile: profiles[indexPath.row])
+            }else {
+                isEditOn = false
+                updateUI()
+                delegate?.addProfile()
+            }
         }else {
-            delegate?.addProfile()
+            if indexPath.row < profiles.count {
+                User.shared.selectedProfile = profiles[indexPath.row]
+                delegate?.profileTapped()
+            }else {
+                delegate?.addProfile()
+            }
         }
     }
 }

@@ -30,7 +30,10 @@ class ProfileCollectionViewCell: UICollectionViewCell {
     }
     
     func configureUI(systemImage: String) {
-        profileImage.image = UIImage(systemName: systemImage)?.withTintColor(UIColor.white, renderingMode: .alwaysTemplate)
+        editView.isHidden = true
+        profileName.text = ""
+        profileImage.image = UIImage(systemName: systemImage)?.withRenderingMode(.alwaysTemplate)
+        profileImage.tintColor = UIColor.white
     }
     
 }

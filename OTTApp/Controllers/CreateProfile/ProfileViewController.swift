@@ -14,9 +14,11 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var createButton: UIButton!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var viewCenterY: NSLayoutConstraint!
+    @IBOutlet weak var closeButton: UIButton!
 
-    
-    var imageName: String = "profile1" {
+    var createProfileTitle = "Please create a profile to continue"
+    var isFromLogin: Bool = true
+    var imageName: String = "profile18" {
         didSet {
             profileImage.image = UIImage(named: imageName)
         }
@@ -32,11 +34,15 @@ class ProfileViewController: UIViewController {
         profileImage.image = UIImage(named: imageName)
         
         if User.shared.savedUser?.profiles == nil {
-            titleLabel.text = "Please create a profile to continue"
+            titleLabel.text = createProfileTitle
             viewCenterY.constant = 0
         }
         
         nameTextfield.attributedPlaceholder = NSAttributedString(string: "Enter profile name", attributes: [NSAttributedString.Key.foregroundColor : UIColor.lightGray])
+        
+        if isFromLogin {
+            closeButton.isHidden = true
+        }
     }
     
     func createProfile() {
@@ -56,7 +62,7 @@ class ProfileViewController: UIViewController {
                         do {
                             let jsonData = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any]
                             if let statusCode = jsonData?["statusCode"] as? Int, statusCode == 200 {
-                                self.goToHome()
+                                self.getUserDetails()
                             }else {
                                 print("Show Error")
                             }
@@ -68,6 +74,49 @@ class ProfileViewController: UIViewController {
                     print("Show Error")
                 }
             }
+        }
+    }
+    
+    func getUserDetails() {
+        let urlString = "https://n6lih99291.execute-api.ap-south-1.amazonaws.com/dev/user-details"
+        
+        var headers: [String: String] = [:]
+        headers["Content-Type"] = "application/json"
+        
+        var urlParams: [String: String] = [:]
+        urlParams["email"] = User.shared.savedUser?.email ?? ""
+        
+        NetworkAdaptor.request(url: urlString, method: .get, headers: headers, urlParameters: urlParams, bodyParameters: nil) { data, response, error in
+            if error == nil {
+                if let data = data {
+                    do {
+                        let userData = try JSONDecoder().decode(LoginModel.self, from: data)
+                        if userData.statusCode == 200 {
+                            let data = try JSONEncoder().encode(userData.data)
+                            UserDefaults.standard.set(data, forKey: kuserDetails)
+                            
+                            if self.isFromLogin {
+                                self.goToHome()
+                            }else {
+                                self.dismissScreen()
+                            }
+                        }else {
+                            print("Show Error")
+                        }
+                    }catch {
+                        print(error.localizedDescription)
+                        print("Show Error")
+                    }
+                }
+            }else {
+                print("Show Error")
+            }
+        }
+    }
+    
+    func dismissScreen() {
+        DispatchQueue.main.async {
+            self.navigationController?.popViewController(animated: true)
         }
     }
     
@@ -88,6 +137,10 @@ class ProfileViewController: UIViewController {
 
     @IBAction func createProfileTapped(_ sender: UIButton) {
         createProfile()
+    }
+    
+    @IBAction func closeTapped(_ sender: UIButton) {
+        dismissScreen()
     }
 }
 
