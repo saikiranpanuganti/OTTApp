@@ -49,7 +49,7 @@ class SettingsTabViewController: UIViewController {
 }
 extension SettingsTabViewController:UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 4
+        return 3//4
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

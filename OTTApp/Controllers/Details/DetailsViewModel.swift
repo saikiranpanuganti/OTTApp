@@ -83,4 +83,33 @@ class DetailsViewModel {
             }
         }
     }
+    
+    func addToList() {
+        var headers: [String: String] = [:]
+        headers["Content-Type"] = "application/json"
+        
+        var bodyParams: [String: Any] = [:]
+        bodyParams["content_type"] = details?.contentType?.rawValue
+        bodyParams["contentid"] = details?.id
+        bodyParams["profileid"] = User.shared.selectedProfile?.profileID ?? ""
+        
+        NetworkAdaptor.request(url: ApiHandler.addToWatching.url(), method: .post, headers: headers, urlParameters: nil, bodyParameters: bodyParams) { data, response, error in
+            if error == nil {
+                do {
+                    if let data = data {
+                        if let jsonData = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any] {
+                            if let status = jsonData["statusCode"] as? Int, status == 200 {
+                                print("Success adding to Mylist")
+                                print("Get mylist data")
+                            }
+                        }
+                    }
+                }catch {
+                    print(error.localizedDescription)
+                }
+            }else {
+                print(error.debugDescription)
+            }
+        }
+    }
 }

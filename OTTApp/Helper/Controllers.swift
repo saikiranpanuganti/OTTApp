@@ -23,6 +23,7 @@ enum Controllers {
     case player
     case createProfile
     case profileImages
+    case account
     
     func getControllers()->UIViewController {
         var storyBoardName = ""
@@ -76,6 +77,9 @@ enum Controllers {
         case .profileImages:
             storyBoardName = "Main"
             storyBoardID = "ProfileImagesViewController"
+        case .account:
+            storyBoardName = "Home"
+            storyBoardID = "AccountViewController"
         }
         
         return UIStoryboard(name: storyBoardName, bundle: nil).instantiateViewController(withIdentifier: storyBoardID)

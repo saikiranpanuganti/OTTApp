@@ -36,4 +36,15 @@ class ProfileCollectionViewCell: UICollectionViewCell {
         profileImage.tintColor = UIColor.white
     }
     
+    func configureUI(profile: Profile?, border: UIColor) {
+        if let profile = profile {
+            profileImage.image = UIImage(named: profile.profileImage ?? "")
+            profileName.text = profile.profileName
+            profileName.font = UIFont.systemFont(ofSize: 14)
+            profileImage.backgroundColor = UIColor.darkGray
+            profileImageBackground.layer.borderColor = border.cgColor
+            profileImageBackground.layer.borderWidth = 2.0
+        }
+    }
+    
 }

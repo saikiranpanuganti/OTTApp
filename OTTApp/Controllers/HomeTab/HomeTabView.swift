@@ -182,7 +182,7 @@ extension HomeTabView:UICollectionViewDelegateFlowLayout{
             if category == .subCategory {
                 return CGSize(width: (screenWidth-8)/3, height: (screenWidth-8)/3)
             }
-            return CGSize(width: screenWidth, height: screenWidth/2)
+            return CGSize(width: screenWidth, height: screenWidth/2.8)
         }
     }
     
@@ -193,7 +193,7 @@ extension HomeTabView:UICollectionViewDelegateFlowLayout{
             if category == .subCategory {
                 return CGSize.zero
             }
-            return CGSize(width: screenWidth, height: 80)
+            return CGSize(width: screenWidth, height: 50)
         }
     }
     

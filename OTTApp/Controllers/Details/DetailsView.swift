@@ -10,6 +10,10 @@ import UIKit
 protocol DetailsViewDelegate: AnyObject {
     func closeTapped()
     func playOrResumeTapped()
+    func myListTapped()
+    func rateTapped()
+    func shareTapped()
+    func moreLikeThistapped()
 }
 
 class DetailsView: UIView {
@@ -119,6 +123,18 @@ extension DetailsView: UITableViewDelegate {
 }
 
 extension DetailsView: DetailsTableViewCellDelegate {
+    func myListTapped() {
+        delegate?.myListTapped()
+    }
+    
+    func rateTapped() {
+        delegate?.rateTapped()
+    }
+    
+    func shareTapped() {
+        delegate?.shareTapped()
+    }
+    
     func playOrResumeTapped() {
         delegate?.playOrResumeTapped()
     }
@@ -140,7 +156,7 @@ extension DetailsView: DetailsHeaderTableViewCellDelegate {
     
     func moreLikeThistapped() {
         showEpisodes = false
-        updateUI()
+        delegate?.moreLikeThistapped()
     }
     
     func seasonTapped() {

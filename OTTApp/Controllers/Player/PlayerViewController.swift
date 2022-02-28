@@ -19,6 +19,13 @@ class PlayerViewController: UIViewController {
         viewModel.getVideoUrl()
     }
 
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        if let progress = playerView.videoPlayerView?.getCurrentTime(), let duration = playerView.videoPlayerView?.getDuration() {
+            viewModel.saveProgress(progress: Int(progress), duration: Int(duration))
+        }
+    }
 }
 
 extension PlayerViewController: PlayerViewModelDelegate {

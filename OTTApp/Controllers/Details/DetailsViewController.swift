@@ -32,6 +32,23 @@ extension DetailsViewController: DetailsViewModelDelegate {
 }
 
 extension DetailsViewController: DetailsViewDelegate {
+    func moreLikeThistapped() {
+        detailsView.moreLikeThisData = viewModel.moreLikeThisData
+        detailsView.updateUI()
+    }
+    
+    func myListTapped() {
+        viewModel.addToList()
+    }
+    
+    func rateTapped() {
+        
+    }
+    
+    func shareTapped() {
+        
+    }
+    
     func playOrResumeTapped() {
         if let controller = Controllers.player.getControllers() as? PlayerViewController {
             controller.viewModel.contentDetails = viewModel.details

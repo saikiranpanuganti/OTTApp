@@ -47,7 +47,12 @@ class DetailsHeaderTableViewCell: UITableViewCell {
     
     func configureUI(season: Season?) {
         if let season = season {
+            episodesLabel.isHidden = false
+            episodesView.isHidden = false
             seasonLabel.text = "Season " + String(season.seasonNumber ?? 1)
+        }else {
+            episodesLabel.isHidden = true
+            episodesView.isHidden = true
         }
     }
     

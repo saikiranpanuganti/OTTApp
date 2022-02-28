@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -149,7 +150,7 @@
                                                 <rect key="frame" x="135" y="0.0" width="82" height="40"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.down.to.line.alt" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="LeX-eF-FvS">
-                                                        <rect key="frame" x="0.0" y="0.0" width="20" height="39.5"/>
+                                                        <rect key="frame" x="0.0" y="1.5" width="20" height="37"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="20" id="hHu-YS-N6T"/>
@@ -263,13 +264,24 @@
                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zUZ-Gu-5l6">
+                                                <rect key="frame" x="0.0" y="0.0" width="70" height="60"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <connections>
+                                                    <action selector="myListTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="94F-Ia-KfA"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstItem="zUZ-Gu-5l6" firstAttribute="centerY" secondItem="SO0-uj-9Z8" secondAttribute="centerY" id="3zC-5c-9Qp"/>
                                             <constraint firstItem="yFp-rH-79L" firstAttribute="centerX" secondItem="SO0-uj-9Z8" secondAttribute="centerX" id="78D-Hu-ptg"/>
                                             <constraint firstItem="YpN-Uj-G5B" firstAttribute="leading" secondItem="SO0-uj-9Z8" secondAttribute="leading" id="9MJ-ci-NMp"/>
+                                            <constraint firstItem="zUZ-Gu-5l6" firstAttribute="centerX" secondItem="SO0-uj-9Z8" secondAttribute="centerX" id="EF3-1o-Di7"/>
+                                            <constraint firstItem="zUZ-Gu-5l6" firstAttribute="height" secondItem="SO0-uj-9Z8" secondAttribute="height" id="HEk-h3-rPP"/>
                                             <constraint firstAttribute="trailing" secondItem="YpN-Uj-G5B" secondAttribute="trailing" id="P0u-Q6-yZ3"/>
                                             <constraint firstAttribute="width" constant="70" id="PfY-xv-nax"/>
+                                            <constraint firstItem="zUZ-Gu-5l6" firstAttribute="width" secondItem="SO0-uj-9Z8" secondAttribute="width" id="lQW-1F-7O5"/>
                                             <constraint firstItem="yFp-rH-79L" firstAttribute="top" secondItem="SO0-uj-9Z8" secondAttribute="top" id="nXe-yk-nIX"/>
                                             <constraint firstAttribute="bottom" secondItem="YpN-Uj-G5B" secondAttribute="bottom" id="yaH-d9-tBI"/>
                                         </constraints>
@@ -291,13 +303,24 @@
                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ak4-rU-wbF">
+                                                <rect key="frame" x="0.0" y="0.0" width="70" height="60"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <connections>
+                                                    <action selector="rateTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="jK8-vG-ebz"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="kML-l1-kLt" firstAttribute="centerX" secondItem="ALB-ZQ-b9t" secondAttribute="centerX" id="6VW-Gt-hQe"/>
+                                            <constraint firstItem="ak4-rU-wbF" firstAttribute="width" secondItem="ALB-ZQ-b9t" secondAttribute="width" id="9Zx-Co-BxO"/>
+                                            <constraint firstItem="ak4-rU-wbF" firstAttribute="centerX" secondItem="ALB-ZQ-b9t" secondAttribute="centerX" id="Fmh-yA-T6g"/>
                                             <constraint firstAttribute="bottom" secondItem="iVe-xD-LKX" secondAttribute="bottom" id="HCv-BH-Orl"/>
+                                            <constraint firstItem="ak4-rU-wbF" firstAttribute="height" secondItem="ALB-ZQ-b9t" secondAttribute="height" id="Tgz-dZ-fWK"/>
                                             <constraint firstAttribute="trailing" secondItem="iVe-xD-LKX" secondAttribute="trailing" id="TsZ-NQ-Qpd"/>
                                             <constraint firstItem="kML-l1-kLt" firstAttribute="top" secondItem="ALB-ZQ-b9t" secondAttribute="top" id="aBK-B5-Fgj"/>
+                                            <constraint firstItem="ak4-rU-wbF" firstAttribute="centerY" secondItem="ALB-ZQ-b9t" secondAttribute="centerY" id="cGr-0G-4T0"/>
                                             <constraint firstItem="iVe-xD-LKX" firstAttribute="leading" secondItem="ALB-ZQ-b9t" secondAttribute="leading" id="lOZ-Fe-06C"/>
                                         </constraints>
                                     </view>
@@ -318,12 +341,23 @@
                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vbI-ba-uXX">
+                                                <rect key="frame" x="0.0" y="0.0" width="70" height="60"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <connections>
+                                                    <action selector="shareTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="r3D-1J-SmQ"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="kDb-Kc-rvy" firstAttribute="top" secondItem="X8p-Xm-zgf" secondAttribute="top" id="3C4-2j-SkT"/>
                                             <constraint firstAttribute="bottom" secondItem="Ara-dm-Djh" secondAttribute="bottom" id="ALT-Gb-jZM"/>
                                             <constraint firstItem="Ara-dm-Djh" firstAttribute="leading" secondItem="X8p-Xm-zgf" secondAttribute="leading" id="Eep-1E-wNQ"/>
+                                            <constraint firstItem="vbI-ba-uXX" firstAttribute="centerY" secondItem="X8p-Xm-zgf" secondAttribute="centerY" id="ZVb-EZ-2hO"/>
+                                            <constraint firstItem="vbI-ba-uXX" firstAttribute="height" secondItem="X8p-Xm-zgf" secondAttribute="height" id="aHX-eT-fIW"/>
+                                            <constraint firstItem="vbI-ba-uXX" firstAttribute="centerX" secondItem="X8p-Xm-zgf" secondAttribute="centerX" id="am8-Is-qcA"/>
+                                            <constraint firstItem="vbI-ba-uXX" firstAttribute="width" secondItem="X8p-Xm-zgf" secondAttribute="width" id="sTn-fk-OhD"/>
                                             <constraint firstAttribute="trailing" secondItem="Ara-dm-Djh" secondAttribute="trailing" id="t1L-2a-rz4"/>
                                             <constraint firstItem="kDb-Kc-rvy" firstAttribute="centerX" secondItem="X8p-Xm-zgf" secondAttribute="centerX" id="vGe-8t-b1E"/>
                                         </constraints>
@@ -395,7 +429,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="arrow.down.to.line.alt" catalog="system" width="111" height="128"/>
+        <image name="arrow.down.to.line.alt" catalog="system" width="128" height="128"/>
         <image name="hand.thumbsup" catalog="system" width="128" height="128"/>
         <image name="netflixLogo" width="32" height="32"/>
         <image name="paperplane" catalog="system" width="128" height="118"/>

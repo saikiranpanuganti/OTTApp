@@ -34,7 +34,11 @@ class TabBarController: UITabBarController {
         let settingsTabBarItem = UITabBarItem(title: "Settings", image: Images.shared.settingsUnSelected?.withRenderingMode(.alwaysTemplate), selectedImage: Images.shared.settingsSelected?.withRenderingMode(.alwaysTemplate))
         settingsTab.tabBarItem = settingsTabBarItem
         
-        self.viewControllers = [homeTab, searchTab, settingsTab]
+        let accountTab = Controllers.account.getControllers()
+        let accountTabBarItem = UITabBarItem(title: "Account", image: UIImage(systemName: "person.circle"), selectedImage: UIImage(systemName: "person.circle.fill"))
+        accountTab.tabBarItem = accountTabBarItem
+        
+        self.viewControllers = [homeTab, searchTab, accountTab, settingsTab]
     }
 
 }

@@ -66,7 +66,7 @@ extension MainCollectionViewCell:UICollectionViewDataSource{
 
 extension MainCollectionViewCell:UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: screenWidth/2.8, height: screenWidth/2)
+        return CGSize(width: screenWidth/2.8, height: screenWidth/2.8)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

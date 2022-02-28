@@ -24,7 +24,7 @@ class PlayerViewModel {
         var bodyparameters: [String: Any] = [:]
         var urlParameters: [String: String] = [:]
         
-        if contentDetails?.contentType == "series" {
+        if contentDetails?.contentType?.rawValue == "series" {
             bodyparameters["episodenumber"] = 1
             urlParameters["type"] = "series"
             urlParameters["videoid"] = String(contentDetails?.id ?? 0)
@@ -46,6 +46,36 @@ class PlayerViewModel {
                             strongSelf.videoUrl = videoUrl
                             strongSelf.delegate?.updateUI()
                     }
+                    }catch {
+                        print(error.localizedDescription)
+                    }
+                }
+            }else {
+                print(error.debugDescription)
+            }
+        }
+    }
+    
+    func saveProgress(progress: Int, duration: Int) {
+        var headers: [String: String] = [:]
+        headers["Content-Type"] = "application/json"
+        
+        var bodyparameters: [String: Any] = [:]
+        bodyparameters["profileid"] = User.shared.selectedProfile?.profileID ?? ""
+        bodyparameters["content_type"] = contentDetails?.contentType?.rawValue
+        bodyparameters["contentid"] = contentDetails?.id
+        bodyparameters["duration"] = duration
+        bodyparameters["resume_position"] = progress
+        
+        NetworkAdaptor.request(url: ApiHandler.addToWatching.url(), method: .post, headers: headers, urlParameters: nil, bodyParameters: bodyparameters) { [weak self] data, response, error in
+            if error == nil {
+                if let data = data {
+                    do {
+                        if let jsonData = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any] {
+                            if let status = jsonData["statusCode"] as? Int, status == 200 {
+                                print("success saving to watching")
+                            }
+                        }
                     }catch {
                         print(error.localizedDescription)
                     }

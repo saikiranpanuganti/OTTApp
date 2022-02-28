@@ -22,7 +22,8 @@ struct SeriesData: Codable {
 // MARK: - Details
 struct Details: Codable {
     let id: Int?
-    let ageRating, videoID, friendlyURL, contentType: String?
+    let ageRating, videoID, friendlyURL: String?
+    let contentType: ContentType?
     let synopsis: String?
     let length: Int?
     let title: String?

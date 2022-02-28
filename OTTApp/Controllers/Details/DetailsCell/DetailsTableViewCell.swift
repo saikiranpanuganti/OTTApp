@@ -11,6 +11,9 @@ import SDWebImage
 protocol DetailsTableViewCellDelegate: AnyObject {
     func closeTapped()
     func playOrResumeTapped()
+    func myListTapped()
+    func rateTapped()
+    func shareTapped()
 }
 
 class DetailsTableViewCell: UITableViewCell {
@@ -54,7 +57,7 @@ class DetailsTableViewCell: UITableViewCell {
                 contentImageView.sd_setImage(with: url, placeholderImage: nil, options: .highPriority, context: nil)
             }
             
-            contentType.text = details.contentType?.uppercased() ?? ""
+            contentType.text = details.contentType?.rawValue.uppercased() ?? ""
             year.text = "2020"
             ageRating.text = details.ageRating
             if let numberOfSeasons = details.seasons?.count {
@@ -62,7 +65,7 @@ class DetailsTableViewCell: UITableViewCell {
             }
             playOrResume.text = "Play"
             
-            if details.contentType == "series" {
+            if details.contentType?.rawValue == "series" {
                 downloadLabel.text = "Download S1:E1"
             }else {
                 downloadLabel.text = "Download"
@@ -99,5 +102,17 @@ class DetailsTableViewCell: UITableViewCell {
     
     @IBAction func downloadTapped(_ sender: UIButton) {
         
+    }
+    
+    @IBAction func myListTapped(_ sender: UIButton) {
+        delegate?.myListTapped()
+    }
+    
+    @IBAction func rateTapped(_ sender: UIButton) {
+        delegate?.rateTapped()
+    }
+    
+    @IBAction func shareTapped(_ sender: UIButton) {
+        delegate?.shareTapped()
     }
 }
