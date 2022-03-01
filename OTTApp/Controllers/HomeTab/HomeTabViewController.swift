@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeTabBarViewController: UIViewController {
+class HomeTabBarViewController: BaseViewController {
     
     @IBOutlet weak var homeTabView:HomeTabView!
     var homeTabViewModel:HomeTabViewModel = HomeTabViewModel()

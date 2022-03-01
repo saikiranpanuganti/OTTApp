@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DetailsViewController: UIViewController {
+class DetailsViewController: BaseViewController {
     @IBOutlet weak var detailsView: DetailsView!
     var viewModel: DetailsViewModel = DetailsViewModel()
 

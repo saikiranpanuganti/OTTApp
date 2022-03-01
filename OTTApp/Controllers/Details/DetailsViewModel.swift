@@ -8,6 +8,8 @@
 import Foundation
 
 protocol DetailsViewModelDelegate: AnyObject {
+    func showLoader()
+    func hideLoader()
     func updateUI()
 }
 
@@ -36,7 +38,7 @@ class DetailsViewModel {
     }
     
     func getDetails(urlString: String, parameters: [String: String], contentType: ContentType) {
-        
+        delegate?.showLoader()
         NetworkAdaptor.request(url: urlString, method: .get, headers: nil, urlParameters: parameters, bodyParameters: nil) { data, response, error in
             if error == nil {
                 do {
@@ -56,11 +58,14 @@ class DetailsViewModel {
             }else {
                 print(error.debugDescription)
             }
+            self.delegate?.hideLoader()
         }
     }
     
     func getMoreLikeThisData() {
         if let contentType = video?.contentType {
+            delegate?.showLoader()
+            
             var headers: [String: String] = [:]
             headers["Authorization"] = "cf606825b8a045c1aae39f7fe39de6c6"
             
@@ -80,11 +85,13 @@ class DetailsViewModel {
                 }else {
                     print(error.debugDescription)
                 }
+                self.delegate?.hideLoader()
             }
         }
     }
     
     func addToList() {
+        self.delegate?.showLoader()
         var headers: [String: String] = [:]
         headers["Content-Type"] = "application/json"
         
@@ -110,6 +117,7 @@ class DetailsViewModel {
             }else {
                 print(error.debugDescription)
             }
+            self.delegate?.hideLoader()
         }
     }
 }

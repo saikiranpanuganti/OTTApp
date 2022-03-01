@@ -7,6 +7,8 @@
 
 protocol HomeTabViewModelDeleagte:AnyObject {
     func updateUI()
+    func showLoader()
+    func hideLoader()
 }
 
 import Foundation
@@ -57,7 +59,7 @@ class HomeTabViewModel{
             delegate?.updateUI()
             return
         }
-        
+        delegate?.showLoader()
         var headers : [String:String] = [:]
         headers["Authorization"] = "cf606825b8a045c1aae39f7fe39de6c6"
         
@@ -71,6 +73,7 @@ class HomeTabViewModel{
             catch{
                 print(error.localizedDescription)
             }
+            self.delegate?.hideLoader()
         }
     }
     
@@ -81,7 +84,7 @@ class HomeTabViewModel{
             delegate?.updateUI()
             return
         }
-        
+        delegate?.showLoader()
         var headers : [String:String] = [:]
         headers["Authorization"] = "cf606825b8a045c1aae39f7fe39de6c6"
         
@@ -95,10 +98,13 @@ class HomeTabViewModel{
             catch{
                 print(error.localizedDescription)
             }
+            self.delegate?.hideLoader()
         }
     }
     
     func getSubCategoryData(subCategory: String, urlString: String, isMovies: Bool) {
+        delegate?.showLoader()
+        
         var headers : [String:String] = [:]
         headers["Authorization"] = "cf606825b8a045c1aae39f7fe39de6c6"
         
@@ -121,6 +127,7 @@ class HomeTabViewModel{
             catch{
                 print(error.localizedDescription)
             }
+            self.delegate?.hideLoader()
         }
     }
     
